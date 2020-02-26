@@ -10,21 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_210936) do
+ActiveRecord::Schema.define(version: 2020_02_26_004000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "properties", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.string "street_address"
+    t.string "city_id"
+    t.string "state_id"
+    t.string "country_id"
+    t.string "zipcode"
+    t.string "owner_id"
+    t.integer "n_bedrooms"
+    t.string "n_bathroom"
+    t.boolean "hasKitchen"
+    t.boolean "hasSmokeDetector"
+    t.boolean "hasAirConditioning"
+    t.string "type_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
-    t.string "email"
     t.string "firstname"
     t.string "middlename"
     t.string "lastname"
+    t.string "email"
+    t.string "gender"
+    t.string "occupation"
+    t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
