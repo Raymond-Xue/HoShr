@@ -3,13 +3,15 @@ class CreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       t.string :username
       t.string :password
-      t.string :email
       t.string :firstname
       t.string :middlename
       t.string :lastname
+      t.string :email
+      t.string :gender
+      t.string :occupation
+      t.integer :age
 
       t.timestamps
     end
-    add_index :users, :username, unique: true
   end
 end

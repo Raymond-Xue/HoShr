@@ -14,10 +14,13 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on "New User"
 
+    fill_in "Age", with: @user.age
     fill_in "Email", with: @user.email
     fill_in "Firstname", with: @user.firstname
+    fill_in "Gender", with: @user.gender
     fill_in "Lastname", with: @user.lastname
     fill_in "Middlename", with: @user.middlename
+    fill_in "Occupation", with: @user.occupation
     fill_in "Password", with: @user.password
     fill_in "Username", with: @user.username
     click_on "Create User"
@@ -30,10 +33,13 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     click_on "Edit", match: :first
 
+    fill_in "Age", with: @user.age
     fill_in "Email", with: @user.email
     fill_in "Firstname", with: @user.firstname
+    fill_in "Gender", with: @user.gender
     fill_in "Lastname", with: @user.lastname
     fill_in "Middlename", with: @user.middlename
+    fill_in "Occupation", with: @user.occupation
     fill_in "Password", with: @user.password
     fill_in "Username", with: @user.username
     click_on "Update User"
