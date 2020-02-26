@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Property:</strong>
+  <%= @lessor_request.property_id %>
+</p>
+
+<p>
+  <strong>Earliest movein date:</strong>
+  <%= @lessor_request.earliest_movein_date %>
+</p>
+
+<p>
+  <strong>Min duration:</strong>
+  <%= @lessor_request.min_duration %>
+</p>
+
+<p>
+  <strong>Total rent:</strong>
+  <%= @lessor_request.total_rent %>
+</p>
+
+<p>
+  <strong>Total rent currency:</strong>
+  <%= @lessor_request.total_rent_currency %>
+</p>
+
+<%= link_to 'Edit', edit_lessor_request_path(@lessor_request) %> |
+<%= link_to 'Back', lessor_requests_path %>

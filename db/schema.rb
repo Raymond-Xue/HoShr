@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_004000) do
+ActiveRecord::Schema.define(version: 2020_02_26_165341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lessor_requests", force: :cascade do |t|
+    t.integer "property_id"
+    t.date "earliest_movein_date"
+    t.integer "min_duration"
+    t.float "total_rent"
+    t.string "total_rent_currency"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "properties", force: :cascade do |t|
     t.float "latitude"
@@ -23,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_02_26_004000) do
     t.string "state_id"
     t.string "country_id"
     t.string "zipcode"
-    t.string "owner_id"
+    t.integer "owner_id"
     t.integer "n_bedrooms"
     t.string "n_bathroom"
     t.boolean "hasKitchen"

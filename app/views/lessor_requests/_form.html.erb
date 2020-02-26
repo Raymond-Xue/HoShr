@@ -1,0 +1,42 @@
+<%= form_with(model: lessor_request, local: true) do |form| %>
+  <% if lessor_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lessor_request.errors.count, "error") %> prohibited this lessor_request from being saved:</h2>
+
+      <ul>
+        <% lessor_request.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :property_id %>
+    <%= form.number_field :property_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :earliest_movein_date %>
+    <%= form.date_select :earliest_movein_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_duration %>
+    <%= form.number_field :min_duration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_rent %>
+    <%= form.text_field :total_rent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_rent_currency %>
+    <%= form.text_field :total_rent_currency %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

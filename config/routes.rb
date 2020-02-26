@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :lessor_requests
   root 'application#hello'
   get 'static_pages/home'
   resources :properties

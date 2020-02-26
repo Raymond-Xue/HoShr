@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  property_id: 1
+  earliest_movein_date: 2020-02-26
+  min_duration: 1
+  total_rent: 1.5
+  total_rent_currency: MyString
+
+two:
+  property_id: 1
+  earliest_movein_date: 2020-02-26
+  min_duration: 1
+  total_rent: 1.5
+  total_rent_currency: MyString
