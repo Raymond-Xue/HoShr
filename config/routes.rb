@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :cities
+  resources :states
+  resources :countries
+  resources :currencies
+  resources :types
+  resources :rooms
+  resources :lessee_requests
   resources :lessor_requests
   root 'application#hello'
   get 'static_pages/home'

@@ -1,0 +1,2 @@
+json.extract! lessee_request, :id, :latitude, :longitude, :radius, :city_id, :state_id, :country_id, :lessee_id, :earliest_movein_date, :latest_movein_date, :min_duration, :max_duration, :duration_unit, :max_rent, :max_rent_unit, :max_rent_currency, :max_n_roommates, :max_n_housemates, :private_bath, :balcony, :smoke, :roommate_gender, :created_at, :updated_at
+json.url lessee_request_url(lessee_request, format: :json)

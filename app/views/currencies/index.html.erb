@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Currencies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Currency name</th>
+      <th>Currency symbol</th>
+      <th>Conversion rate to usd</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @currencies.each do |currency| %>
+      <tr>
+        <td><%= currency.currency_name %></td>
+        <td><%= currency.currency_symbol %></td>
+        <td><%= currency.conversion_rate_to_usd %></td>
+        <td><%= link_to 'Show', currency %></td>
+        <td><%= link_to 'Edit', edit_currency_path(currency) %></td>
+        <td><%= link_to 'Destroy', currency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Currency', new_currency_path %>

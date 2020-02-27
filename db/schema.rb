@@ -10,19 +10,77 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_165341) do
+ActiveRecord::Schema.define(version: 2020_02_27_024237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string "city_name"
+    t.integer "state_id"
+    t.integer "country_id"
+    t.float "max_latitude"
+    t.float "min_latitude"
+    t.float "max_longitude"
+    t.float "min_longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "country_name"
+    t.float "max_latitude"
+    t.float "min_latitude"
+    t.float "max_longitude"
+    t.float "min_longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "currencies", force: :cascade do |t|
+    t.string "currency_name"
+    t.string "currency_symbol"
+    t.float "conversion_rate_to_usd"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lessee_requests", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.float "radius"
+    t.integer "city_id"
+    t.integer "state_id"
+    t.integer "country_id"
+    t.integer "lessee_id"
+    t.date "earliest_movein_date"
+    t.date "latest_movein_date"
+    t.integer "min_duration"
+    t.integer "max_duration"
+    t.integer "duration_unit"
+    t.float "max_rent"
+    t.integer "max_rent_unit"
+    t.integer "max_rent_currency"
+    t.integer "max_n_roommates"
+    t.integer "max_n_housemates"
+    t.boolean "private_bath"
+    t.boolean "balcony"
+    t.boolean "smoke"
+    t.string "roommate_gender"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "lessor_requests", force: :cascade do |t|
     t.integer "property_id"
     t.date "earliest_movein_date"
     t.integer "min_duration"
     t.float "total_rent"
-    t.string "total_rent_currency"
+    t.integer "total_rent_currency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "total_rent_unit"
+    t.integer "min_duration_unit"
   end
 
   create_table "properties", force: :cascade do |t|
@@ -40,6 +98,35 @@ ActiveRecord::Schema.define(version: 2020_02_26_165341) do
     t.boolean "hasSmokeDetector"
     t.boolean "hasAirConditioning"
     t.string "type_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "rooms", id: false, force: :cascade do |t|
+    t.integer "room_id"
+    t.integer "property_id"
+    t.float "area"
+    t.integer "area_unit"
+    t.boolean "hasBalcony"
+    t.boolean "hasPrivateBath"
+    t.boolean "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "state_name"
+    t.integer "country_id"
+    t.float "max_latitude"
+    t.float "min_latitude"
+    t.float "max_longitude"
+    t.float "min_longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "type_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

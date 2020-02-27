@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Currency name:</strong>
+  <%= @currency.currency_name %>
+</p>
+
+<p>
+  <strong>Currency symbol:</strong>
+  <%= @currency.currency_symbol %>
+</p>
+
+<p>
+  <strong>Conversion rate to usd:</strong>
+  <%= @currency.conversion_rate_to_usd %>
+</p>
+
+<%= link_to 'Edit', edit_currency_path(@currency) %> |
+<%= link_to 'Back', currencies_path %>

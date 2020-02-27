@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room_id: 1
+  property_id: 1
+  area: 1.5
+  area_unit: 1
+  hasBalcony: false
+  hasPrivateBath: false
+  status: false
+
+two:
+  room_id: 1
+  property_id: 1
+  area: 1.5
+  area_unit: 1
+  hasBalcony: false
+  hasPrivateBath: false
+  status: false

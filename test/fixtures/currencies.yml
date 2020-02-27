@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  currency_name: MyString
+  currency_symbol: MyString
+  conversion_rate_to_usd: 1.5
+
+two:
+  currency_name: MyString
+  currency_symbol: MyString
+  conversion_rate_to_usd: 1.5

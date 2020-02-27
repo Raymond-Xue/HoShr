@@ -1,0 +1,47 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  latitude: 1.5
+  longitude: 1.5
+  radius: 1.5
+  city_id: 1
+  state_id: 1
+  country_id: 1
+  lessee_id: 1
+  earliest_movein_date: 2020-02-26
+  latest_movein_date: 2020-02-26
+  min_duration: 1
+  max_duration: 1
+  duration_unit: 1
+  max_rent: 1.5
+  max_rent_unit: 1
+  max_rent_currency: 1
+  max_n_roommates: 1
+  max_n_housemates: 1
+  private_bath: false
+  balcony: false
+  smoke: false
+  roommate_gender: MyString
+
+two:
+  latitude: 1.5
+  longitude: 1.5
+  radius: 1.5
+  city_id: 1
+  state_id: 1
+  country_id: 1
+  lessee_id: 1
+  earliest_movein_date: 2020-02-26
+  latest_movein_date: 2020-02-26
+  min_duration: 1
+  max_duration: 1
+  duration_unit: 1
+  max_rent: 1.5
+  max_rent_unit: 1
+  max_rent_currency: 1
+  max_n_roommates: 1
+  max_n_housemates: 1
+  private_bath: false
+  balcony: false
+  smoke: false
+  roommate_gender: MyString

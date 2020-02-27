@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country name:</strong>
+  <%= @country.country_name %>
+</p>
+
+<p>
+  <strong>Max latitude:</strong>
+  <%= @country.max_latitude %>
+</p>
+
+<p>
+  <strong>Min latitude:</strong>
+  <%= @country.min_latitude %>
+</p>
+
+<p>
+  <strong>Max longitude:</strong>
+  <%= @country.max_longitude %>
+</p>
+
+<p>
+  <strong>Min longitude:</strong>
+  <%= @country.min_longitude %>
+</p>
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', countries_path %>

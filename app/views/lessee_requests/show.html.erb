@@ -1,0 +1,109 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @lessee_request.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @lessee_request.longitude %>
+</p>
+
+<p>
+  <strong>Radius:</strong>
+  <%= @lessee_request.radius %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @lessee_request.city_id %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @lessee_request.state_id %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @lessee_request.country_id %>
+</p>
+
+<p>
+  <strong>Lessee:</strong>
+  <%= @lessee_request.lessee_id %>
+</p>
+
+<p>
+  <strong>Earliest movein date:</strong>
+  <%= @lessee_request.earliest_movein_date %>
+</p>
+
+<p>
+  <strong>Latest movein date:</strong>
+  <%= @lessee_request.latest_movein_date %>
+</p>
+
+<p>
+  <strong>Min duration:</strong>
+  <%= @lessee_request.min_duration %>
+</p>
+
+<p>
+  <strong>Max duration:</strong>
+  <%= @lessee_request.max_duration %>
+</p>
+
+<p>
+  <strong>Duration unit:</strong>
+  <%= @lessee_request.duration_unit %>
+</p>
+
+<p>
+  <strong>Max rent:</strong>
+  <%= @lessee_request.max_rent %>
+</p>
+
+<p>
+  <strong>Max rent unit:</strong>
+  <%= @lessee_request.max_rent_unit %>
+</p>
+
+<p>
+  <strong>Max rent currency:</strong>
+  <%= @lessee_request.max_rent_currency %>
+</p>
+
+<p>
+  <strong>Max n roommates:</strong>
+  <%= @lessee_request.max_n_roommates %>
+</p>
+
+<p>
+  <strong>Max n housemates:</strong>
+  <%= @lessee_request.max_n_housemates %>
+</p>
+
+<p>
+  <strong>Private bath:</strong>
+  <%= @lessee_request.private_bath %>
+</p>
+
+<p>
+  <strong>Balcony:</strong>
+  <%= @lessee_request.balcony %>
+</p>
+
+<p>
+  <strong>Smoke:</strong>
+  <%= @lessee_request.smoke %>
+</p>
+
+<p>
+  <strong>Roommate gender:</strong>
+  <%= @lessee_request.roommate_gender %>
+</p>
+
+<%= link_to 'Edit', edit_lessee_request_path(@lessee_request) %> |
+<%= link_to 'Back', lessee_requests_path %>

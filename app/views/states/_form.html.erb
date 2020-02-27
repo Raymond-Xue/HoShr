@@ -1,0 +1,47 @@
+<%= form_with(model: state, local: true) do |form| %>
+  <% if state.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(state.errors.count, "error") %> prohibited this state from being saved:</h2>
+
+      <ul>
+        <% state.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :state_name %>
+    <%= form.text_field :state_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_id %>
+    <%= form.number_field :country_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_latitude %>
+    <%= form.text_field :max_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_latitude %>
+    <%= form.text_field :min_latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_longitude %>
+    <%= form.text_field :max_longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_longitude %>
+    <%= form.text_field :min_longitude %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,122 @@
+<%= form_with(model: lessee_request, local: true) do |form| %>
+  <% if lessee_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lessee_request.errors.count, "error") %> prohibited this lessee_request from being saved:</h2>
+
+      <ul>
+        <% lessee_request.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :radius %>
+    <%= form.text_field :radius %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_id %>
+    <%= form.number_field :city_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.number_field :state_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_id %>
+    <%= form.number_field :country_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lessee_id %>
+    <%= form.number_field :lessee_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :earliest_movein_date %>
+    <%= form.date_select :earliest_movein_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latest_movein_date %>
+    <%= form.date_select :latest_movein_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_duration %>
+    <%= form.number_field :min_duration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_duration %>
+    <%= form.number_field :max_duration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration_unit %>
+    <%= form.number_field :duration_unit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_rent %>
+    <%= form.text_field :max_rent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_rent_unit %>
+    <%= form.number_field :max_rent_unit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_rent_currency %>
+    <%= form.number_field :max_rent_currency %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_n_roommates %>
+    <%= form.number_field :max_n_roommates %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_n_housemates %>
+    <%= form.number_field :max_n_housemates %>
+  </div>
+
+  <div class="field">
+    <%= form.label :private_bath %>
+    <%= form.check_box :private_bath %>
+  </div>
+
+  <div class="field">
+    <%= form.label :balcony %>
+    <%= form.check_box :balcony %>
+  </div>
+
+  <div class="field">
+    <%= form.label :smoke %>
+    <%= form.check_box :smoke %>
+  </div>
+
+  <div class="field">
+    <%= form.label :roommate_gender %>
+    <%= form.text_field :roommate_gender %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
