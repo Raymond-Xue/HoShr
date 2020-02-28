@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_28_195559) do
+ActiveRecord::Schema.define(version: 2020_02_28_204903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_195559) do
     t.float "latitude"
     t.float "longitude"
     t.string "street_address"
-    t.string "city_id"
+    t.integer "city_id"
     t.string "state_id"
     t.string "country_id"
     t.string "zipcode"
@@ -152,4 +152,12 @@ ActiveRecord::Schema.define(version: 2020_02_28_195559) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "cities", "states"
+  add_foreign_key "lessee_requests", "groups"
+  add_foreign_key "lessee_requests", "users", column: "lessee_id"
+  add_foreign_key "lessor_requests", "properties"
+  add_foreign_key "properties", "cities"
+  add_foreign_key "properties", "users", column: "owner_id"
+  add_foreign_key "rooms", "properties"
+  add_foreign_key "states", "countries"
 end
