@@ -20,5 +20,5 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-heroku link: https://morning-lake-47266.herokuapp.com/
+heroku link: https://hoshr-auto-realtor.herokuapp.com/users
 * ...
