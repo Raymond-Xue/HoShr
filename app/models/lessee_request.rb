@@ -1,4 +1,4 @@
 class LesseeRequest < ApplicationRecord
-	belongs_to :users
-	belongs_to :groups
+	belongs_to :user, optional: true, foreign_key: :lessee_id
+	belongs_to :group
 end
