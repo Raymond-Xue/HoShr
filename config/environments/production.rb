@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # Force all access tot he app over SSL, use strict-transport-security
-  #config.force_ssl = true
+  config.force_ssl = true
   # Code is not reloaded between requests.
   config.cache_classes = true
 
