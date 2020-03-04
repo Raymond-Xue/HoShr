@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  resources :groups
   root 'static_pages#home'
+  #get 'sessions/new'
+  
+  
   get 'static_pages/home'
   get  '/signup',  to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to:'sessions#destroy'
 
+  resources :groups
   resources :cities
   resources :states
   resources :countries
