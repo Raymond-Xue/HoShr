@@ -4,7 +4,7 @@ class RecommendController < ApplicationController
   include InvitationHelper
   def show
     #Login user placeholder
-    current_user = User.find(1)
+    current_user = User.find(2)
 
     recommend_groups = []
     LesseeRequest.where(group_id: current_user.group_id).each do |request|

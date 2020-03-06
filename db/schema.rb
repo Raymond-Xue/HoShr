@@ -67,7 +67,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_053832) do
     t.integer "city_id"
     t.integer "state_id"
     t.integer "country_id"
-    t.integer "lessee_id"
+    # t.integer "lessee_id"
+    t.integer "group_id"
     t.date "earliest_movein_date"
     t.date "latest_movein_date"
     t.integer "min_duration"
@@ -84,7 +85,6 @@ ActiveRecord::Schema.define(version: 2020_03_03_053832) do
     t.string "roommate_gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "group_id"
   end
 
   create_table "lessor_requests", force: :cascade do |t|
@@ -159,16 +159,16 @@ ActiveRecord::Schema.define(version: 2020_03_03_053832) do
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "group_id"
+    t.integer "current_group_id"
     t.integer "origin_group_id"
   end
 
   add_foreign_key "cities", "states"
   add_foreign_key "lessee_requests", "groups"
-  add_foreign_key "lessee_requests", "users", column: "lessee_id"
   add_foreign_key "lessor_requests", "properties"
   add_foreign_key "properties", "cities"
   add_foreign_key "properties", "users", column: "owner_id"
   add_foreign_key "rooms", "properties"
   add_foreign_key "states", "countries"
+  add_foreign_key "users", "groups", column: "current_group_id"
 end

@@ -15,26 +15,20 @@ module GroupsHelper
 
       group_1.users.each { |user|
         user.group = new_group
+        if user.origin_group_id != user.group_id
+          user.group.destroy
+        end
         user.save
-      }
-      group_1.lessee_requests.each{ |request|
-        if !request.user.nil?
-          request.delete
-        end
-      }
-      group_2.lessee_requests.each{ |request|
-        if !request.user.nil?
-          request.delete
-        end
       }
       group_2.users.each{ |user|
         user.group = new_group
+        if user.origin_group_id != user.group_id
+          user.group.destroy
+        end
         user.save
       }
       new_group.save
     end
-
-
   end
 
   def quit_group(user_id, group_id)
@@ -43,7 +37,14 @@ module GroupsHelper
       if user.origin_group_id == group_id
         raise "Cannot exit origin group"
       end
+      group = Group.find(group_id)
+      if group.nil? || user.group_id != group_id
+        raise "Invalid request"
+      end
       user.group = user.origin_group
+      if group.users.size == 0
+        group.destroy
+      end
       user.save
     end
   end

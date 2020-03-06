@@ -1,6 +1,6 @@
 module InvitationHelper
 
-  def create(group_from_id, group_to_id)
+  def create_invitation(group_from_id, group_to_id)
 
     state = Invitation.transaction do
       group_from = Group.find_by_id(group_from_id)
@@ -23,25 +23,27 @@ module InvitationHelper
   end
 
   def show_received_invitation(group_id)
-    Invitation.find_by_group_to_id(group_id)
+    Invitation.find(group_id)
   end
 
   def accept_invitation(invitation_id)
+
 
     Invitation.transaction do
       invitation = Invitation.find(invitation_id)
       if invitation.nil?
         raise "Invitation not found"
       end
-
+      # Todo User placeholder
+      if invitation.group_to_id != User.find(1)
+        raise "Invalid request"
+      end
+      GroupsHelper::merge_group(invitation.group_from_id, invitation.group_to_id)
     end
-
   end
 
   def find_sender(group_id_from, group_id_to)
     Invitation.find_by(group_from_id: group_id_from, group_to_id: group_id_to)
   end
-
-
 
 end
