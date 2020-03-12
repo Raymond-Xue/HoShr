@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
-  resources :groups
   root 'static_pages#home'
+
   get 'static_pages/home'
   get '/recommendation', to: 'recommend#show'
+
+  get 'sessions/new'
+  
+  
+  get 'static_pages/home'
+  get  '/signup',  to: 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to:'sessions#destroy'
+
+  resources :groups
+
   resources :cities
   resources :states
   resources :countries
@@ -10,10 +22,7 @@ Rails.application.routes.draw do
   resources :types
   resources :rooms
   resources :lessee_requests
-  resources :lessor_requests
-  
-  
- 
+  resources :lessor_requests 
   resources :properties
   resources :users
 

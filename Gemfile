@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 gem 'activerecord-import'
 gem 'json'
+gem 'bcrypt',         '3.1.13'
 gem 'bootstrap-sass', '3.4.1'
 
 # Reduces boot times through caching; required in config/boot.rb

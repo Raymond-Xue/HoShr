@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_03_03_053832) do
+
+
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -149,7 +153,6 @@ ActiveRecord::Schema.define(version: 2020_03_03_053832) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
     t.string "firstname"
     t.string "middlename"
     t.string "lastname"
@@ -159,8 +162,12 @@ ActiveRecord::Schema.define(version: 2020_03_03_053832) do
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
     t.integer "current_group_id"
     t.integer "origin_group_id"
+
+    t.string "password_digest"
+
   end
 
   add_foreign_key "cities", "states"
