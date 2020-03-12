@@ -1,4 +1,3 @@
 class LesseeRequest < ApplicationRecord
-	belongs_to :users
-	belongs_to :groups
+	belongs_to :group
 end
