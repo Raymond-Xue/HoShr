@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-
-  get 'static_pages/home'
-  get '/recommendation', to: 'recommend#show'
-
   get 'sessions/new'
   
   
@@ -14,7 +10,6 @@ Rails.application.routes.draw do
   delete '/logout', to:'sessions#destroy'
 
   resources :groups
-
   resources :cities
   resources :states
   resources :countries
@@ -25,7 +20,5 @@ Rails.application.routes.draw do
   resources :lessor_requests 
   resources :properties
   resources :users
-
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
