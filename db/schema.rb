@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_28_213050) do
+ActiveRecord::Schema.define(version: 2020_03_03_053832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(version: 2020_02_28_213050) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "invitations", force: :cascade do |t|
+    t.bigint "group_from_id"
+    t.bigint "group_to_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_from_id"], name: "index_invitations_on_group_from_id"
+    t.index ["group_to_id"], name: "index_invitations_on_group_to_id"
+  end
+
   create_table "lessee_requests", force: :cascade do |t|
     t.float "latitude"
     t.float "longitude"
@@ -58,7 +67,8 @@ ActiveRecord::Schema.define(version: 2020_02_28_213050) do
     t.integer "city_id"
     t.integer "state_id"
     t.integer "country_id"
-    t.integer "lessee_id"
+    # t.integer "lessee_id"
+    t.integer "group_id"
     t.date "earliest_movein_date"
     t.date "latest_movein_date"
     t.integer "min_duration"
@@ -75,7 +85,6 @@ ActiveRecord::Schema.define(version: 2020_02_28_213050) do
     t.string "roommate_gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "group_id"
   end
 
   create_table "lessor_requests", force: :cascade do |t|
@@ -140,6 +149,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_213050) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "password_digest"
     t.string "firstname"
     t.string "middlename"
     t.string "lastname"
@@ -149,15 +159,16 @@ ActiveRecord::Schema.define(version: 2020_02_28_213050) do
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
+    t.integer "current_group_id"
+    t.integer "origin_group_id"
   end
 
   add_foreign_key "cities", "states"
   add_foreign_key "lessee_requests", "groups"
-  add_foreign_key "lessee_requests", "users", column: "lessee_id"
   add_foreign_key "lessor_requests", "properties"
   add_foreign_key "properties", "cities"
   add_foreign_key "properties", "users", column: "owner_id"
   add_foreign_key "rooms", "properties"
   add_foreign_key "states", "countries"
+  add_foreign_key "users", "groups", column: "current_group_id"
 end
