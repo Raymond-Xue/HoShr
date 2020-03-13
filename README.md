@@ -1,24 +1,11 @@
-# README
+# Hoshr Development Readme
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-heroku link: https://hoshr-auto-realtor.herokuapp.com/users
-* ...
+## Database initialization
+* As we directly modify "schema.rb" file, "rails:reset" commend will not be suitable because it will run migration to build schema instead of using "schema.rb".
+* The rule of thumb is to run the commends below whenever you want to rebuild database.
+```
+# shell
+rails db:drop
+rails db:create
+rails db:schema:load
+```
