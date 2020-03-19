@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/invitation.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/sessions_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/group.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/group.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/lessee_requests_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/lessee_requests_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/recommend_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/recommend_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/lessee_request.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/lessee_request.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/lessee_requests/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/lessee_requests/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/lessee_requests/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/lessee_requests/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/lessee_requests/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/lessee_requests/show.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +207,7 @@
       <workItem from="1583527368133" duration="828000" />
       <workItem from="1584068553656" duration="464000" />
       <workItem from="1584069040056" duration="2715000" />
-      <workItem from="1584638072885" duration="2141000" />
+      <workItem from="1584638072885" duration="3003000" />
     </task>
     <servers />
   </component>

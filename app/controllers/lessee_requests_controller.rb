@@ -25,6 +25,7 @@ class LesseeRequestsController < ApplicationController
   # POST /lessee_requests.json
   def create
     @lessee_request = LesseeRequest.new(lessee_request_params)
+    @lessee_request.group = current_user.current_group
 
     respond_to do |format|
       if @lessee_request.save

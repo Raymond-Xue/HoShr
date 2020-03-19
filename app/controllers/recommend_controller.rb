@@ -18,7 +18,7 @@ class RecommendController < ApplicationController
     @group_info = []
     recommend_groups.each do |group|
       @group_info.append({:group => group,
-                          :invitation => find_sender(group.id, current_user.group_id)})
+                          :invitation => find_sender(group.id, current_user.current_group_id)})
     end
     render 'recommendation'
 
