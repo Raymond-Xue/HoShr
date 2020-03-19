@@ -171,4 +171,5 @@ ActiveRecord::Schema.define(version: 2020_03_03_053832) do
   add_foreign_key "rooms", "properties"
   add_foreign_key "states", "countries"
   add_foreign_key "users", "groups", column: "current_group_id"
+  add_foreign_key "users", "groups", column: "origin_group_id"
 end

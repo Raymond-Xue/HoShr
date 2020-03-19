@@ -26,6 +26,9 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    default_group = Group.new
+    @user.current_group = default_group
+    @user.origin_group = default_group
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Sample App!"
