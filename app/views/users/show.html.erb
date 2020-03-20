@@ -57,5 +57,6 @@
   <%= @user.age %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit Your Profile', edit_user_path(@user), class:'btn btn-md btn-primary' %> |
+<%= link_to 'Rent a New Property', new_lessee_request_path, class:'btn btn-md btn-primary' %> |
+<%= link_to 'Lease Your Property', new_lessor_request_path, class:'btn btn-md btn-primary' %> 
