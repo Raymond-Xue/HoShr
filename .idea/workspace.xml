@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/groups_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/groups_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/recommend_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/recommend_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/group.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/group.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +33,7 @@
     <property name="Ruby.ViewRefParam.DefaultExtension" value="html.erb" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
@@ -201,7 +205,8 @@
       <workItem from="1583527368133" duration="828000" />
       <workItem from="1584068553656" duration="464000" />
       <workItem from="1584069040056" duration="2715000" />
-      <workItem from="1584638072885" duration="4198000" />
+      <workItem from="1584638072885" duration="5106000" />
+      <workItem from="1584738013329" duration="4565000" />
     </task>
     <servers />
   </component>
@@ -209,10 +214,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl" timestamp="1583986175260">
+    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl" timestamp="1584724348985">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1583986175260" />
+    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1584724348985" />
     <state width="1793" height="263" key="GridCell.Tab.0.bottom" timestamp="1583133633208">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
