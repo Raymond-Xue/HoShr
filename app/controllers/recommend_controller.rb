@@ -15,6 +15,7 @@ class RecommendController < ApplicationController
     end
     recommend_groups = recommend_groups.uniq
 
+    @current_group = @current_user.current_group
     @group_info = []
     recommend_groups.each do |group|
       @group_info.append({:group => group,

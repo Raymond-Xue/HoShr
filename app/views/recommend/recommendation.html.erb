@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Group recommendation</h1>
+<% if @current_group.lessee_request.empty? %>
+  <h3>No recommendation found. You need to post at least one lessee request</h3>
+<% elsif @group_info.empty? %>
+  <h3>No recommendation found. You can adjust your request or wait a little longer.</h3>
+<% else %>
 <table class="table table-striped table-bordered">
   <thead>
   <tr>
@@ -11,32 +16,32 @@
   </thead>
 
   <tbody>
-  <% @group_info.each do |info| %>
-    <tr>
-      <td><%= info[:group].id%></td>
-      <td>
-        <% info[:group].users.each do |user| %>
-         <span> <%= user.id %> </span>
-        <% end %>
-      </td>
-      <td>
-        <% if info[:received_invitation].nil? %>
-          <% if info[:send_invitation].nil? %>
-            <span>
-            <%= link_to("send merge invitation", send_invitation_path(info[:group].id), method: :post)%>
-            </span>
-          <% else %>
-            <span>Waiting for response</span>
+    <% @group_info.each do |info| %>
+      <tr>
+        <td><%= info[:group].id%></td>
+        <td>
+          <% info[:group].users.each do |user| %>
+           <span> <%= user.id %> </span>
           <% end %>
-        <% else %>
-          <span>
-            <%= link_to("accept merge invitation", accept_invitation_path(info[:received_invitation].id), method: :post) %>
-          </span>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
+        </td>
+        <td>
+          <% if info[:received_invitation].nil? %>
+            <% if info[:send_invitation].nil? %>
+              <span>
+              <%= link_to("send merge invitation", send_invitation_path(info[:group].id), method: :post)%>
+              </span>
+            <% else %>
+              <span>Waiting for response</span>
+            <% end %>
+          <% else %>
+            <span>
+              <%= link_to("accept merge invitation", accept_invitation_path(info[:received_invitation].id), method: :post) %>
+            </span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
-
+<% end %>
 
