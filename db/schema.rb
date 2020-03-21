@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_053832) do
     t.boolean "balcony"
     t.boolean "smoke"
     t.string "roommate_gender"
+    t.boolean "active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

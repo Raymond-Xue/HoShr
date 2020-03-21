@@ -24,7 +24,7 @@ module RecommendHelper
 
   # Return the recommended requests
   def recommend_request_sql_query(group_request)
-    LesseeRequest.where("group_id != #{group_request.group_id}")
+    LesseeRequest.where("group_id != #{group_request.group_id} and active != false")
   end
 
   # Rate two requests

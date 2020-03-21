@@ -1,18 +1,17 @@
 class InvitationController < ApplicationController
   include InvitationHelper
-  def invite
+  include SessionsHelper
+  def create
     params.require(:group_to_id)
     group_to_id = params.require(:group_to_id)
-    #user place holder
-    # user = current_user
-    user = User.find(1)
-    group_from_id = user.group_id
+    user = current_user
+    group_from_id = user.current_group_id
     begin
       create_invitation(group_from_id, group_to_id)
     rescue => ex
       flash[:danger] = ex.message
     end
-    render recommendation_path
+    redirect_to recommendation_path
   end
 
   def accept
@@ -24,7 +23,7 @@ class InvitationController < ApplicationController
     rescue => ex
       flash[:danger] = ex.message
     end
-    redirect_to mygroup_path
+    redirect_to recommendation_path
   end
 
 

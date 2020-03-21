@@ -20,10 +20,18 @@
         <% end %>
       </td>
       <td>
-        <% if info[:invitation].nil? %>
-          <span><a href="#">send merge request</a></span>
+        <% if info[:received_invitation].nil? %>
+          <% if info[:send_invitation].nil? %>
+            <span>
+            <%= link_to("send merge invitation", send_invitation_path(info[:group].id), method: :post)%>
+            </span>
+          <% else %>
+            <span>Waiting for response</span>
+          <% end %>
         <% else %>
-          <span><a href="#">accept merge request</a></span>
+          <span>
+            <%= link_to("accept merge invitation", accept_invitation_path(info[:received_invitation].id), method: :post) %>
+          </span>
         <% end %>
       </td>
     </tr>

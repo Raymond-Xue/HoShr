@@ -53,11 +53,16 @@ def destroy_group(group_id)
     if group_id.nil?
       raise "No such group"
     end
-    group.received_invitation.destroy
-    group.send_invitation.destroy
+    group.received_invitation.destroy_all
+    group.send_invitation.destroy_all
     if group.original_user.nil?
-      group.lessee_request.destroy
+      group.lessee_request.destroy_all
       group.destroy
+    else
+      group.lessee_request.each { |record|
+        record.active = false
+        record.save
+      }
     end
   end
 end
