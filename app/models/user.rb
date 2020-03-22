@@ -1,5 +1,6 @@
 require 'bcrypt'
 class User < ApplicationRecord
+        has_one_attached :avatar
 	has_many :property
 	has_many :lessor_request, :through => :property	
 	has_many :lessee_request

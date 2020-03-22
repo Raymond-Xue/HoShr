@@ -1,63 +1,67 @@
+<!DOCTYPE html>
+<style>
+  .photo
+  {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  table, div
+  {
+    text-align: center;
+  }
+  section
+  {
+    text-align: center;
+    font-size: 20px;
+  }
+
+</style>
 <% provide(:title, @user.username) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.username %>
-      </h1>
-    </section>
-  </aside>
-</div>
+    <h1>
+        <%= @user.username%>
+    </h1>
 <p id="notice"><%= notice %></p>
 
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Firstname:</strong>
-  <%= @user.firstname %>
-</p>
-
-<p>
-  <strong>Middlename:</strong>
-  <%= @user.middlename %>
-</p>
-
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <strong>Occupation:</strong>
-  <%= @user.occupation %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @user.age %>
-</p>
-
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Photo</td>
+      <td>  
+        <% if @user.avatar.attached? %>
+          <%= image_tag url_for(@user.avatar), class: "photo"%>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Username</td>
+      <td><%= @user.username %></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td><%= @user.firstname.to_s + " " + @user.lastname.to_s %></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td><%= @user.age %></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><%= @user.gender %></td>
+    </tr>
+    <tr>
+      <td>Occupation</td>
+      <td><%= @user.occupation %></td>
+    </tr>
+  </tbody>
+</table>
+<div>
 <%= link_to 'Edit Your Profile', edit_user_path(@user), class:'btn btn-md btn-primary' %> |
 <%= link_to 'Find a Place', new_lessee_request_path, class:'btn btn-md btn-primary' %> |
 <%= link_to 'Lease Your Property', new_lessor_request_path, class:'btn btn-md btn-primary' %> |
 <%= link_to 'Upload Your Property', new_property_path, class:'btn btn-md btn-primary' %>
+</div>
