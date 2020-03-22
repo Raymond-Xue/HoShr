@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center my-5">
+  <%= @user.username %>
+</h1>
+
+<h3 class="my-3">My Lessee:</h3>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Lessee ID</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @lessee_requests.each do |lessee_request| %>
+    <tr>
+      <td><%= lessee_request.id %></td>
+      <td><%= lessee_request.city_id %></td>
+      <td><%= lessee_request.state_id %></td>
+      <td><%= Country.find(lessee_request.country_id).country_name %></td>
+      <td><%= link_to 'Cancel', "/cancel/#{lessee_request.id}", class: 'btn btn-primary', method: :post %></td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
+<%= link_to 'New Lessee Request', new_lessee_request_path, class: 'btn btn-primary'%>

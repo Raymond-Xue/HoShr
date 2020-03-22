@@ -61,6 +61,32 @@ class GroupsController < ApplicationController
     end
   end
 
+  def submit
+    LesseeRequest.create(group_id: current_user.current_group_id, id: params[:lessee_request_id])
+    flash[:success] = 'Request Submit Success!'
+
+    redirect_to my_lessee_path
+  end
+
+  def cancel
+    LesseeRequest.where(group_id: current_user.current_group_id).first.destroy
+    flash[:success] = 'Request Submit Success!'
+
+    redirect_to my_lessee_path
+  end
+
+  def my_lessee
+    @user = current_user
+    @group = Group.find_by(:id => @user.current_group_id)
+    @lessee_requests = LesseeRequest.where(:group_id => @group.id)
+  end
+
+  def my_group
+    @user = current_user
+    @group = Group.find_by(:id => @user.current_group_id)
+    @members = User.where(:current_group_id => @group.id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_group

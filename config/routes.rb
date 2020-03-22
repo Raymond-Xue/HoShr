@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   post '/invitation/accept/:invitation_id', to:'invitation#accept', as: 'accept_invitation'
   post '/invitation/send/:group_to_id', to:'invitation#create', as: 'send_invitation'
 
+  get '/my_lessee', to: 'groups#my_lessee'
+  post '/submit/:lessee_id', to: 'groups#submit'
+  post '/cancel/:property_id', to: 'groups#cancel'
+
+  get '/my_group', to: 'groups#my_group'
+
   resources :groups
   resources :cities
   resources :states

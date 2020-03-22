@@ -5,10 +5,15 @@
     A Novel Way of Living
   </h2>
 
-  <%= link_to "Users", users_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "Properties", properties_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "Lessor Requests", lessor_requests_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "Lessee Requests", lessee_requests_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "Rooms", rooms_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "Recommendation", recommendation_path, class: "btn btn-lg btn-primary" %>
+  <% if logged_in? %>
+	<%= link_to "Users", users_path, class: "btn btn-lg btn-primary" %>
+	<%= link_to "Properties", properties_path, class: "btn btn-lg btn-primary" %>
+	<%= link_to "Lessor Requests", lessor_requests_path, class: "btn btn-lg btn-primary" %>
+	<%= link_to "Lessee Requests", my_lessee_path, class: "btn btn-lg btn-primary" %>
+	<%= link_to "Rooms", rooms_path, class: "btn btn-lg btn-primary" %>
+	<%= link_to "Recommendation", recommendation_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to "My Group", my_group_path, class: "btn btn-lg btn-primary" %>
+  <% else %>
+	<%= link_to "Please Login Here", login_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>

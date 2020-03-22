@@ -1,4 +1,4 @@
 class City < ApplicationRecord
 	belongs_to :state
-	has_many :property
+	has_many :properties
 end

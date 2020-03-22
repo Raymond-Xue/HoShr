@@ -29,7 +29,7 @@ class LesseeRequestsController < ApplicationController
 
     respond_to do |format|
       if @lessee_request.save
-        format.html { redirect_to @lessee_request, notice: 'Lessee request was successfully created.' }
+        format.html { redirect_to my_lessee_path, notice: 'Lessee request was successfully created.' }
         format.json { render :show, status: :created, location: @lessee_request }
       else
         format.html { render :new }

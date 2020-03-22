@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center my-5">
+  <%= @user.username %>
+</h1>
+
+<h3 class="my-3">My Group:</h3>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>User ID</th>
+    <th>Username</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @members.each do |member| %>
+    <tr>
+      <td><%= member.id %></td>
+      <td><%= member.username %></td>
+      <td><%= member.email %></td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
+
+
+
+
