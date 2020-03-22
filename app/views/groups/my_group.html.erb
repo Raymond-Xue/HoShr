@@ -9,18 +9,24 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>User ID</th>
     <th>Username</th>
+    <th>Name</th>
     <th>Email</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Occupation</th>
   </tr>
   </thead>
 
   <tbody>
   <% @members.each do |member| %>
     <tr>
-      <td><%= member.id %></td>
       <td><%= member.username %></td>
+      <td><%= member.firstname.to_s + " " + member.lastname.to_s %></td>
       <td><%= member.email %></td>
+      <td><%= member.age %></td>
+      <td><%= member.gender %></td>
+      <td><%= member.occupation %></td>
     </tr>
   <% end %>
 

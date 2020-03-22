@@ -13,6 +13,10 @@
     <th>City</th>
     <th>State</th>
     <th>Country</th>
+    <th>Move in Date Range</th>
+    <th>Duration Range(Month)</th>
+    <th>Max Rent(USD)</th>
+    <th>Max Housemates</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -21,13 +25,19 @@
   <% @lessee_requests.each do |lessee_request| %>
     <tr>
       <td><%= lessee_request.id %></td>
-      <td><%= lessee_request.city_id %></td>
-      <td><%= lessee_request.state_id %></td>
+      <td><%= City.find(lessee_request.city_id).city_name %></td>
+      <td><%= State.find(lessee_request.state_id).state_name %></td>
       <td><%= Country.find(lessee_request.country_id).country_name %></td>
+      <td><%= lessee_request.earliest_movein_date.to_s + " to " +  lessee_request.latest_movein_date.to_s%></td>
+      <td><%= lessee_request.min_duration.to_s + " to " +  lessee_request.max_duration.to_s%></td>
+      <td><%= lessee_request.max_rent %></td>
+      <td><%= lessee_request.max_n_housemates %></td>
       <td><%= link_to 'Cancel', "/cancel/#{lessee_request.id}", class: 'btn btn-primary', method: :post %></td>
     </tr>
   <% end %>
 
   </tbody>
 </table>
-<%= link_to 'New Lessee Request', new_lessee_request_path, class: 'btn btn-primary'%>
+<%= link_to 'View my Group', my_group_path, class: 'btn btn-primary'%>
+<%= link_to 'View my Recommendation', recommendation_path, class: 'btn btn-primary'%>
+<%= link_to 'New Lessee Request', new_lessee_request_path, class: 'btn btn-secondary'%>

@@ -17,6 +17,21 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
 
+      <%= f.label :firstname %>
+      <%= f.text_field :firstname, :required => true%>
+
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname , :required => true%>
+
+      <%= f.label :gender %>
+      <%= f.text_field :gender , :required => true%>
+
+      <%= f.label :occupation %>
+      <%= f.text_field :occupation , :required => true%>
+
+      <%= f.label :age %>
+      <%= f.text_field :age , :required => true%>
+
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>

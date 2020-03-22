@@ -1,5 +1,6 @@
 class LessorRequestsController < ApplicationController
-  before_action :set_lessor_request, only: [:show, :edit, :update, :destroy]
+  #before_action :set_lessor_request, only: [:show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :new, :create, :destroy]
 
   # GET /lessor_requests
   # GET /lessor_requests.json

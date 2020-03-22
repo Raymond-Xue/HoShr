@@ -13,102 +13,102 @@
 
   <div class="field">
     <%= form.label :latitude %>
-    <%= form.text_field :latitude %>
+    <%= form.text_field :latitude, :required => true%>
   </div>
 
   <div class="field">
     <%= form.label :longitude %>
-    <%= form.text_field :longitude %>
+    <%= form.text_field :longitude, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :radius %>
-    <%= form.text_field :radius %>
+    <%= form.text_field :radius, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :country_id %>
-    <%= form.collection_select(:country_id, Country.all,:id, :country_name,{prompt: 'Select Country'}) %>
+    <%= form.collection_select(:country_id, Country.all,:id, :country_name,{prompt: 'Select Country'}, {required: true})%>
   </div>
 
   <div class="field">
     <%= form.label :state_id %>
-    <%= form.collection_select(:state_id, State.all,:id, :state_name,{prompt: 'Select State'}) %>
+    <%= form.collection_select(:state_id, State.all,:id, :state_name,{prompt: 'Select State'}, {required: true}) %>
   </div>
 
   <div class="field">
     <%= form.label :city_id %>
-    <%= form.number_field :city_id %>
+    <%= form.collection_select(:city_id, City.all,:id, :city_name,{prompt: 'Select City'}, {required: true}) %>
   </div>
 
   <div class="field">
     <%= form.label :earliest_movein_date %>
-    <%= form.date_select :earliest_movein_date %>
+    <%= form.date_select :earliest_movein_date, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :latest_movein_date %>
-    <%= form.date_select :latest_movein_date %>
+    <%= form.date_select :latest_movein_date, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :min_duration %>
-    <%= form.number_field :min_duration %>
+    <%= form.number_field :min_duration , :required => true%>
   </div>
 
   <div class="field">
     <%= form.label :max_duration %>
-    <%= form.number_field :max_duration %>
+    <%= form.number_field :max_duration , :required => true%>
   </div>
 
   <div class="field">
     <%= form.label :duration_unit %>
-    <%= form.number_field :duration_unit %>
+    <%= form.number_field :duration_unit , :required => true%>
   </div>
 
   <div class="field">
     <%= form.label :max_rent %>
-    <%= form.text_field :max_rent %>
+    <%= form.text_field :max_rent , :required => true%>
   </div>
 
   <div class="field">
     <%= form.label :max_rent_unit %>
-    <%= form.number_field :max_rent_unit %>
+    <%= form.number_field :max_rent_unit , :required => true%>
   </div>
 
   <div class="field">
     <%= form.label :max_rent_currency %>
-    <%= form.number_field :max_rent_currency %>
+    <%= form.number_field :max_rent_currency , :required => true%>
   </div>
 
   <div class="field">
     <%= form.label :max_n_roommates %>
-    <%= form.number_field :max_n_roommates %>
+    <%= form.number_field :max_n_roommates , :required => true%>
   </div>
 
   <div class="field">
     <%= form.label :max_n_housemates %>
-    <%= form.number_field :max_n_housemates %>
+    <%= form.number_field :max_n_housemates , :required => true%>
   </div>
 
   <div class="field">
     <%= form.label :private_bath %>
-    <%= form.check_box :private_bath %>
+    <%= form.check_box :private_bath , :required => true%>
   </div>
 
   <div class="field">
     <%= form.label :balcony %>
-    <%= form.check_box :balcony %>
+    <%= form.check_box :balcony , :required => true%>
   </div>
 
   <div class="field">
-    <%= form.label :smoke %>
+    <%= form.label :smoke , :required => true%>
     <%= form.check_box :smoke %>
   </div>
 
   <div class="field">
     <%= form.label :roommate_gender %>
-    <%= form.text_field :roommate_gender %>
+    <%= form.text_field :roommate_gender , :required => true%>
   </div>
 
   <div class="actions">
