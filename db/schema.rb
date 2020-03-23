@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
+    t.string "city_abbr"
     t.integer "state_id"
     t.integer "country_id"
     t.float "max_latitude"
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
 
   create_table "countries", force: :cascade do |t|
     t.string "country_name"
+    t.string "country_abbr"
     t.float "max_latitude"
     t.float "min_latitude"
     t.float "max_longitude"
@@ -153,6 +155,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
 
   create_table "states", force: :cascade do |t|
     t.string "state_name"
+    t.string "state_abbr"
     t.integer "country_id"
     t.float "max_latitude"
     t.float "min_latitude"
