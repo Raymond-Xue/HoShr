@@ -28,17 +28,17 @@
 
   <div class="field">
     <%= form.label :city_id %>
-    <%= form.text_field :city_id %>
+    <%= form.collection_select(:city_id, City.all, :id, :city_name, { :prompt => 'Select a City', :selected => @property.city_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">
     <%= form.label :state_id %>
-    <%= form.text_field :state_id %>
+    <%= form.collection_select(:state_id, State.all, :id, :state_abbr, { :prompt => 'Select a State', :selected => @property.state_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">
     <%= form.label :country_id %>
-    <%= form.text_field :country_id %>
+    <%= form.collection_select(:country_id, Country.all, :id, :country_abbr, { :prompt => 'Select a Country', :selected => @property.country_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">
@@ -77,8 +77,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :type_id %>
-    <%= form.text_field :type_id %>
+    <%= form.collection_select(:type_id, Type.all, :id, :type_name, { :prompt => 'Select a type', :selected => @property.type_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="actions">

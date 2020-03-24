@@ -16,15 +16,21 @@ require 'city-state'
 country_list = CS.get
 
 Country.create(country_abbr: "US", country_name: "United State")
-state_list = CS.get("US")
-sid = 1
-state_list.each do |sabbr, sname|
-	State.create(state_abbr: sabbr, state_name: sname, country_id: 1)
-	city_list = CS.get("US", sabbr)
-	city_list.each do |cabbr, cname|
-		City.create(city_abbr: cabbr, city_name: cname, state_id: sid)
-	end
-	sid += 1
-	puts "loading state: ", sname, "\n"
-end
+State.create(state_abbr: "MA", state_name: "Massachusetts", country_id: 1)
+City.create(city_name: "Waltham", state_id: 1)
+Type.create(type_name: "House")
+
+# Full state and city list
+
+# state_list = CS.get("US")
+# sid = 1
+# state_list.each do |sabbr, sname|
+# 	State.create(state_abbr: sabbr, state_name: sname, country_id: 1)
+# 	city_list = CS.get("US", sabbr)
+# 	city_list.each do |cabbr, cname|
+# 		City.create(city_abbr: cabbr, city_name: cname, state_id: sid)
+# 	end
+# 	sid += 1
+# 	puts "loading state: ", sname, "\n"
+# end
 

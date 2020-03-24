@@ -136,7 +136,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
     t.boolean "hasKitchen"
     t.boolean "hasSmokeDetector"
     t.boolean "hasAirConditioning"
-    t.string "type_id"
+    t.integer "type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -191,8 +191,9 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
   add_foreign_key "cities", "states"
   add_foreign_key "lessee_requests", "groups"
   add_foreign_key "lessor_requests", "properties"
-  add_foreign_key "properties", "cities"
+  add_foreign_key "properties", "cities", column: "city_id"
   add_foreign_key "properties", "users", column: "owner_id"
+  add_foreign_key "properties", "types", column: "type_id"
   add_foreign_key "rooms", "properties"
   add_foreign_key "states", "countries"
   add_foreign_key "users", "groups", column: "current_group_id"
