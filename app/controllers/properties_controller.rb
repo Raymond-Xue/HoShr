@@ -6,13 +6,17 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all
+	if current_user
+    	@properties = Property.find_by(:owner_id => current_user.id)
+	else
+		redirect_to "/login"
+	end
   end
 
   # GET /properties/1
   # GET /properties/1.json
   def show
-    @property= Property.find_by(:owner_id => current_user)
+  	@property = Property.find_by(:id => params[:id])	
   end
 
   # GET /properties/new
@@ -22,13 +26,14 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1/edit
   def edit
+	
   end
 
   # POST /properties
   # POST /properties.json
   def create
     @property = Property.new(property_params)
-    @property.owner = current_user
+    @property.owner_id = current_user.id
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
@@ -63,7 +68,10 @@ class PropertiesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def post 
+	LessorRequest.create(property_id: @property.id)
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_property

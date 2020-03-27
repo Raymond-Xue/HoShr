@@ -35,28 +35,24 @@
   <%= @property.zipcode %>
 </p>
 
-<p>
-  <strong>Owner:</strong>
-  <%= @property.owner_id %>
-</p>
 
 <p>
-  <strong>N bedrooms:</strong>
+  <strong>Number of bedrooms:</strong>
   <%= @property.n_bedrooms %>
 </p>
 
 <p>
-  <strong>N bathroom:</strong>
+  <strong>Number of bathroom:</strong>
   <%= @property.n_bathroom %>
 </p>
 
 <p>
-  <strong>Haskitchen:</strong>
+  <strong>Has kitchen:</strong>
   <%= @property.hasKitchen %>
 </p>
 
 <p>
-  <strong>Hassmokedetector:</strong>
+  <strong>Has Smoke Detector:</strong>
   <%= @property.hasSmokeDetector %>
 </p>
 
@@ -70,5 +66,5 @@
   <%= @property.type_id %>
 </p>
 
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+<%= link_to 'Edit Property Info', edit_property_path(@property), class: "btn btn-primary" %> |
+<%= link_to 'Post this Property', new_lessor_request_path, class: "btn btn-primary" %>
