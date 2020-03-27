@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 # gem to add all the county and city
 gem 'city-state', '~>0.0.13'
 
+# gem for address standardilization and lontiture/lititude retrival
+gem 'geokit'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'activerecord-import'

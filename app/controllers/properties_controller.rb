@@ -34,6 +34,7 @@ class PropertiesController < ApplicationController
   def create
     @property = Property.new(property_params)
     @property.owner_id = current_user.id
+    @property = address_standardilization(@property)
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
@@ -70,13 +71,23 @@ class PropertiesController < ApplicationController
   end
   
   def post 
-	LessorRequest.create(property_id: @property.id)
+	  LessorRequest.create(property_id: @property.id)
   end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_property
       @property = Property.find(params[:id])
     end
+
+    def address_standardilization(property)
+      Geokit::Geocoders::GoogleGeocoder.api_key = 'AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI'
+      a=Geokit::Geocoders::GoogleGeocoder.geocode(property.street_address + ' ' + property.city.city_name + ' ' + property.city.state.state_name)
+      property.street_address = a.street_number + ' testing ' + a.street_name
+      property.latitude = a.lat.to_f
+      property.longitude = a.lng.to_f
+      return property
+    end
+
 
     # Only allow a list of trusted parameters through.
     def property_params

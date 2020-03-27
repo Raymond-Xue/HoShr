@@ -89,6 +89,7 @@ GEM
     faker (2.10.2)
       i18n (>= 1.6, < 2)
     ffi (1.12.2)
+    geokit (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.2)
@@ -222,6 +223,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   city-state (~> 0.0.13)
   faker
+  geokit
   jbuilder (~> 2.7)
   json
   listen (>= 3.0.5, < 3.2)
