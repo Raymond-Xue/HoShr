@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/HoShr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HoShr.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/lessee_requests/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/lessee_requests/_form.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +214,7 @@
       <workItem from="1584840364670" duration="662000" />
       <workItem from="1584841384259" duration="125000" />
       <workItem from="1584893242194" duration="317000" />
-      <workItem from="1585256341634" duration="1231000" />
+      <workItem from="1585256341634" duration="5196000" />
     </task>
     <servers />
   </component>
@@ -227,38 +226,38 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1585256422038" />
-    <state width="1793" height="403" key="GridCell.Tab.0.bottom" timestamp="1585257243646">
+    <state width="931" height="609" key="GridCell.Tab.0.bottom" timestamp="1585277430033">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="403" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585257243646" />
-    <state width="1793" height="403" key="GridCell.Tab.0.center" timestamp="1585257243643">
+    <state width="931" height="609" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430033" />
+    <state width="931" height="609" key="GridCell.Tab.0.center" timestamp="1585277430031">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="403" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585257243643" />
-    <state width="1793" height="403" key="GridCell.Tab.0.left" timestamp="1585257243642">
+    <state width="931" height="609" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430031" />
+    <state width="931" height="609" key="GridCell.Tab.0.left" timestamp="1585277430030">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="403" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585257243642" />
-    <state width="1793" height="403" key="GridCell.Tab.0.right" timestamp="1585257243644">
+    <state width="931" height="609" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430030" />
+    <state width="931" height="609" key="GridCell.Tab.0.right" timestamp="1585277430032">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="403" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585257243644" />
-    <state width="1793" height="403" key="GridCell.Tab.1.bottom" timestamp="1585257243649">
+    <state width="931" height="609" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430032" />
+    <state width="931" height="609" key="GridCell.Tab.1.bottom" timestamp="1585277430036">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="403" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585257243649" />
-    <state width="1793" height="403" key="GridCell.Tab.1.center" timestamp="1585257243647">
+    <state width="931" height="609" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430036" />
+    <state width="931" height="609" key="GridCell.Tab.1.center" timestamp="1585277430034">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="403" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585257243647" />
-    <state width="1793" height="403" key="GridCell.Tab.1.left" timestamp="1585257243646">
+    <state width="931" height="609" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430034" />
+    <state width="931" height="609" key="GridCell.Tab.1.left" timestamp="1585277430034">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="403" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585257243646" />
-    <state width="1793" height="403" key="GridCell.Tab.1.right" timestamp="1585257243648">
+    <state width="931" height="609" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430034" />
+    <state width="931" height="609" key="GridCell.Tab.1.right" timestamp="1585277430035">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="403" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585257243648" />
+    <state width="931" height="609" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430035" />
     <state width="1793" height="442" key="GridCell.Tab.2.bottom" timestamp="1584827191966">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -285,7 +284,7 @@
     <state x="572" y="45" width="840" height="1034" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1583210750659" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HoShr@Development__HoShr.rcov" NAME="Development: HoShr Coverage Results" MODIFIED="1585257188507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@Development__HoShr.rcov" NAME="Development: HoShr Coverage Results" MODIFIED="1585277429991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1583131776238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
   </component>
 </project>
