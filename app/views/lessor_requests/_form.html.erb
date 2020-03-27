@@ -11,10 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :property_id %>
-    <%= form.collection_select(:property_id, Property.where(owner_id:current_user.id), :id, :street_address, { :prompt => 'Select a Property', :selected => @lessor_request.property_id }, { class: 'form-control' }) %>
-  </div>
+  
 
   <div class="field">
     <%= form.label :earliest_movein_date %>
@@ -35,6 +32,8 @@
     <%= form.label :total_rent_currency %>
     <%= form.text_field :total_rent_currency %>
   </div>
+
+   <%= hidden_field_tag :property_id, @property_id %>
 
   <div class="actions">
     <%= form.submit %>

@@ -67,4 +67,4 @@
 </p>
 
 <%= link_to 'Edit Property Info', edit_property_path(@property), class: "btn btn-primary" %> |
-<%= link_to 'Post this Property', new_lessor_request_path, class: "btn btn-primary" %>
+<%= link_to 'Post this Property', new_lessor_request_path(:property_id => @property.id), class: "btn btn-primary" %>

@@ -17,6 +17,7 @@ class LessorRequestsController < ApplicationController
   # GET /lessor_requests/new
   def new
     @lessor_request = LessorRequest.new
+    @property_id = params[:property_id]
   end
 
   # GET /lessor_requests/1/edit
@@ -27,6 +28,7 @@ class LessorRequestsController < ApplicationController
   # POST /lessor_requests.json
   def create
     @lessor_request = LessorRequest.new(lessor_request_params)
+    @lessor_request.property_id = params[:property_id]
 
     respond_to do |format|
       if @lessor_request.save
@@ -71,6 +73,6 @@ class LessorRequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lessor_request_params
-      params.require(:lessor_request).permit(:property_id, :earliest_movein_date, :min_duration, :total_rent, :total_rent_currency)
+      params.require(:lessor_request).permit(:earliest_movein_date, :min_duration, :total_rent, :total_rent_currency)
     end
 end
