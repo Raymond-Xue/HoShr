@@ -6,11 +6,11 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-	if current_user
-    	@properties = Property.all
-	else
-		redirect_to "/login"
-	end
+    if current_user
+        @properties = Property.all
+    else
+      redirect_to "/login"
+    end
   end
 
   # GET /properties/1

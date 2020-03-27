@@ -17,17 +17,17 @@
 
 <p>
   <strong>City:</strong>
-  <%= @property.city_id %>
+  <%= @property.city.city_name %>
 </p>
 
 <p>
   <strong>State:</strong>
-  <%= @property.state_id %>
+  <%= @property.city.state.state_name %>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= @property.country_id %>
+  <%= @property.city.state.country.country_name %>
 </p>
 
 <p>
