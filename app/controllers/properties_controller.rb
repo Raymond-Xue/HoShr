@@ -7,7 +7,7 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
 	if current_user
-    	@properties = Property.find_by(:owner_id => current_user.id)
+    	@properties = Property.all
 	else
 		redirect_to "/login"
 	end
