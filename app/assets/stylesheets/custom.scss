@@ -59,7 +59,11 @@ p {
   line-height: 1.7em;
 }
 
-
+a.btn {
+	&:visited {
+		color: white !important;
+	}
+}
 /* header */
 
 #logo {
@@ -175,7 +179,7 @@ aside {
     float: left;
     padding: 0 10px;
     border-left: 1px solid $gray-lighter;
-    color: gray;
+    color: white;
     &:first-child {
       padding-left: 0;
       border: 0;
@@ -305,3 +309,12 @@ span.image {
     border: 0;
   }
 }
+
+.btn-primary { background-color: #DAA520; } //button
+
+.btn-primary:hover { background-color: #FFD700; color: white} //hover
+
+
+//.purple-background {background-color: purple}
+//.white {color: white}
+

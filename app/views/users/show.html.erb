@@ -17,6 +17,7 @@
   }
 
 </style>
+
 <% provide(:title, @user.username) %>
     <h1>
         <%= @user.username%>
@@ -59,9 +60,38 @@
     </tr>
   </tbody>
 </table>
-<div>
-<%= link_to 'Edit Your Profile', edit_user_path(@user), class:'btn btn-md btn-primary' %> |
-<%= link_to 'Find a Place', new_lessee_request_path, class:'btn btn-md btn-primary' %> |
-<%= link_to 'Lease Your Property', new_lessor_request_path, class:'btn btn-md btn-primary' %> |
-<%= link_to 'Upload Your Property', new_property_path, class:'btn btn-md btn-primary' %>
+
+
+<div class = "btn btn-group">
+	<%= link_to 'Edit Your Profile', edit_user_path(@user), class:'btn btn-primary'%> 
+	<%= link_to 'Search for a New Home', new_lessee_request_path, class:'btn btn-primary'%> 
 </div>
+
+<h3>Your Properties</h3>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Address</th>
+    <th>City</th>
+	<th>State</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  <% if !@properties.nil? %>
+  <% @properties.each do |property| %>
+    <tr>
+      <td><%= property.street_address %></td>
+      <td><%= property.city.city_name %></td>
+	  <td><%= property.city.state.state_abbr %></td>
+      <td><%= link_to 'View Details', property, class: 'btn btn-primary' %> </td>
+	  
+    </tr>
+  <% end %>
+  <% end %>
+  
+  </tbody>
+</table>
+<%= link_to 'Add a New Property', new_property_path, class:'btn btn-primary'%>

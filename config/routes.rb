@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   post '/cancel/:property_id', to: 'groups#cancel'
 
   get '/my_group', to: 'groups#my_group'
+  
+  get '/uploaded_properties', to: 'users#uploaded_properties'
+  get '/show_property/:property_id', to: 'properties#show'
+  #post '/edit_property/:property_id', to: 'properties#edit'
+  #post '/delete_property/:property_id', to: 'properties#destroy'
+
+  get '/post_property/:property_id', to: 'properties#post'
 
   resources :groups
   resources :cities
