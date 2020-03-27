@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :property_id %>
-    <%= form.number_field :property_id %>
+    <%= form.collection_select(:property_id, Property.all, :id, :street_address, { :prompt => 'Select a Property', :selected => @lessor_request.property_id }, { class: 'form-control' }) %>
   </div>
 
   <div class="field">

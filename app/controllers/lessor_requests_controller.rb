@@ -11,6 +11,7 @@ class LessorRequestsController < ApplicationController
   # GET /lessor_requests/1
   # GET /lessor_requests/1.json
   def show
+    @lessor_request = LessorRequest.find_by(:id => params[:id])	
   end
 
   # GET /lessor_requests/new
