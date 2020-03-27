@@ -1,5 +1,29 @@
+<!DOCTYPE html>
+<style>
+  .fl
+  {
+    float: left;
+    width: 300px;
+  }
+  .fr
+  {
+    float: right;
+    margin-right: 200px;
+  }
+  .mainbox
+  {
+    height: 600px;
+  }
+
+</style>
 <p id="notice"><%= notice %></p>
 
+<div class = "fl">
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=800x600&markers=size:small%7Ccolor:red%7C#{@lessee_request.latitude},#{@lessee_request.longitude}&key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI", alt: "Map" %>
+</div>
+
+<div class = "mainbox">
+<div class = "fr">
 <p>
   <strong>Latitude:</strong>
   <%= @lessee_request.latitude %>
@@ -17,22 +41,17 @@
 
 <p>
   <strong>City:</strong>
-  <%= @lessee_request.city_id %>
+  <%= City.find(@lessee_request.city_id).city_name %>
 </p>
 
 <p>
   <strong>State:</strong>
-  <%= @lessee_request.state_id %>
+  <%= State.find(@lessee_request.state_id).state_name %>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= @lessee_request.country_id %>
-</p>
-
-<p>
-  <strong>Group:</strong>
-  <%= @lessee_request.group_id %>
+  <%= Country.find(@lessee_request.country_id).country_name %>
 </p>
 
 <p>
@@ -56,23 +75,8 @@
 </p>
 
 <p>
-  <strong>Duration unit:</strong>
-  <%= @lessee_request.duration_unit %>
-</p>
-
-<p>
   <strong>Max rent:</strong>
   <%= @lessee_request.max_rent %>
-</p>
-
-<p>
-  <strong>Max rent unit:</strong>
-  <%= @lessee_request.max_rent_unit %>
-</p>
-
-<p>
-  <strong>Max rent currency:</strong>
-  <%= @lessee_request.max_rent_currency %>
 </p>
 
 <p>
@@ -106,4 +110,7 @@
 </p>
 
 <%= link_to 'Edit', edit_lessee_request_path(@lessee_request) %> |
-<%= link_to 'Back', lessee_requests_path %>
+<%= link_to 'Back', my_lessee_path %>
+
+</div>
+</div>

@@ -12,6 +12,12 @@
   <% end %>
 
   <div class="field">
+	  <%= link_to 'Confirm Your Coordinate Here', "https://www.google.com/maps"%>
+	  <br>
+	  <%= link_to 'How to Get Coordinate with Google Map', "https://www.clubrunnersupport.com/article/1416-how-to-find-a-location-s-latitude-longitude-in-google-maps"%>
+  </div>
+
+  <div class="field">
     <%= form.label :latitude %>
     <%= form.text_field :latitude, :required => true%>
   </div>

@@ -84,8 +84,8 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
   end
 
   create_table "lessee_requests", force: :cascade do |t|
-    t.float "latitude"
-    t.float "longitude"
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.float "radius"
     t.integer "city_id"
     t.integer "state_id"

@@ -18,6 +18,7 @@
     <th>Max Rent(USD)</th>
     <th>Max Housemates</th>
     <th colspan="3"></th>
+    <th colspan="3"></th>
   </tr>
   </thead>
 
@@ -32,6 +33,7 @@
       <td><%= lessee_request.min_duration.to_s + " to " +  lessee_request.max_duration.to_s%></td>
       <td><%= lessee_request.max_rent %></td>
       <td><%= lessee_request.max_n_housemates %></td>
+      <td><%= link_to 'Detail', lessee_request, class: 'btn btn-primary'%></td>
       <td><%= link_to 'Cancel', "/cancel/#{lessee_request.id}", class: 'btn btn-primary', method: :post %></td>
     </tr>
   <% end %>
