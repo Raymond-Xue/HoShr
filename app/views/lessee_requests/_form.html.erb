@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<style>
+  .form
+  {
+    width:400px;
+    float: left;
+  }
+  #map
+  {
+    float: left;
+  }
+
+</style>
 <%= form_with(model: lessee_request, local: true) do |form| %>
   <% if lessee_request.errors.any? %>
     <div id="error_explanation">
@@ -16,106 +29,169 @@
 	  <br>
 	  <%= link_to 'How to Get Coordinate with Google Map', "https://www.clubrunnersupport.com/article/1416-how-to-find-a-location-s-latitude-longitude-in-google-maps"%>
   </div>
+<div class = "form">
+  <table class="table table-striped">
+  <tbody>
+  <tr>
+    <td><%= form.label :latitude %></td>
+    <td><%= form.text_field :latitude, :required => true%></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude, :required => true%>
-  </div>
+  <tr>
+    <td><%= form.label :longitude %></td>
+    <td><%= form.text_field :longitude, :required => true %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude, :required => true %>
-  </div>
+  <tr>
+    <td><%= form.label :radius %></td>
+    <td><%= form.text_field :radius, :required => true %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :radius %>
-    <%= form.text_field :radius, :required => true %>
-  </div>
+  <tr>
+    <td><%= form.label :country_id %></td>
+    <td><%= form.collection_select(:country_id, Country.all,:id, :country_name,{prompt: 'Select Country'}, {required: true})%></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :country_id %>
-    <%= form.collection_select(:country_id, Country.all,:id, :country_name,{prompt: 'Select Country'}, {required: true})%>
-  </div>
+  <tr>
+    <td><%= form.label :state_id %></td>
+    <td><%= form.collection_select(:state_id, State.all,:id, :state_name,{prompt: 'Select State'}, {required: true}) %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :state_id %>
-    <%= form.collection_select(:state_id, State.all,:id, :state_name,{prompt: 'Select State'}, {required: true}) %>
-  </div>
+  <tr>
+    <td><%= form.label :city_id %></td>
+    <td><%= form.collection_select(:city_id, City.all,:id, :city_name,{prompt: 'Select City'}, {required: true}) %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :city_id %>
-    <%= form.collection_select(:city_id, City.all,:id, :city_name,{prompt: 'Select City'}, {required: true}) %>
-  </div>
+  <tr>
+    <td><%= form.label :earliest_movein_date %></td>
+    <td><%= form.date_select :earliest_movein_date, :required => true %><td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :earliest_movein_date %>
-    <%= form.date_select :earliest_movein_date, :required => true %>
-  </div>
+  <tr>
+    <td><%= form.label :latest_movein_date %></td>
+    <td><%= form.date_select :latest_movein_date, :required => true %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :latest_movein_date %>
-    <%= form.date_select :latest_movein_date, :required => true %>
-  </div>
+  <tr>
+    <td><%= form.label :min_duration %></td>
+    <td><%= form.number_field :min_duration , :required => true%></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :min_duration %>
-    <%= form.number_field :min_duration , :required => true%>
-  </div>
+  <tr>
+    <td><%= form.label :max_duration %></td>
+    <td><%= form.number_field :max_duration , :required => true%></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :max_duration %>
-    <%= form.number_field :max_duration , :required => true%>
-  </div>
+  <tr>
+    <td><%= form.label :max_rent %></td>
+    <td><%= form.text_field :max_rent , :required => true%></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :duration_unit %>
-    <%= form.number_field :duration_unit , :required => true%>
-  </div>
+  <tr>
+    <td><%= form.label :max_n_roommates %></td>
+    <td><%= form.number_field :max_n_roommates , :required => true%></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :max_rent %>
-    <%= form.text_field :max_rent , :required => true%>
-  </div>
+  <tr>
+    <td><%= form.label :max_n_housemates %></td>
+    <td><%= form.number_field :max_n_housemates , :required => true%></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :max_rent_unit %>
-    <%= form.number_field :max_rent_unit , :required => true%>
-  </div>
+  <tr>
+    <td><%= form.label :private_bath %></td>
+    <td><%= form.check_box :private_bath %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :max_rent_currency %>
-    <%= form.number_field :max_rent_currency , :required => true%>
-  </div>
+  <tr>
+    <td><%= form.label :balcony %></td>
+    <td><%= form.check_box :balcony %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :max_n_roommates %>
-    <%= form.number_field :max_n_roommates , :required => true%>
-  </div>
+  <tr>
+    <td><%= form.label :smoke%></td>
+    <td><%= form.check_box :smoke %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :max_n_housemates %>
-    <%= form.number_field :max_n_housemates , :required => true%>
-  </div>
+  <tr>
+    <td><%= form.label :roommate_gender %></td>
+    <td><%= form.select :roommate_gender,  LesseeRequest::GENDER_TYPES %></td>
+  </tr>  
+  
+  </tbody>
+  </table>
+</div>
 
-  <div class="field">
-    <%= form.label :private_bath %>
-    <%= form.check_box :private_bath %>
-  </div>
 
-  <div class="field">
-    <%= form.label :balcony %>
-    <%= form.check_box :balcony %>
-  </div>
 
-  <div class="field">
-    <%= form.label :smoke%>
-    <%= form.check_box :smoke %>
-  </div>
 
-  <div class="field">
-    <%= form.label :roommate_gender %>
-    <%= form.text_field :roommate_gender , :required => true%>
-  </div>
+
+<p>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        
+		var lat = document.getElementById('lessee_request_latitude').value;
+		var lng = document.getElementById('lessee_request_longitude').value;
+		
+
+		if (!lat || !lng){
+		    lat=42.3765;
+		    lng=-71.2356;
+		    document.getElementById('lessee_request_latitude').value = lat;
+		    document.getElementById('lessee_request_longitude').value = lng;
+    	}
+		
+		var myCoords = new google.maps.LatLng(lat,lng);    
+		var mapOptions = {
+			center: myCoords,
+			zoom: 14
+		};    
+		var map = new google.maps.Map(document.getElementById('map'), mapOptions);    
+		var marker = new google.maps.Marker({
+			position: myCoords,
+		    animation: google.maps.Animation.DROP,
+		    map: map,
+		    draggable: true
+		});
+		function refreshMarker(){
+		    var lat = document.getElementById('lessee_request_latitude').value;
+		    var lng = document.getElementById('lessee_request_longitude').value;
+		    var myCoords = new google.maps.LatLng(lat, lng);
+		    marker.setPosition(myCoords);
+		    map.setCenter(marker.getPosition());   
+		}
+		// when input values change call refreshMarker
+		document.getElementById('lessee_request_latitude').onchange = refreshMarker;
+		document.getElementById('lessee_request_longitude').onchange = refreshMarker;
+
+		// when marker is dragged update input values
+		marker.addListener('drag', function() {
+		    latlng = marker.getPosition();
+		    newlat=(Math.round(latlng.lat()*1000000))/1000000;
+		    newlng=(Math.round(latlng.lng()*1000000))/1000000;
+		    document.getElementById('lessee_request_latitude').value = newlat;
+		    document.getElementById('lessee_request_longitude').value = newlng;
+		});
+
+        var circle = new google.maps.Circle({
+            center: myCoords,
+            radius: document.getElementById('lessee_request_radius').value,
+            fillColor: "#ff69b4",
+            fillOpacity: 0.5,
+            strokeOpacity: 0.0,
+            strokeWeight: 0,
+            map: map
+        });
+
+		// When drag ends, center (pan) the map on the marker position
+		marker.addListener('dragend', function() {
+		    map.panTo(marker.getPosition());   
+		});
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI&callback=initMap"
+    async defer></script>
+</p>
 
   <div class="actions">
     <%= form.submit %>

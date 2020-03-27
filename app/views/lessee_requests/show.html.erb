@@ -3,12 +3,13 @@
   .fl
   {
     float: left;
-    width: 300px;
+    width: 450px;
+    margin-left: 75px;
   }
   .fr
   {
     float: right;
-    margin-right: 200px;
+    margin-right: 75px;
   }
   .mainbox
   {
@@ -19,98 +20,117 @@
 <p id="notice"><%= notice %></p>
 
 <div class = "fl">
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=800x600&markers=size:small%7Ccolor:red%7C#{@lessee_request.latitude},#{@lessee_request.longitude}&key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI", alt: "Map" %>
+<p>
+    <div id="map2"></div>
+    <script>
+      var map;
+      var marker;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map2'), {
+          center: {lat: <%=@lessee_request.latitude%>, lng: <%=@lessee_request.longitude%>},
+          zoom: 13
+        });
+        marker = new google.maps.Marker({
+          position: {lat: <%=@lessee_request.latitude%>, lng: <%=@lessee_request.longitude%>},
+          map: map
+        });
+        var circle = new google.maps.Circle({
+            center: {lat: <%=@lessee_request.latitude%>, lng: <%=@lessee_request.longitude%>},
+            radius: <%=@lessee_request.radius%> * 1609.344,
+            fillColor: "#ff69b4",
+            fillOpacity: 0.5,
+            strokeOpacity: 0.0,
+            strokeWeight: 0,
+            map: map
+        });
+      }      
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI&callback=initMap"
+    async defer></script>
+</p>
 </div>
 
 <div class = "mainbox">
 <div class = "fr">
-<p>
-  <strong>Latitude:</strong>
-  <%= @lessee_request.latitude %>
-</p>
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <td>Latitude</td>
+      <td><%= @lessee_request.latitude %></td>
+    </tr>
+    <tr>
+      <td>Longitude</td>
+      <td><%= @lessee_request.longitude %></td>
+    </tr>
+    <tr>
+      <td>Radius</td>
+      <td><%= @lessee_request.radius %></td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td><%= Country.find(@lessee_request.country_id).country_name %>,  <%= State.find(@lessee_request.state_id).state_name %>,  <%= City.find(@lessee_request.city_id).city_name %></td>
+    </tr>
+    <tr>
+      <td>Movin in Date</td>
+      <td><%= @lessee_request.earliest_movein_date %>  to  <%= @lessee_request.latest_movein_date %></td>
+    </tr>
+    <tr>
+      <td>Duration(Month)</td>
+      <td><%= @lessee_request.min_duration %>  to  <%= @lessee_request.max_duration %></td>
+    </tr>
+    <tr>
+      <td>Max Rent(USD)</td>
+      <td><%= @lessee_request.max_rent %></td>
+    </tr>
+    <tr>
+      <td>Max Number of Roommates</td>
+      <td><%= @lessee_request.max_n_roommates %></td>
+    </tr>
+    <tr>
+      <td>Max Number of Housemates</td>
+      <td><%= @lessee_request.max_n_housemates %></td>
+    </tr>
+    <tr>
+      <td>Balcony</td>
+      <td>
+	<% if @lessee_request.balcony == true %>
+	    <%= 'Yes' %>
+	<% else %>
+	    <%= 'No' %>
+	<% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Private Bath</td>
+      <td>	
+	<% if @lessee_request.private_bath == true %>
+	    <%= 'Yes' %>
+	<% else %>
+	    <%= 'No' %>
+	<% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Smoke</td>
+      <td>
+	<% if @lessee_request.smoke == true %>
+	    <%= 'Yes' %>
+	<% else %>
+	    <%= 'No' %>
+	<% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Roommate Gender</td>
+      <td><%= @lessee_request.roommate_gender %></td>
+    </tr>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @lessee_request.longitude %>
-</p>
+  </tbody>
+</table>
 
-<p>
-  <strong>Radius:</strong>
-  <%= @lessee_request.radius %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= City.find(@lessee_request.city_id).city_name %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= State.find(@lessee_request.state_id).state_name %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= Country.find(@lessee_request.country_id).country_name %>
-</p>
-
-<p>
-  <strong>Earliest movein date:</strong>
-  <%= @lessee_request.earliest_movein_date %>
-</p>
-
-<p>
-  <strong>Latest movein date:</strong>
-  <%= @lessee_request.latest_movein_date %>
-</p>
-
-<p>
-  <strong>Min duration:</strong>
-  <%= @lessee_request.min_duration %>
-</p>
-
-<p>
-  <strong>Max duration:</strong>
-  <%= @lessee_request.max_duration %>
-</p>
-
-<p>
-  <strong>Max rent:</strong>
-  <%= @lessee_request.max_rent %>
-</p>
-
-<p>
-  <strong>Max n roommates:</strong>
-  <%= @lessee_request.max_n_roommates %>
-</p>
-
-<p>
-  <strong>Max n housemates:</strong>
-  <%= @lessee_request.max_n_housemates %>
-</p>
-
-<p>
-  <strong>Private bath:</strong>
-  <%= @lessee_request.private_bath %>
-</p>
-
-<p>
-  <strong>Balcony:</strong>
-  <%= @lessee_request.balcony %>
-</p>
-
-<p>
-  <strong>Smoke:</strong>
-  <%= @lessee_request.smoke %>
-</p>
-
-<p>
-  <strong>Roommate gender:</strong>
-  <%= @lessee_request.roommate_gender %>
-</p>
-
-<%= link_to 'Edit', edit_lessee_request_path(@lessee_request) %> |
-<%= link_to 'Back', my_lessee_path %>
+<%= link_to 'Edit', edit_lessee_request_path(@lessee_request), class: 'btn btn-primary' %> |
+<%= link_to 'Back', my_lessee_path, class: 'btn btn-primary' %>
 
 </div>
 </div>
