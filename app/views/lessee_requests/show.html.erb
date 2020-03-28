@@ -9,6 +9,7 @@
   .fr
   {
     float: right;
+    width: 450px;
     margin-right: 75px;
   }
   .mainbox
@@ -61,6 +62,10 @@
     <tr>
       <td>Longitude</td>
       <td><%= @lessee_request.longitude %></td>
+    </tr>
+    <tr>
+      <td>Full Address</td>
+      <td><%= Geocoder.search([@lessee_request.latitude, @lessee_request.longitude]).first.address %></td>
     </tr>
     <tr>
       <td>Radius</td>

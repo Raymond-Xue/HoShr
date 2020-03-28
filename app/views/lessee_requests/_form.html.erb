@@ -172,20 +172,31 @@
 		    document.getElementById('lessee_request_latitude').value = newlat;
 		    document.getElementById('lessee_request_longitude').value = newlng;
 		});
+		
+        var geocoder = new google.maps.Geocoder;
+        var infowindow = new google.maps.InfoWindow;
 
-        var circle = new google.maps.Circle({
-            center: myCoords,
-            radius: document.getElementById('lessee_request_radius').value,
-            fillColor: "#ff69b4",
-            fillOpacity: 0.5,
-            strokeOpacity: 0.0,
-            strokeWeight: 0,
-            map: map
-        });
+
+		  function geocodeLatLng(geocoder, map, infowindow, marker) {
+		    var latlng = {lat: marker.getPosition().lat(), lng: marker.getPosition().lng()};
+		    geocoder.geocode({'location': latlng}, function(results, status) {
+		      if (status === 'OK') {
+		        if (results[0]) {
+		          infowindow.setContent(results[0].formatted_address);
+		          infowindow.open(map, marker);
+		        } else {
+		          window.alert('No results found');
+		        }
+		      } else {
+		        window.alert('Geocoder failed due to: ' + status);
+		      }
+		    });
+		  }
 
 		// When drag ends, center (pan) the map on the marker position
 		marker.addListener('dragend', function() {
-		    map.panTo(marker.getPosition());   
+		    map.panTo(marker.getPosition());  
+			geocodeLatLng(geocoder, map, infowindow, marker); 
 		});
       }
     </script>
