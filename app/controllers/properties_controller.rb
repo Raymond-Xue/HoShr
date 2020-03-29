@@ -82,7 +82,7 @@ class PropertiesController < ApplicationController
     def address_standardilization(property)
       Geokit::Geocoders::GoogleGeocoder.api_key = 'AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI'
       a=Geokit::Geocoders::GoogleGeocoder.geocode(property.street_address + ' ' + property.city.city_name + ' ' + property.city.state.state_name)
-      property.street_address = a.street_number + ' testing ' + a.street_name
+      property.street_address = a.street_number + ' ' + a.street_name
       property.latitude = a.lat.to_f
       property.longitude = a.lng.to_f
       return property
