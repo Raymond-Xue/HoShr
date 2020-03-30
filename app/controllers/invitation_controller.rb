@@ -25,6 +25,4 @@ class InvitationController < ApplicationController
     end
     redirect_to recommendation_path
   end
-
-
 end
