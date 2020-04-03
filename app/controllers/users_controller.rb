@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     @user.origin_group = default_group
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Welcome to the HoShr!"
       redirect_to root_url
     else
       render 'new'
