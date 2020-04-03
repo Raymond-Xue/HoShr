@@ -8,7 +8,9 @@ class StaticPagesController < ApplicationController
     @cities = City.all
     @states = State.all
     @countries = Country.all
-    inv_req
+	if logged_in?
+    	inv_req
+	end
   end
 
   def property_search
