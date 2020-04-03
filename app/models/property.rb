@@ -4,4 +4,5 @@ class Property < ApplicationRecord
 	belongs_to :type, foreign_key: :type_id, class_name: "Type"
 	has_many :lessor_request
 	has_many :room
+	validates :street_address, uniqueness: {scope: [:city]}
 end

@@ -7,7 +7,7 @@ one:
   city_id: 1
   state_id: 1
   country_id: 1
-  lessee_id: 1
+  id: 1
   earliest_movein_date: 2020-02-26
   latest_movein_date: 2020-02-26
   min_duration: 1
@@ -30,7 +30,7 @@ two:
   city_id: 1
   state_id: 1
   country_id: 1
-  lessee_id: 1
+  id: 1
   earliest_movein_date: 2020-02-26
   latest_movein_date: 2020-02-26
   min_duration: 1

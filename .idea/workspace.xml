@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HoShr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HoShr.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/invitation_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/invitation_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fixtures/groups.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/groups.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fixtures/lessee_requests.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/lessee_requests.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/fixtures/users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/users.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/integration/users_login_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/integration/users_login_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/integration/users_signup_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/integration/users_signup_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_helper.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +49,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -102,29 +113,6 @@
       <RAILS_SERVER_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method v="2" />
     </configuration>
-    <configuration name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
-      <module name="HoShr" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:migrate" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
-      <method v="2" />
-    </configuration>
     <configuration name="spec: HoShr" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="HoShr" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -174,9 +162,163 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
+    <configuration name="UsersSignupTest" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+      <module name="HoShr" />
+      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/integration/users_signup_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_login_with_invalid_inf..." type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+      <module name="HoShr" />
+      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/integration/users_login_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_login_with_invalid_information" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_login_with_valid_email..." type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+      <module name="HoShr" />
+      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/integration/users_login_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_login_with_valid_email/invalid_password" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_the_truth" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+      <module name="HoShr" />
+      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/integration/users_signup_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_the_truth" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_valid_signup_information" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+      <module name="HoShr" />
+      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/integration/users_signup_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_valid_signup_information" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Rake.db:migrate" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_valid_signup_information" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.UsersSignupTest" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_the_truth" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_login_with_valid_email..." />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_login_with_invalid_inf..." />
       </list>
     </recent_temporary>
   </component>
@@ -215,6 +357,7 @@
       <workItem from="1584841384259" duration="125000" />
       <workItem from="1584893242194" duration="317000" />
       <workItem from="1585256341634" duration="5196000" />
+      <workItem from="1585280809579" duration="9801000" />
     </task>
     <servers />
   </component>
@@ -222,58 +365,86 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="615" y="340" width="747" height="424" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585604991799">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="615" y="340" width="747" height="424" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1585604991799" />
     <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl" timestamp="1585256422038">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1585256422038" />
-    <state width="931" height="609" key="GridCell.Tab.0.bottom" timestamp="1585277430033">
+    <state width="1793" height="442" key="GridCell.Tab.0.bottom" timestamp="1585605975237">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="931" height="609" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430033" />
-    <state width="931" height="609" key="GridCell.Tab.0.center" timestamp="1585277430031">
+    <state width="1793" height="442" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975237" />
+    <state width="1793" height="442" key="GridCell.Tab.0.center" timestamp="1585605975235">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="931" height="609" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430031" />
-    <state width="931" height="609" key="GridCell.Tab.0.left" timestamp="1585277430030">
+    <state width="1793" height="442" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975235" />
+    <state width="1793" height="442" key="GridCell.Tab.0.left" timestamp="1585605975234">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="931" height="609" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430030" />
-    <state width="931" height="609" key="GridCell.Tab.0.right" timestamp="1585277430032">
+    <state width="1793" height="442" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975234" />
+    <state width="1793" height="442" key="GridCell.Tab.0.right" timestamp="1585605975236">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="931" height="609" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430032" />
-    <state width="931" height="609" key="GridCell.Tab.1.bottom" timestamp="1585277430036">
+    <state width="1793" height="442" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975236" />
+    <state width="1793" height="442" key="GridCell.Tab.1.bottom" timestamp="1585605975113">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="931" height="609" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430036" />
-    <state width="931" height="609" key="GridCell.Tab.1.center" timestamp="1585277430034">
+    <state width="1793" height="442" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975113" />
+    <state width="1793" height="442" key="GridCell.Tab.1.center" timestamp="1585605975111">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="931" height="609" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430034" />
-    <state width="931" height="609" key="GridCell.Tab.1.left" timestamp="1585277430034">
+    <state width="1793" height="442" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975111" />
+    <state width="1793" height="442" key="GridCell.Tab.1.left" timestamp="1585605975110">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="931" height="609" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430034" />
-    <state width="931" height="609" key="GridCell.Tab.1.right" timestamp="1585277430035">
+    <state width="1793" height="442" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975110" />
+    <state width="1793" height="442" key="GridCell.Tab.1.right" timestamp="1585605975112">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="931" height="609" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585277430035" />
-    <state width="1793" height="442" key="GridCell.Tab.2.bottom" timestamp="1584827191966">
+    <state width="1793" height="442" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975112" />
+    <state width="1793" height="442" key="GridCell.Tab.2.bottom" timestamp="1585605975116">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1584827191966" />
-    <state width="1793" height="442" key="GridCell.Tab.2.center" timestamp="1584827191965">
+    <state width="1793" height="442" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975116" />
+    <state width="1793" height="442" key="GridCell.Tab.2.center" timestamp="1585605975114">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1584827191965" />
-    <state width="1793" height="442" key="GridCell.Tab.2.left" timestamp="1584827191963">
+    <state width="1793" height="442" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975114" />
+    <state width="1793" height="442" key="GridCell.Tab.2.left" timestamp="1585605975113">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1584827191963" />
-    <state width="1793" height="442" key="GridCell.Tab.2.right" timestamp="1584827191965">
+    <state width="1793" height="442" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975113" />
+    <state width="1793" height="442" key="GridCell.Tab.2.right" timestamp="1585605975115">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1584827191965" />
+    <state width="1793" height="442" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585605975115" />
+    <state width="1370" height="442" key="GridCell.Tab.3.bottom" timestamp="1585605800320">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1370" height="442" key="GridCell.Tab.3.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1585605800320" />
+    <state width="1370" height="442" key="GridCell.Tab.3.center" timestamp="1585605800319">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1370" height="442" key="GridCell.Tab.3.center/67.27.1853.1053@67.27.1853.1053" timestamp="1585605800319" />
+    <state width="1370" height="442" key="GridCell.Tab.3.left" timestamp="1585605800318">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1370" height="442" key="GridCell.Tab.3.left/67.27.1853.1053@67.27.1853.1053" timestamp="1585605800318" />
+    <state width="1370" height="442" key="GridCell.Tab.3.right" timestamp="1585605800319">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1370" height="442" key="GridCell.Tab.3.right/67.27.1853.1053@67.27.1853.1053" timestamp="1585605800319" />
+    <state x="351" y="100" key="SettingsEditor" timestamp="1585316659761">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="351" y="100" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1585316659760" />
+    <state x="535" y="27" width="917" height="1050" key="find.popup" timestamp="1585600557922">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="535" y="27" width="917" height="1050" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1585600557922" />
     <state x="573" y="249" key="run.anything.popup" timestamp="1583172401153">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -283,8 +454,28 @@
     </state>
     <state x="572" y="45" width="840" height="1034" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1583210750659" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/controllers/users_controller.rb</url>
+          <line>30</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HoShr@Development__HoShr.rcov" NAME="Development: HoShr Coverage Results" MODIFIED="1585277429991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@Development__HoShr.rcov" NAME="Development: HoShr Coverage Results" MODIFIED="1585605975026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_login_with_valid_email___.rcov" NAME="test_login_with_valid_email... Coverage Results" MODIFIED="1585605372055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_valid_signup_information.rcov" NAME="test_valid_signup_information Coverage Results" MODIFIED="1585605679106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1583131776238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@UsersSignupTest.rcov" NAME="UsersSignupTest Coverage Results" MODIFIED="1585605454068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@UsersLoginTest.rcov" NAME="UsersLoginTest Coverage Results" MODIFIED="1585604940549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_login_with_invalid_inf___.rcov" NAME="test_login_with_invalid_inf... Coverage Results" MODIFIED="1585605217205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_the_truth.rcov" NAME="test_the_truth Coverage Results" MODIFIED="1585605421848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
   </component>
 </project>
