@@ -40,12 +40,12 @@
 
   <tr>
     <td><%= form.label :latitude %></td>
-    <td><%= form.text_field :latitude, :required => true%></td>
+    <td><%= form.text_field :latitude, :required => true, :readonly => true %></td>
   </tr>
 
   <tr>
     <td><%= form.label :longitude %></td>
-    <td><%= form.text_field :longitude, :required => true %></td>
+    <td><%= form.text_field :longitude, :required => true, :readonly => true %></td>
   </tr>
 
   <tr>
@@ -54,18 +54,18 @@
   </tr>
 
   <tr>
-    <td><%= form.label :country_id %></td>
-    <td><%= form.collection_select(:country_id, Country.all,:id, :country_name,{prompt: 'Select Country'}, {required: true})%></td>
+    <td><%= form.label :country %></td>
+    <td><%= form.text_field :country, :required => true, :readonly => true %></td>
   </tr>
 
   <tr>
-    <td><%= form.label :state_id %></td>
-    <td><%= form.collection_select(:state_id, State.all,:id, :state_name,{prompt: 'Select State'}, {required: true}) %></td>
+    <td><%= form.label :state %></td>
+    <td><%= form.text_field :state, :required => true, :readonly => true %></td>
   </tr>
 
   <tr>
-    <td><%= form.label :city_id %></td>
-    <td><%= form.collection_select(:city_id, City.all,:id, :city_name,{prompt: 'Select City'}, {required: true}) %></td>
+    <td><%= form.label :city %></td>
+    <td><%= form.text_field :city, :required => true, :readonly => true %></td>
   </tr>
 
   <tr>
@@ -138,11 +138,13 @@
         
 		var lat = document.getElementById('lessee_request_latitude').value;
 		var lng = document.getElementById('lessee_request_longitude').value;
+		var city = document.getElementById('lessee_request_city').value;
 		
 
 		if (!lat || !lng){
 		    lat=42.3765;
 		    lng=-71.2356;
+		    city="Waltham";
 		    document.getElementById('lessee_request_latitude').value = lat;
 		    document.getElementById('lessee_request_longitude').value = lng;
     	}
@@ -209,6 +211,26 @@
 		      if (status === 'OK') {
 		        if (results[0]) {
 		          infowindow.setContent(results[0].formatted_address);
+				  document.getElementById('lessee_request_city').value = results[0].address_components[2].long_name
+				  var i;
+				  var flag = 0;
+				  for(i = 0; i < results[0].address_components.length; i++){
+					if(results[0].address_components[i].types[0] == "locality"){
+				  		document.getElementById('lessee_request_city').value = results[0].address_components[i].long_name
+						flag += 1;
+					}
+					if(results[0].address_components[i].types[0] == "country"){
+				  		document.getElementById('lessee_request_country').value = results[0].address_components[i].long_name
+						flag += 1;
+					}
+					if(results[0].address_components[i].types[0] == "administrative_area_level_1"){
+				  		document.getElementById('lessee_request_state').value = results[0].address_components[i].long_name
+						flag += 1;
+					}
+				  }
+				  if(flag < 3){
+					alert("City/State/Country not found, please relocate!")
+				  }
 		          infowindow.open(map, marker);
 		        } else {
 		          window.alert('No results found');
@@ -224,9 +246,12 @@
 		    map.panTo(marker.getPosition());  
 			//geocodeLatLng(geocoder, map, infowindow, marker); 
 		});
-		marker.addListener('click', function() {
+		marker.addListener('dragend', function() {
 		    //map.panTo(marker.getPosition());  
-			geocodeLatLng(geocoder, map, infowindow, marker); 
+			if (infowindow) {
+				infowindow.close();
+			}
+			geocodeLatLng(geocoder, map, infowindow, marker);
 		});
       }
     </script>

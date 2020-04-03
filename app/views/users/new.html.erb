@@ -16,7 +16,7 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
-<!--
+
       <%= f.label :firstname %>
       <%= f.text_field :firstname, :required => true%>
 
@@ -31,7 +31,7 @@
 
       <%= f.label :age %>
       <%= f.text_field :age , :required => true%>
--->
+
       <%= f.submit "Create my account", class: "btn btn-primary" %>
       <small>Already have an account? <%= link_to "Login!", login_path %></small>
     <% end %>
