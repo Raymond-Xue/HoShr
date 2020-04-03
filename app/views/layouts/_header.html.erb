@@ -23,32 +23,56 @@
     <%= link_to "Hoshr", root_path, id: "logo" %>
     <nav>
 		<div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed"
-                data-toggle="collapse"
-                data-target="#bs-example-navbar-collapse-1"
-                aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-    </div>
+        		<button type="button" class="navbar-toggle collapsed"
+                		data-toggle="collapse"
+                		data-target="#bs-example-navbar-collapse-1"
+                		aria-expanded="false">
+          		<span class="sr-only">Toggle navigation</span>
+          		<span class="icon-bar"></span>
+          		<span class="icon-bar"></span>
+          		<span class="icon-bar"></span>
+        	</button>
+    	</div>
       
-        
+ 
     <%= form_tag(search_result_path, remote: true, method: :get, class: 'navbar-form navbar-left') do %>
       <div class="input-group">
             
-            <!--<%= label_tag(:city_name_search, 'LOCATION') %>-->
-            <%= text_field_tag :city_name, nil, onkeyup: 'Rails.fire(this.form, "submit")', placeholder: 'Add a city, landmark, or address', class: 'form-control' %>
+            
+            <%= text_field_tag :city_name, nil, onkeyup: 'Rails.fire(this.form, "submit")', placeholder: 'Add Destination', class: 'form-control' %>
             
             <div class="input-group-btn">  
               <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
             </div>
       </div>
     <% end %>
-        
-        
-      
+ <!--       
+	<div role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc">
+   
+   
+   <form>
+     <p>
+       <label for="firstName">First Name</label>
+       <input id="firstName" type="text" />
+     </p>
+     <p>
+       <label for="lastName">Last Name</label>
+       <input id="lastName" type="text"/>
+     </p>
+     <p>
+       <label for="interests">Interests</label>
+       <textarea id="interests"></textarea>
+     </p>
+     <p>
+       <input type="checkbox" id="autoLogin"/>
+       <label for="autoLogin">Auto-login?</label>
+     </p>
+     <p>
+         <input type="submit" value="Save Information"/>
+     </p>
+   </form>
+ </div>        
+     --> 
       <ul class="nav navbar-nav navbar-right collapse navbar-collapse"
           id="bs-example-navbar-collapse-1">
         
