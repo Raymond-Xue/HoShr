@@ -1,0 +1,82 @@
+<style>
+  .photo
+  {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  table, div
+  {
+    text-align: center;
+  }
+  section
+  {
+    text-align: center;
+    font-size: 20px;
+  }
+
+</style>
+
+<%= form_with(model: @user, local: true) do |form| %>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+            <% user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+        </ul>
+        </div>
+    <% end %>
+
+
+    <%= form.label :photo, "Profile Picture" %>
+    <%if @user.avatar.attached?%>
+        <%= image_tag url_for(@user.avatar), class: "photo"%>
+    <%end%>
+    <%= form.file_field :avatar %>
+
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+
+
+
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname %>
+
+
+    <%= form.label :middlename, "M.I." %>
+    <%= form.text_field :middlename %>
+
+
+
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+
+
+
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+
+
+
+    <%= form.label :gender %>
+    <%= form.select :gender, ['Male', 'Female', 'Other'] %>
+
+
+
+    <%= form.label :occupation %>
+    <%= form.text_field :occupation %>
+
+
+
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+
+
+
+    <%= form.submit yield(:button_text), class: "btn btn-primary" %>
+
+<% end %>
+

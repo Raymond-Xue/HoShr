@@ -1,5 +1,10 @@
-<h1>Editing User</h1>
+<% provide(:title, 'Edit user') %>
+<% provide(:button_text, 'Save changes') %>
 
-<%= render 'form', user: @user %>
-
+<h1>Update your profile</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render 'update', user: @user %>
+  </div>
+</div>
 <%= link_to 'Back', @user, class:'btn btn-md btn-primary'  %>

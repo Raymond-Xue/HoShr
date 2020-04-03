@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'city-state', '~>0.0.13'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 gem 'activerecord-import'
 gem 'json'
 gem 'bcrypt',         '3.1.13'

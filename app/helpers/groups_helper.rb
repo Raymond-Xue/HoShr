@@ -26,6 +26,7 @@ def merge_group(group_id_1, group_id_2)
     destroy_group(group_2.id)
   end
 end
+
 def quit_group(user_id)
   User.transaction do
     user = User.find(user_id)

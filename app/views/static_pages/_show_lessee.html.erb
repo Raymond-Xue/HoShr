@@ -1,0 +1,26 @@
+<h4> Similar Requests in <%= City.find_by(id: @city).city_name %>:</h4>
+
+<table class="table table-responsive table-striped table-bordered">
+  <thead>
+  <tr>
+    <th>Group ID</th>
+    <th>Earliest Movein</th>
+    <th>Latest Movein</th>
+    <th>Lease Duration Range</th>
+    <th>Max Rent/month</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @lessees.each do |lessee| %>
+    <tr>
+      <td><%= lessee.group_id %></td>
+      <td><%= lessee.earliest_movein_date %></td>
+      <td><%= lessee.latest_movein_date %></td>
+      <td><%= lessee.min_duration%>-<%= lessee.max_duration %> months</td>
+      <td>$<%= lessee.max_rent %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

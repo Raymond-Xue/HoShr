@@ -1,0 +1,28 @@
+<%#Author: Hanting Ge%>
+
+<h4> Stays in <%= City.find_by(id: @city).city_name %>:</h4>
+
+<table class="table table-responsive table-striped">
+  <thead>
+  <tr>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Owner</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @properties.each do |property| %>
+    <tr>
+      <td><%= property.street_address %></td>
+      <td><%= City.find_by(id: property.city_id).city_name %></td>
+      <td><%= State.find_by(id: property.state_id).state_name %></td>
+      <td><%= User.find_by(id: property.owner_id).username %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+

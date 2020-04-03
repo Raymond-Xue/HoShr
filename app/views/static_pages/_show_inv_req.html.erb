@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Groups recommended for you:</h1>
 <% if @current_group.lessee_request.empty? %>
   <h3>No recommendation found. You need to post at least one lessee request</h3>
 <% elsif @group_info.empty? %>

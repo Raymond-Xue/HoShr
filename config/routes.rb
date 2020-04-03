@@ -2,10 +2,23 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'sessions/new'
   
-  
+  # routes to home pages
   get 'static_pages/home'
+  get '/search', to: 'static_pages#property_search'
+  
+  # post '/search', to: 'static_pages#create'
+  get '/search_result', to: 'static_pages#result'
+  get 'static_pages/show'
+
+  get '/lessee_search', to: 'static_pages#lessee_search'
+  get '/lessee_result', to: 'static_pages#lessee_result'
+  
+  get 'static_pages/show_lessee'
+
   get  '/signup',  to: 'users#new'
   get '/login', to: 'sessions#new'
+  get  'static_pages/signup',  to: 'users#new'
+  get 'static_pages/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to:'sessions#destroy'
   get '/recommendation', to: 'recommend#show'
@@ -25,7 +38,8 @@ Rails.application.routes.draw do
   #post '/delete_property/:property_id', to: 'properties#destroy'
 
   get '/post_property/:property_id', to: 'properties#post'
-
+  
+  
   resources :groups
   resources :cities
   resources :states

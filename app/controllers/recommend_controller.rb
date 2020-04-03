@@ -1,10 +1,10 @@
 class RecommendController < ApplicationController
   before_action :logged_in_user
 
-
   include RecommendHelper
   include InvitationHelper
   include SessionsHelper
+  
   def show
     #Login user placeholder
     user = current_user()

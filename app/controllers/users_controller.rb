@@ -10,8 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-	@user = current_user
-	@properties = Property.where(owner_id: current_user.id)
+    @user = current_user
+    @properties = Property.where(owner_id: current_user.id)
   end
 
   # GET /users/new
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    
   end
 
   # POST /users
@@ -42,16 +43,19 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    @user.avatar.attach(params[:avatar])
+    if !params[:avatar].nil?
+      @user.avatar.attach(params[:avatar])
+    end
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'User was successfully updated.'}
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # DELETE /users/1
@@ -66,8 +70,8 @@ class UsersController < ApplicationController
   
   
   def uploaded_properties
-	@user = current_user
-	@properties = Property.where(owner_id: current_user.id)
+	  @user = current_user
+	  @properties = Property.where(owner_id: current_user.id)
   end
   
     
@@ -80,7 +84,9 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :firstname, :lastname, :gender, :occupation, :age, :avatar)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, 
+                                      :firstname, :lastname, :gender, :occupation, :age, :avatar)
+      
     end
 
     # Confirms the correct user.
