@@ -1,23 +1,22 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  username: "test"
-  password: MyString
-  firstname: MyString
-  middlename: MyString
-  lastname: MyString
-  email: MyString
-  gender: MyString
-  occupation: MyString
-  age: 1
+user1:
+  id: 1
+  username:  "Example User1",
+  email: "user1@example.com",
+  firstname: "test firstname",
+  lastname: "test lastname",
+  gender: "male",
+  occupation: "Brandeis",
+  current_group_id: 1
+  age: 121
 
-two:
-  username: MyString
-  password: MyString
-  firstname: MyString
-  middlename: MyString
-  lastname: MyString
-  email: MyString
-  gender: MyString
-  occupation: MyString
-  age: 1
+user2:
+  id: 2
+  username:  "Example User1",
+  email: "user1@example.com",
+  firstname: "test firstname",
+  lastname: "test lastname",
+  gender: "male",
+  occupation: "Brandeis",
+  age: 121

@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
     t.bigint "group_to_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "active", default: false
     t.index ["group_from_id"], name: "index_invitations_on_group_from_id"
     t.index ["group_to_id"], name: "index_invitations_on_group_to_id"
   end
@@ -185,6 +186,11 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "current_group_id"
     t.integer "origin_group_id"
+  end
+
+  create_table "agree_on_invitations", force: :cascade do |t|
+    t.integer "invitation_id"
+    t.integer "user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
