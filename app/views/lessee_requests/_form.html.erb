@@ -24,7 +24,10 @@
     </div>
   <% end %>
 
+
+
 <div class = "form">
+
   <table class="table table-striped">
   <tbody>
 
@@ -136,6 +139,15 @@
 		var city = document.getElementById('lessee_request_city').value;
 		var state = document.getElementById('lessee_request_state').value;
 		var country = document.getElementById('lessee_request_country').value;
+
+        var input = document.getElementById('address');
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(
+            ['address_components', 'geometry', 'icon', 'name']);
+		
 		
 
 		if (!lat || !lng){
@@ -285,7 +297,7 @@
 		});
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI&libraries=places&callback=initMap"
     async defer></script>
 </p>
 
