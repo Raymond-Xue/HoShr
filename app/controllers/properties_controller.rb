@@ -34,7 +34,13 @@ class PropertiesController < ApplicationController
   def create
     @property = Property.new(property_params)
     @property.owner_id = current_user.id
+    puts "county id ############"
+    @property.country_id = Country.find_by(country_name: params[:property][:country]).id
+    puts @property.country_id
+    @property.state_id = State.find_by(country_id: @property.country_id, state_name: params[:property][:state]).id
+    @property.city_id = City.find_by(state_id: @property.state_id, city_name: params[:property][:city]).id
     @property = address_standardilization(@property)
+    
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
