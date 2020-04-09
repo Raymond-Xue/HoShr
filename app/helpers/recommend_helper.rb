@@ -16,8 +16,18 @@ module RecommendHelper
       soft_rating(group_request, other_request)
     end
     # extract the group from the requests
-    extract_group_from_requests(request_list)
+    groups = extract_group_from_requests(request_list)
+  end
 
+  def extract_new_recommend_group(group_id, groups)
+    result = []
+    groups.each do |group|
+      if group.received_invitation.find(:sender => group_id).nil? &&
+          group.send_invitation.find(:receiver => group_id).nil?
+        result.append(group)
+      end
+    end
+    result
   end
 
   private

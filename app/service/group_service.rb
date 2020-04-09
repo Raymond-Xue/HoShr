@@ -5,6 +5,7 @@ module GroupService
 
     raise "Assert Error" unless group_id_1 != group_id_2
 
+    group_id = nil
     Group.transaction do
       group_1 = Group.find(group_id_1)
       group_2 = Group.find(group_id_2)
@@ -26,7 +27,9 @@ module GroupService
       destroy_group(group_1.id)
       destroy_group(group_2.id)
       new_group.save
+      group_id = new_group.id
     end
+    return group_id
   end
 
   def quit_group(user_id)
@@ -35,12 +38,25 @@ module GroupService
       if user.origin_group == user.current_group
         raise "Cannot exit origin group"
       end
-      group = user.current_group
-      user.group = user.origin_group
-      if group.users.empty?
-        destroy_group(group.id)
+      left_group = user.current_group
+      left_group.send_invitation.all.each do  |invitation|
+        AgreeOnInvitation.where(invitation_id: invitation.id).destroy_all
+      end
+      left_group.received_invitation.all.each do  |invitation|
+        AgreeOnInvitation.where(invitation_id: invitation.id).destroy_all
+      end
+      AgreeOnInvitation.where(invitation_id: left_group.id).destroy_all
+      Invitation.where(group_to_id: left_group.id).destroy_all
+      Invitation.where(group_from_id: left_group.id).destroy_all
+      user.current_group = user.origin_group
+      user.current_group.lessee_request.all.each do |request|
+        request.active = true
+        request.save
       end
       user.save
+      if left_group.users.empty?
+        destroy_group(left_group.id)
+      end
     end
   end
 

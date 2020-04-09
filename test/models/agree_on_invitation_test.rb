@@ -26,7 +26,6 @@ class AgreeOnInvitationTest < ActiveSupport::TestCase
                      email: "user4@example.com",
                      password:              "password",
                      password_confirmation: "password"})
-    group = Group.create({id: 10})
 
     user3 = User.find(3)
     user4 = User.find(4)

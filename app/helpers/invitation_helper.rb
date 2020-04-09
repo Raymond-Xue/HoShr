@@ -38,7 +38,12 @@ module InvitationHelper
   end
 
   def find_sender(group_id_from, group_id_to)
-    Invitation.find_by(group_from_id: group_id_from, group_to_id: group_id_to)
+    result = Invitation.find_by(group_from_id: group_id_from, group_to_id: group_id_to)
+    if result.nil?
+      return result
+    else
+      result
+    end
   end
 
 end

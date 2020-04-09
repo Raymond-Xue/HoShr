@@ -6,11 +6,12 @@ module InvitationService
     if user.nil?
       raise "No such user"
     end
-    invitation_id = create_invitation(group_from_id, group_to_id)
-
-    invitation = Invitation.find(invitation_id)
-    agree_on_send_invitation(creator_id, invitation_id)
-    return invitation.id
+    invitation_id = nil
+    Invitation.transaction do
+      invitation_id = create_invitation(group_from_id, group_to_id)
+      agree_on_send_invitation(creator_id, invitation_id)
+    end
+    return invitation_id
   end
 
   def agree_on_send_invitation(user_id, invitation_id)
@@ -18,18 +19,21 @@ module InvitationService
     if user.nil?
       raise "No such user"
     end
-    invitation = Invitation.find(invitation_id)
-    if invitation.nil?
-      raise "No such invitation"
-    end
-    if user.current_group_id != invitation.group_from_id
-      raise "Illegal request"
-    end
-    agree_id = agree_with_invitation(user_id, invitation_id)
-    if user.current_group.users.count == invitation.agree_on_invitations.count
-      invitation.agree_on_invitations.destroy_all
-      invitation.active = true
-      invitation.save
+    agree_id = nil
+    Invitation.transaction do
+      invitation = Invitation.find(invitation_id)
+      if invitation.nil?
+        raise "No such invitation"
+      end
+      if user.current_group_id != invitation.group_from_id
+        raise "Illegal request"
+      end
+      agree_id = agree_with_invitation(user_id, invitation_id)
+      if user.current_group.users.count == invitation.agree_on_invitations.count
+        invitation.agree_on_invitations.destroy_all
+        invitation.active = true
+        invitation.save
+      end
     end
     return agree_id
 
@@ -115,10 +119,12 @@ module InvitationService
     if !agree.nil?
       raise "User already agree on the invitation"
     end
-    agree = AgreeOnInvitation.new
-    agree.invitation_id = invitation_id
-    agree.user_id = user.id
-    agree.save
+    AgreeOnInvitation.transaction do
+      agree = AgreeOnInvitation.new
+      agree.invitation_id = invitation_id
+      agree.user_id = user.id
+      agree.save
+    end
     return agree.id
 
   end

@@ -7,7 +7,7 @@ class RecommendController < ApplicationController
   
   def show
     #Login user placeholder
-    user = current_user()
+    user = current_user
 
     recommend_groups = []
     LesseeRequest.where(group_id: @current_user.current_group).each do |request|
