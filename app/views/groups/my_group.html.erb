@@ -1,3 +1,34 @@
+<!DOCTYPE html>
+<style>
+  .body
+  {
+	height: 1000px;
+  }
+  .photo
+  {
+    border-radius:20px;
+	width: 100%;
+	height: 100%;
+  }
+  .frame
+  {
+	width: 40%;
+	height: 30%;
+  }
+  #outer
+  {
+	width: 45%;
+	float: left;
+	margin: 15px;
+  }
+  #inner
+  {
+	height: 100%;
+  }
+
+
+</style>
+
 <p id="notice"><%= notice %></p>
 
 <h1 class="text-center my-5">
@@ -6,32 +37,46 @@
 
 <h3 class="my-3">My Group:</h3>
 
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th>Username</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Age</th>
-    <th>Gender</th>
-    <th>Occupation</th>
-  </tr>
-  </thead>
-
-  <tbody>
+<div class="body">
   <% @members.each do |member| %>
-    <tr>
-      <td><%= member.username %></td>
-      <td><%= member.firstname.to_s + " " + member.lastname.to_s %></td>
-      <td><%= member.email %></td>
-      <td><%= member.age %></td>
-      <td><%= member.gender %></td>
-      <td><%= member.occupation %></td>
-    </tr>
+	<table class="table table-striped" id="outer">
+		<td class = "frame">
+		    <% if member.avatar.attached? %>
+		      <%= image_tag url_for(member.avatar), class: "photo"%>
+		    <% end %>
+		</td>
+		<td>
+		<table class="table table-striped" id = "inner">
+			<tbody>
+				<tr>
+				  <td>Name</td>
+				  <td><%= member.firstname.to_s + " " + member.lastname.to_s %></td>
+				</tr> 
+				<tr> 
+				  <td>Email</td>    
+				  <td><%= member.email %></td>
+				</tr>
+				<tr>
+				  <td>Age</td>
+				  <td><%= member.age %></td>
+				</tr>
+				<tr>
+				  <td>Occupation</td>
+				  <td><%= member.occupation %></td>
+				</tr>
+				<tr>
+				  <td>Gender</td>
+				  <td><%= member.gender %></td>
+				</tr>
+			</tbody>
+		</table>
+		</td>
+	</table>
   <% end %>
+</div>
 
-  </tbody>
-</table>
+  
+
 
 
 
