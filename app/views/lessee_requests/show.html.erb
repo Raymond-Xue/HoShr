@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   .fl
   {
@@ -133,9 +134,11 @@
   </tbody>
 </table>
 
+<%if current_user.current_group_id == @lessee_request.group_id%>
 
-<%= link_to 'Edit', edit_lessee_request_path(@lessee_request), class: 'btn btn-primary' %> |
-<%= link_to 'Back', my_lessee_path, class: 'btn btn-primary' %>
+	<%= link_to 'Edit', edit_lessee_request_path(@lessee_request), class: 'fa fa-pencil-square-o' %> |
+	<%= link_to 'Back', my_lessee_path, class: 'fa fa-reply' %>
+<% end%>
 
 </div>
 </div>

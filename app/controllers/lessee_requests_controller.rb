@@ -72,6 +72,6 @@ class LesseeRequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lessee_request_params
-      params.require(:lessee_request).permit(:country, :state, :city, :latitude, :longitude, :radius, :city_id, :state_id, :country_id, :lessee_id, :earliest_movein_date, :latest_movein_date, :min_duration, :max_duration, :duration_unit, :max_rent, :max_rent_unit, :max_rent_currency, :max_n_roommates, :max_n_housemates, :private_bath, :balcony, :smoke, :roommate_gender)
+      params.require(:lessee_request).permit(:country, :state, :city, :latitude, :longitude, :radius, :city_id, :state_id, :country_id, :group_id, :earliest_movein_date, :latest_movein_date, :min_duration, :max_duration, :duration_unit, :max_rent, :max_rent_unit, :max_rent_currency, :max_n_roommates, :max_n_housemates, :private_bath, :balcony, :smoke, :roommate_gender)
     end
 end
