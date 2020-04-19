@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   .photo
   {
@@ -14,6 +15,10 @@
   {
     text-align: center;
     font-size: 20px;
+  }
+  .fa-pencil
+  {
+    margin-right: 30%;
   }
 
 </style>
@@ -61,10 +66,11 @@
   </tbody>
 </table>
 
+<% if @user == current_user %>
 
 <div class = "btn btn-group">
-	<%= link_to 'Edit Your Profile', edit_user_path(@user), class:'btn btn-primary'%> 
-	<%= link_to 'Search for a New Home', new_lessee_request_path, class:'btn btn-primary'%> 
+	<%= link_to ' Edit Your Profile', edit_user_path(@user), class:"fa fa-pencil"%>
+	<%= link_to ' Search for a New Home', new_lessee_request_path, class:"fa fa-home"%> 
 </div>
 
 <h3>Your Properties</h3>
@@ -86,7 +92,7 @@
       <td><%= property.street_address %></td>
       <td><%= property.city.city_name %></td>
 	  <td><%= property.city.state.state_abbr %></td>
-      <td><%= link_to 'View Details', property, class: 'btn btn-primary' %> </td>
+      <td><%= link_to 'View Details', property, class: 'fa fa-arrow-right' %> </td>
 	  
     </tr>
   <% end %>
@@ -94,4 +100,6 @@
   
   </tbody>
 </table>
-<%= link_to 'Add a New Property', new_property_path, class:'btn btn-primary'%>
+<%= link_to ' Add a New Property', new_property_path, class:'fa fa-upload'%>
+
+<% end %>

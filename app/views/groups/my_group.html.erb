@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
   .body
   {
@@ -61,12 +62,12 @@
 				  <td><%= member.age %></td>
 				</tr>
 				<tr>
-				  <td>Occupation</td>
-				  <td><%= member.occupation %></td>
-				</tr>
-				<tr>
 				  <td>Gender</td>
 				  <td><%= member.gender %></td>
+				</tr>
+				<tr>
+				  <td></td>
+				  <td><%= link_to ' View More', member, class: 'fa fa-address-card-o' %></td>
 				</tr>
 			</tbody>
 		</table>

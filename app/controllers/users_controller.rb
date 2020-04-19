@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = current_user
+    #@user = current_user
+    @user = User.find(params[:id])
     @properties = Property.where(owner_id: current_user.id)
   end
 
