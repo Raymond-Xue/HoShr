@@ -17,13 +17,52 @@
 
 <!-- <% provide(:title, 'Search') %> -->
 
+<style>
+    .buttons
+	{
+		width: 100%;
+		height: 1300px;
+	}
+
+    .img_class
+	{
+		width: 100%;
+		height: 85%;
+		border-radius: 15% 15% 0 0;
+	}
+    .imgs
+	{
+		width: 31%;
+		height: 28%;
+		float: left;
+		margin-left: 12%;
+		margin-top: 2%;
+		border-radius: 15%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	div .text_tag {
+	    text-align: center;
+	    margin-top: 5%;
+	}
+    p
+	{
+		font-size: 1.5em;
+		font-family: OCR A Std, monospace;
+	}
+	h6
+	{
+		font-size: 1em;
+		font-family: OCR A Std, monospace;
+	}
+
+
+  
+    
+
+</style>
+
 <%#Author: Hanting Ge%>
 <% if logged_in? %>
-	<div class= 'center jumbotron'>
-		<h1>HoShr</h1>
-		<h2>Find you next home</h2>
-	</div>
-	
 
 	<ul class="nav nav-tabs">
 	<ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -66,72 +105,61 @@
 
 	</div>
 
-	
-
-	<ul class="nav nav-tabs">
-	<ul class="nav nav-tabs" id="myTab2" role="tablist">
-		<li class="nav-item">
-			<a class="nav-link active" id="inv_req-tab" data-toggle="tab" href="#inv_req" role="tab" aria-controls="inv_req" aria-selected="true">Invitation Requests</a>
-		</li>
-		
-		<li class="nav-item">
-			<a class="nav-link" id="inv_pend-tab" data-toggle="tab" href="#inv_pend" role="tab" aria-controls="inv_pend" aria-selected="false">My Group</a>
-		</li>
-	</ul>
-
-	<div class="tab-content" id="myTabContent2">
-		<div class="tab-pane active" id="inv_req" role="tabpanel" aria-labelledby="inv_req-tab">	
-			<% if @current_group.lessee_request.empty? %>
-				<h3>No recommendation found. You need to post at least one lessee request</h3>
-				<% elsif @group_info.empty? %>
-				<h3>No recommendation found. You can adjust your request or wait a little longer.</h3>
-				<% else %>
-				<table class="table table-striped table-bordered">
-				<thead>
-				<tr>
-					<th>Group</th>
-					<th>Group Member</th>
-					<th>Invite/Accept</th>
-				</tr>
-				</thead>
-
-				<tbody>
-					<% @group_info.each do |info| %>
-					<tr>
-						<td><%= info[:group].id%></td>
-						<td>
-						<% info[:group].users.each do |user| %>
-						<span> <%= user.username %> </span>
-						<% end %>
-						</td>
-						<td>
-						<% if info[:received_invitation].nil? %>
-							<% if info[:send_invitation].nil? %>
-							<span>
-							<%= link_to("Invite Group", send_invitation_path(info[:group].id), method: :post, class: "btn btn-primary")%>
-							</span>
-							<% else %>
-							<span>Waiting for response</span>
-							<% end %>
-						<% else %>
-							<span>
-							<%= link_to("Join Group", accept_invitation_path(info[:received_invitation].id), method: :post, class: "btn btn-primary") %>
-							</span>
-						<% end %>
-						</td>
-					</tr>
-					<% end %>
-				</tbody>
-				</table>
+	<div class="buttons">
+		<div class="imgs">
+			<%= link_to new_lessee_request_path do %>
+			   <%= image_tag "roommate.jpg", class: "img_class" %>
 			<% end %>
+			<div class="text_tag">
+				<p>Find Roommate</p>
+			</div>
 		</div>
 
-		
-		<div class="tab-pane fade" id="inv_pend" role="tabpanel" aria-labelledby="inv_pend-tab">
-			<%= link_to "My Group", my_group_path, class: "btn btn-lg btn-primary" %>
+		<div class="imgs">
+			<%= link_to properties_path do %>
+			   <%= image_tag "house.jpg", class: "img_class"%>
+			<% end %>
+			<div class="text_tag">
+				<p>Find Property</p>
+			</div>
 		</div>
 
-	</div>
+		<div class="imgs">
+			<%= link_to recommendation_path do %>
+			    <%= image_tag("recommendation.jpg", class: "img_class")%>
+			<% end %>
+			<div class="text_tag">
+				<p>Your Roommate Recommendation</p>
+			</div>
+		</div>
+
+		<div class="imgs">
+			<%= link_to my_group_path do %>
+			   <%= image_tag "group.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p>Your Group</p>
+			</div>
+		</div>
+
+		<div class="imgs">
+			<%= link_to my_lessee_path do %>
+			   <%= image_tag "my_lessee.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p>Your Lessee Request</p>
+			</div>
+		</div>
+
+		<div class="imgs">
+			<%= link_to new_property_path do %>
+			   <%= image_tag "post_house.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p>Post Your Property</p>
+			</div>
+		</div>
+    </div>
 	
 
 
@@ -141,27 +169,13 @@
 <div class="center jumbotron">
     <h1>HoShr</h1>
 	<h2>Find your next home</h2>
-
-	<ul class="nav nav-tabs">
-	<ul class="nav nav-tabs" id="myTab" role="tablist">
-		<li class="nav-item">
-			<a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
-		</li>
-		
-		<li class="nav-item">
-		<a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="false">Signup</a>
-		</li>
-	</ul>
-
-	<div class="tab-content" id="myTabContent">
-	<%# Login %>
-	<div class="tab-pane fade" id="login" role="tabpanel" aria-labelledby="login-tab">
-    	<%= link_to "Login", login_path, class: "btn btn-lg btn-primary" %> 
-		
-	</div>
-	<div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
-    	<%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
-		
-  	</div>
-  </div>
+	<p>How We Work:</p>
+	<h6>Please <%= link_to "click here", login_path %> to log in to show more options. For new uers, Please <%= link_to "click here", signup_path %> to sign up.</h6>
+	<h6>Set your preference after login.</h6>
+	<h6>Post at least one lessee request.</h6>
+	<h6>Look at your recommendation, and invite ones you are interested in to form a group.</h6>
+	<h6>Once you have formed a group, please post a new lessee request and search for properties.</h6>
+	<h6>Select your favorite property and contact them.</h6>
+	<h6>Enjoy your new home!</h6>
+	
 <%end%>

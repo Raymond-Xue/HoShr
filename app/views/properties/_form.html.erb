@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<style>
+  .form
+  {
+    width:37%;
+    float: left;
+  }
+  #map
+  {
+    width: 60%;
+    float: left;
+    height: 800px;
+  }
+
+</style>
+
 <%= form_with(model: property, local: true) do |form| %>
   <% if property.errors.any? %>
     <div id="error_explanation">
@@ -11,72 +27,276 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :street_address %>
-    <%= form.text_field :street_address %>
-  </div>
+<div class = "form">
 
-  <div class="field">
-    <%= form.label :country_id %>
-    <%= form.collection_select(:country_id, Country.all, :id, :country_abbr, { :prompt => 'Select a Country', :selected => @property.country_id }, { class: 'form-control' }) %>
-  </div>
-  <div class="field">
-    <%= form.label :state_id %>
-	<% if !property.country_id.nil? %>
-    	<%= form.collection_select(:state_id, State.where(country_id: @property.country_id), :id, :state_abbr, { :prompt => 'Select a State', :selected => @property.state_id }, { class: 'form-control' }) %>
-	<%else%>
-		<%= form.collection_select(:state_id, State.all, :id, :state_abbr, { :prompt => 'Select a State', :selected => @property.state_id }, { class: 'form-control' }) %>
-    <%end%>
+  <table class="table table-striped">
+  <tbody>
 
-  </div>
+  <tr>
+    <td><input id="address" type="textbox" value="Waltham, MA"></td>
+    <td><input id="submit" type="button" value="Search Address"></td>
+  </tr>
 
+  <tr>
+    <td><%= form.label :street_address %></td>
+    <td><%= form.text_field :street_address %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :country %></td>
+    <td><%= form.text_field :country, :required => true, :readonly => true %></td>
+  </tr>
   
-  <div class="field">
-    <%= form.label :city_id %>
-    <% if !property.state_id.nil? %>
-    	<%= form.collection_select(:city_id, City.where(state_id: @property.state_id), :id, :city_name, { :prompt => 'Select a City', :selected => @property.city_id }, { class: 'form-control' }) %>
-    <% else %>
-		<%= form.collection_select(:city_id, City.all, :id, :city_name, { :prompt => 'Select a City', :selected => @property.city_id }, { class: 'form-control' }) %>	
-	<% end %>
-  </div>
+  <tr>
+    <td><%= form.label :state %></td>
+    <td><%= form.text_field :state, :required => true, :readonly => true %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :city %></td>
+    <td><%= form.text_field :city, :required => true, :readonly => true %></td>
+  </tr>
   
+  <tr>
+    <td><%= form.label :zipcode %></td>
+    <td><%= form.text_field :zipcode %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :latitude %></td>
+    <td><%= form.text_field :latitude, :required => true, :readonly => true %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :longitude %></td>
+    <td><%= form.text_field :longitude, :required => true, :readonly => true %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :n_bedrooms %></td>
+    <td><%= form.text_field :n_bedrooms %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :n_bathroom %></td>
+    <td><%= form.text_field :n_bathroom %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :hasKitchen %></td>
+    <td><%= form.check_box :hasKitchen %></td>
+  </tr>
+  
+  <tr>
+    <td><%= form.label :hasSmokeDetector %></td>
+    <td><%= form.check_box :hasSmokeDetector %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :hasAirConditioning %></td>
+    <td><%= form.check_box :hasAirConditioning %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :Type %></td>
+    <td><%= form.collection_select(:type_id, Type.all, :id, :type_name, { :prompt => 'Select a type', :selected => @property.type_id }, { class: 'form-control' }) %>
+  </tr>
+
+  </tbody>
+  </table>
+
+</div>
   
 
-  <div class="field">
-    <%= form.label :zipcode %>
-    <%= form.text_field :zipcode %>
-  </div>  
+<p>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        
+		var lat = document.getElementById('property_latitude').value;
+		var lng = document.getElementById('property_longitude').value;
+		var city = document.getElementById('property_city').value;
+		var state = document.getElementById('property_state').value;
+		var country = document.getElementById('property_country').value;
+    var street_address = document.getElementById('property_street_address').value;
+    var zipcode = document.getElementById('property_zipcode').value;
 
-  <div class="field">
-    <%= form.label :n_bedrooms %>
-    <%= form.number_field :n_bedrooms %>
-  </div>
+        var input = document.getElementById('address');
 
-  <div class="field">
-    <%= form.label :n_bathroom %>
-    <%= form.text_field :n_bathroom %>
-  </div>
+        var autocomplete = new google.maps.places.Autocomplete(input);
 
-  <div class="field">
-    <%= form.label :hasKitchen %>
-    <%= form.check_box :hasKitchen %>
-  </div>
+        // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(
+            ['address_components', 'geometry', 'icon', 'name']);
+		
+		
 
-  <div class="field">
-    <%= form.label :hasSmokeDetector %>
-    <%= form.check_box :hasSmokeDetector %>
-  </div>
+		if (!lat || !lng){
+		    lat=42.3765;
+		    lng=-71.2356;
+		    city="Waltham";
+			state="Massachusetts"
+			country="United States"
+		    document.getElementById('property_latitude').value = lat;
+		    document.getElementById('property_longitude').value = lng;
+			  var city = document.getElementById('property_city').value = city;
+			  var state = document.getElementById('property_state').value = state;
+			  var country = document.getElementById('property_country').value = country;
+        var street_address = document.getElementById('property_street_address').value;
+        var zipcode = document.getElementById('property_zipcode').value;
+    	}
+		
+		var myCoords = new google.maps.LatLng(lat,lng);    
+		var mapOptions = {
+			center: myCoords,
+			zoom: 14
+		};    
+		var map = new google.maps.Map(document.getElementById('map'), mapOptions);    
+		var marker = new google.maps.Marker({
+			position: myCoords,
+		    animation: google.maps.Animation.DROP,
+		    map: map,
+		    draggable: true
+		});
+		function refreshMarker(){
+		    var lat = document.getElementById('property_latitude').value;
+		    var lng = document.getElementById('property_longitude').value;
+		    var myCoords = new google.maps.LatLng(lat, lng);
+		    marker.setPosition(myCoords);
+		    map.setCenter(marker.getPosition());   
+		}
+		// when input values change call refreshMarker
+		document.getElementById('property_latitude').onchange = refreshMarker;
+		document.getElementById('property_longitude').onchange = refreshMarker;
 
-  <div class="field">
-    <%= form.label :hasAirConditioning %>
-    <%= form.check_box :hasAirConditioning %>
-  </div>
+		// when marker is dragged update input values
+		marker.addListener('drag', function() {
+		    latlng = marker.getPosition();
+		    newlat=(Math.round(latlng.lat()*1000000))/1000000;
+		    newlng=(Math.round(latlng.lng()*1000000))/1000000;
+		    document.getElementById('property_latitude').value = newlat;
+		    document.getElementById('property_longitude').value = newlng;
+		});
+		
+        var geocoder = new google.maps.Geocoder;
+        var infowindow = new google.maps.InfoWindow;
 
-  <div class="field">
-    <%= form.collection_select(:type_id, Type.all, :id, :type_name, { :prompt => 'Select a type', :selected => @property.type_id }, { class: 'form-control' }) %>
-  </div>
+        var geocoder_search = new google.maps.Geocoder();
+
+        document.getElementById('submit').addEventListener('click', function() {
+		if (infowindow) {
+			infowindow.close();
+		}
+          geocodeAddress(geocoder_search, map, marker);
+        });
+
+		function geocodeAddress(geocoder, resultsMap, marker) {
+			var address = document.getElementById('address').value;
+		    geocoder.geocode({'address': address}, function(results, status) {
+		        if (status === 'OK') {
+				    resultsMap.setCenter(results[0].geometry.location);
+					marker.setPosition(results[0].geometry.location);
+					document.getElementById('property_latitude').value = results[0].geometry.location.lat();
+					document.getElementById('property_longitude').value = results[0].geometry.location.lng();
+					var i;
+					var flag = 0;
+          street_address = "";
+					for(i = 0; i < results[0].address_components.length; i++){
+						if(results[0].address_components[i].types[0] == "locality"){
+					  		document.getElementById('property_city').value = results[0].address_components[i].long_name
+							flag += 1;
+						}
+						if(results[0].address_components[i].types[0] == "country"){
+					  		document.getElementById('property_country').value = results[0].address_components[i].long_name
+							flag += 1;
+						}
+						if(results[0].address_components[i].types[0] == "administrative_area_level_1"){
+					  		document.getElementById('property_state').value = results[0].address_components[i].long_name
+							flag += 1;
+						}
+            if(results[0].address_components[i].types[0] == "postal_code"){
+					  		document.getElementById('property_zipcode').value = results[0].address_components[i].long_name
+						}
+            if(results[0].address_components[i].types[0] == "street_number"){
+              street_address = (results[0].address_components[i].long_name)
+						}
+            if(results[0].address_components[i].types[0] == "route"){
+              street_address = street_address + " " + results[0].address_components[i].long_name
+						}
+					}
+          document.getElementById('property_street_address').value = street_address;
+					if(flag < 3){
+						alert("City/State/Country not found, please relocate!")
+					}
+		      } else {
+		        alert('Geocode was not successful for the following reason: ' + status);
+		      }
+		    });
+		  }
+
+
+		  function geocodeLatLng(geocoder, map, infowindow, marker) {
+		      var latlng = {lat: marker.getPosition().lat(), lng: marker.getPosition().lng()};
+		      geocoder.geocode({'location': latlng}, function(results, status) {
+		      if (status === 'OK') {
+		        if (results[0]) {
+		          infowindow.setContent(results[0].formatted_address);
+				  var i;
+				  var flag = 0;
+				  for(i = 0; i < results[0].address_components.length; i++){
+					if(results[0].address_components[i].types[0] == "locality"){
+				  		document.getElementById('property_city').value = results[0].address_components[i].long_name
+						flag += 1;
+					}
+					if(results[0].address_components[i].types[0] == "country"){
+				  		document.getElementById('property_country').value = results[0].address_components[i].long_name
+						flag += 1;
+					}
+					if(results[0].address_components[i].types[0] == "administrative_area_level_1"){
+				  		document.getElementById('property_state').value = results[0].address_components[i].long_name
+						flag += 1;
+					}
+          
+				  }
+				  if(flag < 3){
+					alert("City/State/Country not found, please relocate!")
+				  }
+		          infowindow.open(map, marker);
+		        } else {
+		          window.alert('No results found');
+		        }
+		      } else {
+		        window.alert('Geocoder failed due to: ' + status);
+		      }
+		    });
+		  }
+
+		// When drag ends, center (pan) the map on the marker position
+		marker.addListener('dragend', function() {
+		    map.panTo(marker.getPosition());  
+			//geocodeLatLng(geocoder, map, infowindow, marker); 
+		});
+		marker.addListener('dragend', function() {
+		    //map.panTo(marker.getPosition());  
+			if (infowindow) {
+				infowindow.close();
+			}
+			geocodeLatLng(geocoder, map, infowindow, marker);
+		});
+		marker.addListener('click', function() {
+		    //map.panTo(marker.getPosition());  
+			if (infowindow) {
+				infowindow.close();
+			}
+			geocodeLatLng(geocoder, map, infowindow, marker);
+		});
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI&libraries=places&callback=initMap"
+    async defer></script>
+</p>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit property", class: "btn btn-primary"  %>
   </div>
 <% end %>

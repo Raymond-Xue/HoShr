@@ -26,7 +26,9 @@ class LesseeRequestsController < ApplicationController
   def create
     @lessee_request = LesseeRequest.new(lessee_request_params)
     @lessee_request.group = current_user.current_group
-
+    @lessee_request.city_id = City.find_by(:city_name => lessee_request_params[:city]).id
+    @lessee_request.state_id = State.find_by(:state_name => lessee_request_params[:state]).id
+    @lessee_request.country_id = Country.find_by(:country_name => lessee_request_params[:country]).id
     respond_to do |format|
       if @lessee_request.save
         format.html { redirect_to my_lessee_path, notice: 'Lessee request was successfully created.' }
@@ -70,6 +72,6 @@ class LesseeRequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lessee_request_params
-      params.require(:lessee_request).permit(:latitude, :longitude, :radius, :city_id, :state_id, :country_id, :lessee_id, :earliest_movein_date, :latest_movein_date, :min_duration, :max_duration, :duration_unit, :max_rent, :max_rent_unit, :max_rent_currency, :max_n_roommates, :max_n_housemates, :private_bath, :balcony, :smoke, :roommate_gender)
+      params.require(:lessee_request).permit(:country, :state, :city, :latitude, :longitude, :radius, :city_id, :state_id, :country_id, :lessee_id, :earliest_movein_date, :latest_movein_date, :min_duration, :max_duration, :duration_unit, :max_rent, :max_rent_unit, :max_rent_currency, :max_n_roommates, :max_n_housemates, :private_bath, :balcony, :smoke, :roommate_gender)
     end
 end

@@ -24,12 +24,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-	  <%= link_to 'Confirm Your Coordinate Here', "https://www.google.com/maps"%>
-	  <br>
-	  <%= link_to 'How to Get Coordinate with Google Map', "https://www.clubrunnersupport.com/article/1416-how-to-find-a-location-s-latitude-longitude-in-google-maps"%>
-  </div>
+
+
 <div class = "form">
+
   <table class="table table-striped">
   <tbody>
 
@@ -40,32 +38,32 @@
 
   <tr>
     <td><%= form.label :latitude %></td>
-    <td><%= form.text_field :latitude, :required => true%></td>
+    <td><%= form.text_field :latitude, :required => true, :readonly => true %></td>
   </tr>
 
   <tr>
     <td><%= form.label :longitude %></td>
-    <td><%= form.text_field :longitude, :required => true %></td>
+    <td><%= form.text_field :longitude, :required => true, :readonly => true %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :country %></td>
+    <td><%= form.text_field :country, :required => true, :readonly => true %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :state %></td>
+    <td><%= form.text_field :state, :required => true, :readonly => true %></td>
+  </tr>
+
+  <tr>
+    <td><%= form.label :city %></td>
+    <td><%= form.text_field :city, :required => true, :readonly => true %></td>
   </tr>
 
   <tr>
     <td><%= form.label :radius %></td>
     <td><%= form.text_field :radius, :required => true %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :country_id %></td>
-    <td><%= form.collection_select(:country_id, Country.all,:id, :country_name,{prompt: 'Select Country'}, {required: true})%></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :state_id %></td>
-    <td><%= form.collection_select(:state_id, State.all,:id, :state_name,{prompt: 'Select State'}, {required: true}) %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :city_id %></td>
-    <td><%= form.collection_select(:city_id, City.all,:id, :city_name,{prompt: 'Select City'}, {required: true}) %></td>
   </tr>
 
   <tr>
@@ -138,13 +136,31 @@
         
 		var lat = document.getElementById('lessee_request_latitude').value;
 		var lng = document.getElementById('lessee_request_longitude').value;
+		var city = document.getElementById('lessee_request_city').value;
+		var state = document.getElementById('lessee_request_state').value;
+		var country = document.getElementById('lessee_request_country').value;
+
+        var input = document.getElementById('address');
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(
+            ['address_components', 'geometry', 'icon', 'name']);
+		
 		
 
 		if (!lat || !lng){
 		    lat=42.3765;
 		    lng=-71.2356;
+		    city="Waltham";
+			state="Massachusetts"
+			country="United States"
 		    document.getElementById('lessee_request_latitude').value = lat;
 		    document.getElementById('lessee_request_longitude').value = lng;
+			var city = document.getElementById('lessee_request_city').value = city;
+			var state = document.getElementById('lessee_request_state').value = state;
+			var country = document.getElementById('lessee_request_country').value = country;
     	}
 		
 		var myCoords = new google.maps.LatLng(lat,lng);    
@@ -185,17 +201,39 @@
         var geocoder_search = new google.maps.Geocoder();
 
         document.getElementById('submit').addEventListener('click', function() {
+		if (infowindow) {
+			infowindow.close();
+		}
           geocodeAddress(geocoder_search, map, marker);
         });
 
-		  function geocodeAddress(geocoder, resultsMap, marker) {
-		    var address = document.getElementById('address').value;
+		function geocodeAddress(geocoder, resultsMap, marker) {
+			var address = document.getElementById('address').value;
 		    geocoder.geocode({'address': address}, function(results, status) {
-		      if (status === 'OK') {
-		        resultsMap.setCenter(results[0].geometry.location);
-				marker.setPosition(results[0].geometry.location);
-		    	document.getElementById('lessee_request_latitude').value = results[0].geometry.location.lat();
-		    	document.getElementById('lessee_request_longitude').value = results[0].geometry.location.lng();
+		        if (status === 'OK') {
+				    resultsMap.setCenter(results[0].geometry.location);
+					marker.setPosition(results[0].geometry.location);
+					document.getElementById('lessee_request_latitude').value = results[0].geometry.location.lat();
+					document.getElementById('lessee_request_longitude').value = results[0].geometry.location.lng();
+					var i;
+					var flag = 0;
+					for(i = 0; i < results[0].address_components.length; i++){
+						if(results[0].address_components[i].types[0] == "locality"){
+					  		document.getElementById('lessee_request_city').value = results[0].address_components[i].long_name
+							flag += 1;
+						}
+						if(results[0].address_components[i].types[0] == "country"){
+					  		document.getElementById('lessee_request_country').value = results[0].address_components[i].long_name
+							flag += 1;
+						}
+						if(results[0].address_components[i].types[0] == "administrative_area_level_1"){
+					  		document.getElementById('lessee_request_state').value = results[0].address_components[i].long_name
+							flag += 1;
+						}
+					}
+					if(flag < 3){
+						alert("City/State/Country not found, please relocate!")
+					}
 		      } else {
 		        alert('Geocode was not successful for the following reason: ' + status);
 		      }
@@ -204,11 +242,30 @@
 
 
 		  function geocodeLatLng(geocoder, map, infowindow, marker) {
-		    var latlng = {lat: marker.getPosition().lat(), lng: marker.getPosition().lng()};
-		    geocoder.geocode({'location': latlng}, function(results, status) {
+		      var latlng = {lat: marker.getPosition().lat(), lng: marker.getPosition().lng()};
+		      geocoder.geocode({'location': latlng}, function(results, status) {
 		      if (status === 'OK') {
 		        if (results[0]) {
 		          infowindow.setContent(results[0].formatted_address);
+				  var i;
+				  var flag = 0;
+				  for(i = 0; i < results[0].address_components.length; i++){
+					if(results[0].address_components[i].types[0] == "locality"){
+				  		document.getElementById('lessee_request_city').value = results[0].address_components[i].long_name
+						flag += 1;
+					}
+					if(results[0].address_components[i].types[0] == "country"){
+				  		document.getElementById('lessee_request_country').value = results[0].address_components[i].long_name
+						flag += 1;
+					}
+					if(results[0].address_components[i].types[0] == "administrative_area_level_1"){
+				  		document.getElementById('lessee_request_state').value = results[0].address_components[i].long_name
+						flag += 1;
+					}
+				  }
+				  if(flag < 3){
+					alert("City/State/Country not found, please relocate!")
+				  }
 		          infowindow.open(map, marker);
 		        } else {
 		          window.alert('No results found');
@@ -224,17 +281,27 @@
 		    map.panTo(marker.getPosition());  
 			//geocodeLatLng(geocoder, map, infowindow, marker); 
 		});
+		marker.addListener('dragend', function() {
+		    //map.panTo(marker.getPosition());  
+			if (infowindow) {
+				infowindow.close();
+			}
+			geocodeLatLng(geocoder, map, infowindow, marker);
+		});
 		marker.addListener('click', function() {
 		    //map.panTo(marker.getPosition());  
-			geocodeLatLng(geocoder, map, infowindow, marker); 
+			if (infowindow) {
+				infowindow.close();
+			}
+			geocodeLatLng(geocoder, map, infowindow, marker);
 		});
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI&libraries=places&callback=initMap"
     async defer></script>
 </p>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit Your LesseeRequest", class: "btn btn-primary"  %>
   </div>
 <% end %>

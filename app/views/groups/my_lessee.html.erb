@@ -1,3 +1,13 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.dt
+{
+float:left;
+margin-left: 3%;
+margin-right: 3%;
+}
+
+</style>
 <p id="notice"><%= notice %></p>
 
 <h1 class="text-center my-5">
@@ -33,13 +43,15 @@
       <td><%= lessee_request.min_duration.to_s + " to " +  lessee_request.max_duration.to_s%></td>
       <td><%= lessee_request.max_rent %></td>
       <td><%= lessee_request.max_n_housemates %></td>
-      <td><%= link_to 'Detail', lessee_request, class: 'btn btn-primary'%></td>
-      <td><%= link_to 'Cancel', "/cancel/#{lessee_request.id}", class: 'btn btn-primary', method: :post %></td>
+      <td><%= link_to ' Detail', lessee_request, class: 'fa fa-arrow-right'%></td>
+      <td><%= link_to ' Cancel', "/cancel/#{lessee_request.id}", class: 'fa fa-times', method: :post %></td>
     </tr>
   <% end %>
 
   </tbody>
 </table>
-<%= link_to 'View my Group', my_group_path, class: 'btn btn-primary'%>
-<%= link_to 'View my Recommendation', recommendation_path, class: 'btn btn-primary'%>
-<%= link_to 'New Lessee Request', new_lessee_request_path, class: 'btn btn-primary'%>
+<div class="button">
+<div class="dt"><%= link_to ' View my Group', my_group_path, class: 'fa fa-users'%></div>
+<div class="dt"><%= link_to ' View my Recommendation', recommendation_path, class: 'fa fa-thumbs-o-up'%></div>
+<div class="dt"><%= link_to ' New Lessee Request', new_lessee_request_path, class: 'fa fa-home'%></div>
+</div>
