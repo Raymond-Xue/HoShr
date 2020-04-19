@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/service/group_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/service/invitation_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/service/recommendation_service.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/service/user_service.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HoShr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HoShr.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/invitation.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/invitation.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/test/fixtures/users.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,13 +19,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="$PROJECT_DIR$/.idea" />
-      </set>
-    </option>
-  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -46,7 +29,6 @@
   <component name="ProjectId" id="1YS9UN52UPSdTP5mHtd01jWxFVK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -466,20 +448,31 @@
     <state x="572" y="45" width="840" height="1034" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1586031272898" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HoShr@test_login_with_valid_email___.rcov" NAME="test_login_with_valid_email... Coverage Results" MODIFIED="1585605372055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1583131776238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_invitation_receiver_ca___.rcov" NAME="test_invitation_receiver_ca... Coverage Results" MODIFIED="1586032960028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test__one_team_member_of_mu___.rcov" NAME="test__one_team_member_of_mu... Coverage Results" MODIFIED="1585965501533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@UsersSignupTest.rcov" NAME="UsersSignupTest Coverage Results" MODIFIED="1585946746686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@UsersLoginTest.rcov" NAME="UsersLoginTest Coverage Results" MODIFIED="1585604940549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test__one_group_member_of_t___.rcov" NAME="test__one_group_member_of_t... Coverage Results" MODIFIED="1585965595872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_login_with_invalid_inf___.rcov" NAME="test_login_with_invalid_inf... Coverage Results" MODIFIED="1585605217205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@Development__HoShr.rcov" NAME="Development: HoShr Coverage Results" MODIFIED="1585605975026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_valid_signup_information.rcov" NAME="test_valid_signup_information Coverage Results" MODIFIED="1585606192333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_a_team_member_can_crea___.rcov" NAME="test_a_team_member_can_crea... Coverage Results" MODIFIED="1585961853694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@agree_on_invitation_test.rcov" NAME="agree_on_invitation_test Coverage Results" MODIFIED="1586030597866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_a_group_member_of_one____.rcov" NAME="test_a_group_member_of_one_... Coverage Results" MODIFIED="1586031454215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_the_truth.rcov" NAME="test_the_truth Coverage Results" MODIFIED="1585605421848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@GroupTest.rcov" NAME="GroupTest Coverage Results" MODIFIED="1586450546564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_a_user_in_its_origin_g___.rcov" NAME="test_a_user_in_its_origin_g... Coverage Results" MODIFIED="1586116356840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_quit_group_will_reset____.rcov" NAME="test_quit_group_will_reset_... Coverage Results" MODIFIED="1586118845860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@UsersLoginTest.rcov" NAME="UsersLoginTest Coverage Results" MODIFIED="1585604940549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_the_last_user_quit_gro___.rcov" NAME="test_the_last_user_quit_gro... Coverage Results" MODIFIED="1586122671098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@Development__HoShr.rcov" NAME="Development: HoShr Coverage Results" MODIFIED="1587231384526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test__one_team_member_of_mu___.rcov" NAME="test__one_team_member_of_mu... Coverage Results" MODIFIED="1585965501533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1583131776238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_login_with_invalid_inf___.rcov" NAME="test_login_with_invalid_inf... Coverage Results" MODIFIED="1585605217205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@disagree_on_invitation_test.rcov" NAME="disagree_on_invitation_test Coverage Results" MODIFIED="1587256292904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@agree_on_invitation_test.rcov" NAME="agree_on_invitation_test Coverage Results" MODIFIED="1587256297441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@users_login_test.rcov" NAME="users_login_test Coverage Results" MODIFIED="1585606200080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_quit_group_will_delete___.rcov" NAME="test_quit_group_will_delete... Coverage Results" MODIFIED="1586119512554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_valid_signup_information.rcov" NAME="test_valid_signup_information Coverage Results" MODIFIED="1585606192333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_all_invitation_receive___.rcov" NAME="test_all_invitation_receive... Coverage Results" MODIFIED="1586035280236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_a_member_of_a_group_ca___.rcov" NAME="test_a_member_of_a_group_ca... Coverage Results" MODIFIED="1587248059845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_all_member_of_a_group____.rcov" NAME="test_all_member_of_a_group_... Coverage Results" MODIFIED="1587256286370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_user_can_withdraw_thei___.rcov" NAME="test_user_can_withdraw_thei... Coverage Results" MODIFIED="1587254868840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_a_team_member_can_crea___.rcov" NAME="test_a_team_member_can_crea... Coverage Results" MODIFIED="1585961853694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_the_truth.rcov" NAME="test_the_truth Coverage Results" MODIFIED="1585605421848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_a_member_of_a_group_ca_____1_.rcov" NAME="test_a_member_of_a_group_ca... (1) Coverage Results" MODIFIED="1587248618566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test__one_group_member_of_t___.rcov" NAME="test__one_group_member_of_t... Coverage Results" MODIFIED="1585965595872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@UsersSignupTest.rcov" NAME="UsersSignupTest Coverage Results" MODIFIED="1585946746686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_invitation_receiver_ca___.rcov" NAME="test_invitation_receiver_ca... Coverage Results" MODIFIED="1586035181462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_login_with_valid_email___.rcov" NAME="test_login_with_valid_email... Coverage Results" MODIFIED="1585605372055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
   </component>
 </project>
