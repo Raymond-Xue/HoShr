@@ -6,11 +6,98 @@ module InvitationService
     if user.nil?
       raise "No such user"
     end
-    invitation_id = create_invitation(group_from_id, group_to_id)
+    invitation_id = nil
+    Invitation.transaction do
+      invitation_id = create_invitation(group_from_id, group_to_id)
+      agree_on_send_invitation(creator_id, invitation_id)
+    end
+    return invitation_id
+  end
 
-    invitation = Invitation.find(invitation_id)
-    agree_on_send_invitation(creator_id, invitation_id)
-    return invitation.id
+  def disagree_on_send_invitation(user_id, invitation_id)
+    user = User.find(user_id)
+    if user.nil?
+      raise "No such user"
+    end
+    disagree_id = nil
+    Invitation.transaction do
+      invitation = Invitation.find(invitation_id)
+      if invitation.nil?
+        raise "No such invitation"
+      end
+      if user.current_group_id != invitation.group_from_id
+        raise "Illegal request"
+      end
+      if user.agree_on_invitations.find_by(id: invitation_id)
+        raise "You have already agree on the invitation"
+      end
+      if user.disagree_on_invitations.find_by(id: invitation_id)
+        raise "You have already disagreed on the invitation"
+      end
+      disagree_with_invitation(user_id, invitation_id)
+      if user.current_group.users.count == invitation.disagree_on_invitations.count
+        invitation.disagree_on_invitations.destroy_all
+        invitation.destroy
+        invitation.save
+      end
+    end
+    return disagree_id
+  end
+
+  def disagree_on_accept_invitation(user_id, invitation_id)
+    user = User.find(user_id)
+    if user.nil?
+      raise "No such user"
+    end
+    state = Invitation.transaction do
+      invitation = Invitation.find(invitation_id)
+      if invitation.nil?
+        raise "No such invitation"
+      end
+      if user.current_group_id != invitation.group_to_id
+        raise "Illegal request"
+      end
+      if !user.agree_on_invitations.find_by(id: invitation_id).nil?
+        raise "You have already agree on the invitation"
+      end
+      if !user.disagree_on_invitations.find_by(id: invitation_id).nil?
+        raise "You have already disagreed on the invitation"
+      end
+      disagree_with_invitation(user_id, invitation_id)
+      if user.current_group.users.count == invitation.disagree_on_invitations.count
+        invitation.disagree_on_invitations.destroy_all
+        invitation.destroy
+        invitation.save
+      end
+    end
+  end
+
+  def destroy_agree_disagree(user_id, invitation_id)
+    user = User.find_by(id: user_id)
+    if user.nil?
+      raise "No such user"
+    end
+    state = Invitation.transaction do
+      invitation = Invitation.find(invitation_id)
+      if invitation.nil?
+        raise "No such invitation"
+      end
+      if user.current_group_id != invitation.group_to_id &&
+          user.current_group_id != invitation.group_from_id
+        raise "Illegal request"
+      end
+      agree = AgreeOnInvitation.find_by(user_id: user_id, invitation_id: invitation_id)
+      if !agree.nil?
+        agree.destroy
+        agree.save
+      end
+      disagree = DisagreeOnInvitation.find_by(user_id: user_id, invitation_id: invitation_id)
+      if !disagree.nil?
+        disagree.destroy
+        disagree.save
+      end
+    end
+    return state
   end
 
   def agree_on_send_invitation(user_id, invitation_id)
@@ -18,21 +105,23 @@ module InvitationService
     if user.nil?
       raise "No such user"
     end
-    invitation = Invitation.find(invitation_id)
-    if invitation.nil?
-      raise "No such invitation"
-    end
-    if user.current_group_id != invitation.group_from_id
-      raise "Illegal request"
-    end
-    agree_id = agree_with_invitation(user_id, invitation_id)
-    if user.current_group.users.count == invitation.agree_on_invitations.count
-      invitation.agree_on_invitations.destroy_all
-      invitation.active = true
-      invitation.save
+    agree_id = nil
+    Invitation.transaction do
+      invitation = Invitation.find(invitation_id)
+      if invitation.nil?
+        raise "No such invitation"
+      end
+      if user.current_group_id != invitation.group_from_id
+        raise "Illegal request"
+      end
+      agree_id = agree_with_invitation(user_id, invitation_id)
+      if user.current_group.users.count == invitation.agree_on_invitations.count
+        invitation.agree_on_invitations.destroy_all
+        invitation.active = true
+        invitation.save
+      end
     end
     return agree_id
-
   end
 
   def agree_on_accept_invitation(user_id, invitation_id)
@@ -66,6 +155,7 @@ module InvitationService
     Invitation.find_by(group_from_id: group_id)
   end
 
+
   private
 
   def create_invitation(group_from_id, group_to_id)
@@ -86,7 +176,6 @@ module InvitationService
       end
     end
     if state.nil?
-      Group.all
       raise "Fail to add invitation"
     end
     return invitation_id
@@ -115,13 +204,23 @@ module InvitationService
     if !agree.nil?
       raise "User already agree on the invitation"
     end
-    agree = AgreeOnInvitation.new
-    agree.invitation_id = invitation_id
-    agree.user_id = user.id
-    agree.save
+    AgreeOnInvitation.transaction do
+      agree = AgreeOnInvitation.new
+      agree.invitation_id = invitation_id
+      agree.user_id = user.id
+      agree.save
+    end
     return agree.id
+  end
 
+  def disagree_with_invitation(user_id, invitation_id)
+    disagree = DisagreeOnInvitation.find_by(invitation_id: invitation_id, user_id: user_id)
+    state = DisagreeOnInvitation.transaction do
+      disagree = DisagreeOnInvitation.new
+      disagree.invitation_id = invitation_id
+      disagree.user_id = user_id
+      disagree.save
+    end
+    disagree.id
   end
 end
-
-
