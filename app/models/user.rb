@@ -9,6 +9,9 @@ class User < ApplicationRecord
     has_many :agree_on_invitations
     has_many :agreed_invitations, through: :agree_on_invitations, source: :invitation
 
+    has_many :disagree_on_invitations
+    has_many :disagreed_invitations, through: :disagree_on_invitations, source: :invitation
+
     belongs_to :current_group, foreign_key: :current_group_id, class_name: "Group"
     belongs_to :origin_group , foreign_key: :origin_group_id, class_name: "Group"
 	  before_save { self.email = email.downcase }

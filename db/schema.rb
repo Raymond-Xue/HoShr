@@ -193,6 +193,11 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
     t.integer "user_id"
   end
 
+  create_table "disagree_on_invitations", force: :cascade do |t|
+    t.integer "invitation_id"
+    t.integer "user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cities", "states"
   add_foreign_key "lessee_requests", "groups"

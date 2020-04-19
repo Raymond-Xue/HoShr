@@ -25,30 +25,34 @@
           <% end %>
         </td>
         <td>
-          <% if info[:received_invitation].nil? %>
-            <% if info[:send_invitation].nil? %>
-              <span>
-              <%= link_to("Invite Group", create_invitation_request_path(info[:group].id), method: :post, class: "btn btn-primary") %>
-              </span>
-            <% elsif info[:send_invitation].active %>
+          <% if is_a_send_invitation?(info)%>
+            <% if invitation_already_send?(info[:send_invitation]) %>
               <span>Waiting for response</span>
+            <% elsif current_user_agree?(info[:send_invitation]) %>
+              <span>You have agreed on sending the invitation, waiting others</span>
+              <span> <%= link_to("Withdraw agree", withdraw_decision_path(info[:send_invitation].id), method: :delete, class: "btn btn-primary") %></span>
+            <% elsif current_user_disagree?(info[:send_invitation]) %>
+              <span>You have disagreed on sending the invitation</span>
+              <span> <%= link_to("Withdraw disagree", withdraw_decision_path(info[:send_invitation].id), method: :delete, class: "btn btn-primary") %></span>
             <% else %>
-              <span>people who agree: </span>
-              <% info[:send_invitation].agree_users.all.each do |user| %>
-                <span><%= user.username %></span>
-              <% end %>
-              <% if info[:send_invitation].agree_users.find_by(id: current_user.id).nil? %>
-                <span>
-                  <%= link_to("Agree on sending invitation", agree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "btn btn-primary") %>
-                </span>
-              <% else %>
-                <span> waiting for others to agree</span>
-              <% end %>
+              <span>Send an invitation to that group, Agree or Disagree?</span>
+              <span> <%= link_to("Agree", agree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "btn btn-primary") %></span>
+              <span> <%= link_to("Disagree", disagree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "btn btn-primary") %></span>
+            <% end %>
+          <% elsif is_a_received_invitation?(info) %>
+            <% if current_user_agree?(info[:received_invitation]) %>
+              <span>You have agreed on accepting the invitation, waiting others</span>
+              <span><%= link_to("Withdraw agree", withdraw_decision_path(info[:received_invitation].id), method: :delete, class: "btn btn-primary") %></span>
+            <% elsif current_user_disagree?(info[:received_invitation]) %>
+              <span>You have disagreed on accepting the invitation</span>
+              <span><%= link_to("Withdraw disagree", withdraw_decision_path(info[:received_invitation].id), method: :delete, class: "btn btn-primary") %></span>
+            <% else %>
+              <span>Accepting the request from that group, Agree or Disagree?</span>
+              <span> <%= link_to("Agree", agree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "btn btn-primary") %></span>
+              <span> <%= link_to("Disagree", disagree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "btn btn-primary") %></span>
             <% end %>
           <% else %>
-              <span>
-              <%= link_to("Join Group", agree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "btn btn-primary") %>
-            </span>
+            <span><%= link_to("Invite Group", create_invitation_request_path(info[:group].id), method: :post, class: "btn btn-primary") %> </span>
           <% end %>
         </td>
       </tr>

@@ -48,6 +48,34 @@ class InvitationController < ApplicationController
     redirect_to recommendation_path
   end
 
+  def disagree_on_send_invitation_request
+    params.require(:invitation_id)
+    begin
+      disagree_on_send_invitation(current_user.id, params[:invitation_id])
+    rescue => ex
+      flash[:danger] = ex.message
+    end
+    redirect_to recommendation_path
+  end
+  def disagree_on_accept_invitation_request
+    params.require(:invitation_id)
+    begin
+      disagree_on_accept_invitation(current_user.id, params[:invitation_id])
+    rescue => ex
+      flash[:danger] = ex.message
+    end
+    redirect_to recommendation_path
+  end
+  def withdraw_decision
+    params.require(:invitation_id)
+    begin
+      destroy_agree_disagree(current_user.id, params[:invitation_id])
+    rescue => ex
+      flash[:danger] = ex.message
+    end
+    redirect_to recommendation_path
+  end
+
   def find_invitations
     begin
       @received_invitations =

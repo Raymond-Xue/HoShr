@@ -1,6 +1,9 @@
 module InvitationHelper
   include GroupsHelper
 
+
+
+
   def create_invitation(group_from_id, group_to_id)
 
     state = Invitation.transaction do

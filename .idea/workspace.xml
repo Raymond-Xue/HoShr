@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/invitation_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/invitation_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/recommend_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/recommend_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers/invitation_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/invitation_helper.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers/recommend_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/recommend_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/invitation.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/invitation.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/service/group_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/group_service.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/service/invitation_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/invitation_service.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/agree_on_invitation_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/agree_on_invitation_test.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/group_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/group_test.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,13 +30,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="$PROJECT_DIR$/.idea" />
-      </set>
-    </option>
-  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -46,7 +40,6 @@
   <component name="ProjectId" id="1YS9UN52UPSdTP5mHtd01jWxFVK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -55,7 +48,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.ruby.settings.RubyModuleStructureConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -70,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Rails.Development: HoShr">
+  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.agree_on_invitation_test">
     <configuration name="Development: HoShr" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="HoShr" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -168,36 +161,6 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="GroupTest" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
-      <module name="HoShr" />
-      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="test" />
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/group_test.rb" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
-      <method v="2" />
-    </configuration>
     <configuration name="agree_on_invitation_test" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
       <module name="HoShr" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
@@ -217,6 +180,7 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/agree_on_invitation_test.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
@@ -228,7 +192,7 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_quit_group_will_delete..." type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+    <configuration name="disagree_on_invitation_test" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
       <module name="HoShr" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
@@ -247,10 +211,42 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/group_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/disagree_on_invitation_test.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_quit_group_will_delete_a_group's_lessee_request,_the_agrees_and_invitations_received_and_sent" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_a_member_of_a_group_ca... (1)" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+      <module name="HoShr" />
+      <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/disagree_on_invitation_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^test_a_member_of_a_group_can_cancel_the_opinion_he_had_on_an_invitation$" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
@@ -258,7 +254,7 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_quit_group_will_reset_..." type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+    <configuration name="test_all_member_of_a_group_..." type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
       <module name="HoShr" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
@@ -277,10 +273,11 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/group_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/disagree_on_invitation_test.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_quit_group_will_reset_a_user's_group_to_its_origin_group" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^test_all_member_of_a_group_disagree_on_an_invitation_will_delete_the_invitation_request$" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
@@ -288,7 +285,7 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_the_last_user_quit_gro..." type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+    <configuration name="test_user_can_withdraw_thei..." type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
       <module name="HoShr" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
@@ -307,10 +304,11 @@
           <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
         </COVERAGE_PATTERN>
       </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/group_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/disagree_on_invitation_test.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_the_last_user_quit_group_will_lead_the_group_to_be_deleted" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^test_user_can_withdraw_their_agree_/_disagree$" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
@@ -321,10 +319,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Test::Unit/Shoulda/Minitest.agree_on_invitation_test" />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.GroupTest" />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.test_the_last_user_quit_gro..." />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.test_quit_group_will_delete..." />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.test_quit_group_will_reset_..." />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.disagree_on_invitation_test" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_all_member_of_a_group_..." />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_user_can_withdraw_thei..." />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_a_member_of_a_group_ca... (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -366,12 +364,17 @@
       <workItem from="1585280809579" duration="26650000" />
       <workItem from="1586030553746" duration="14864000" />
       <workItem from="1586320389263" duration="66000" />
-      <workItem from="1586444903747" duration="8129000" />
+      <workItem from="1586444903747" duration="10269000" />
+      <workItem from="1587227502218" duration="628000" />
+      <workItem from="1587228174601" duration="32000" />
+      <workItem from="1587228228939" duration="72000" />
+      <workItem from="1587228319778" duration="35000" />
+      <workItem from="1587228372507" duration="18536000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="615" y="340" width="747" height="424" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585604991799">
@@ -386,74 +389,78 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1585256422038" />
-    <state width="1793" height="384" key="GridCell.Tab.0.bottom" timestamp="1586453251878">
+    <state width="1793" height="282" key="GridCell.Tab.0.bottom" timestamp="1587260925866">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="384" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1586453251878" />
-    <state width="1793" height="384" key="GridCell.Tab.0.center" timestamp="1586453251877">
+    <state width="1793" height="282" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587260925866" />
+    <state width="1793" height="282" key="GridCell.Tab.0.center" timestamp="1587260925864">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="384" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1586453251877" />
-    <state width="1793" height="384" key="GridCell.Tab.0.left" timestamp="1586453251876">
+    <state width="1793" height="282" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587260925864" />
+    <state width="1793" height="282" key="GridCell.Tab.0.left" timestamp="1587260925863">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="384" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1586453251876" />
-    <state width="1793" height="384" key="GridCell.Tab.0.right" timestamp="1586453251878">
+    <state width="1793" height="282" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587260925863" />
+    <state width="1793" height="282" key="GridCell.Tab.0.right" timestamp="1587260925865">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="384" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1586453251878" />
-    <state width="1793" height="384" key="GridCell.Tab.1.bottom" timestamp="1586453251881">
+    <state width="1793" height="282" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587260925865" />
+    <state width="1793" height="282" key="GridCell.Tab.1.bottom" timestamp="1587260925869">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="384" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1586453251881" />
-    <state width="1793" height="384" key="GridCell.Tab.1.center" timestamp="1586453251880">
+    <state width="1793" height="282" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587260925869" />
+    <state width="1793" height="282" key="GridCell.Tab.1.center" timestamp="1587260925867">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="384" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1586453251880" />
-    <state width="1793" height="384" key="GridCell.Tab.1.left" timestamp="1586453251879">
+    <state width="1793" height="282" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587260925867" />
+    <state width="1793" height="282" key="GridCell.Tab.1.left" timestamp="1587260925866">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="384" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1586453251879" />
-    <state width="1793" height="384" key="GridCell.Tab.1.right" timestamp="1586453251881">
+    <state width="1793" height="282" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587260925866" />
+    <state width="1793" height="282" key="GridCell.Tab.1.right" timestamp="1587260925868">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="384" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1586453251881" />
-    <state width="1793" height="442" key="GridCell.Tab.2.bottom" timestamp="1586452006343">
+    <state width="1793" height="282" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587260925868" />
+    <state width="1793" height="422" key="GridCell.Tab.2.bottom" timestamp="1587260316893">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1586452006343" />
-    <state width="1793" height="442" key="GridCell.Tab.2.center" timestamp="1586452006341">
+    <state width="1793" height="422" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587260316893" />
+    <state width="1793" height="422" key="GridCell.Tab.2.center" timestamp="1587260316892">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1586452006341" />
-    <state width="1793" height="442" key="GridCell.Tab.2.left" timestamp="1586452006341">
+    <state width="1793" height="422" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587260316892" />
+    <state width="1793" height="422" key="GridCell.Tab.2.left" timestamp="1587260316892">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1586452006341" />
-    <state width="1793" height="442" key="GridCell.Tab.2.right" timestamp="1586452006342">
+    <state width="1793" height="422" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587260316892" />
+    <state width="1793" height="422" key="GridCell.Tab.2.right" timestamp="1587260316893">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1586452006342" />
-    <state width="1793" height="442" key="GridCell.Tab.3.bottom" timestamp="1586033196581">
+    <state width="1793" height="422" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587260316893" />
+    <state width="1793" height="422" key="GridCell.Tab.3.bottom" timestamp="1587260316896">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.3.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1586033196581" />
-    <state width="1793" height="442" key="GridCell.Tab.3.center" timestamp="1586033196579">
+    <state width="1793" height="422" key="GridCell.Tab.3.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587260316896" />
+    <state width="1793" height="422" key="GridCell.Tab.3.center" timestamp="1587260316895">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.3.center/67.27.1853.1053@67.27.1853.1053" timestamp="1586033196579" />
-    <state width="1793" height="442" key="GridCell.Tab.3.left" timestamp="1586033196578">
+    <state width="1793" height="422" key="GridCell.Tab.3.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587260316895" />
+    <state width="1793" height="422" key="GridCell.Tab.3.left" timestamp="1587260316894">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.3.left/67.27.1853.1053@67.27.1853.1053" timestamp="1586033196578" />
-    <state width="1793" height="442" key="GridCell.Tab.3.right" timestamp="1586033196580">
+    <state width="1793" height="422" key="GridCell.Tab.3.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587260316894" />
+    <state width="1793" height="422" key="GridCell.Tab.3.right" timestamp="1587260316895">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="442" key="GridCell.Tab.3.right/67.27.1853.1053@67.27.1853.1053" timestamp="1586033196580" />
-    <state x="351" y="100" key="SettingsEditor" timestamp="1586320453199">
+    <state width="1793" height="422" key="GridCell.Tab.3.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587260316895" />
+    <state x="351" y="100" key="SettingsEditor" timestamp="1587228352074">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="351" y="100" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1586320453199" />
+    <state x="351" y="100" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1587228352074" />
+    <state x="655" y="224" width="675" height="655" key="StructurePopup" timestamp="1587259115924">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="655" y="224" width="675" height="655" key="StructurePopup/67.27.1853.1053@67.27.1853.1053" timestamp="1587259115924" />
     <state x="535" y="27" width="917" height="1050" key="find.popup" timestamp="1585600557922">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -462,32 +469,37 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="573" y="249" key="run.anything.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1583172401153" />
-    <state x="572" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1586451134198">
+    <state x="572" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1587233638116">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="572" y="45" width="840" height="1034" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1586451134198" />
+    <state x="572" y="45" width="840" height="1034" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1587233638116" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HoShr@test_login_with_valid_email___.rcov" NAME="test_login_with_valid_email... Coverage Results" MODIFIED="1585605372055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1583131776238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_invitation_receiver_ca___.rcov" NAME="test_invitation_receiver_ca... Coverage Results" MODIFIED="1586035181462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test__one_team_member_of_mu___.rcov" NAME="test__one_team_member_of_mu... Coverage Results" MODIFIED="1585965501533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@GroupTest.rcov" NAME="GroupTest Coverage Results" MODIFIED="1586450546564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@UsersSignupTest.rcov" NAME="UsersSignupTest Coverage Results" MODIFIED="1585946746686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@UsersLoginTest.rcov" NAME="UsersLoginTest Coverage Results" MODIFIED="1585604940549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test__one_group_member_of_t___.rcov" NAME="test__one_group_member_of_t... Coverage Results" MODIFIED="1585965595872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_login_with_invalid_inf___.rcov" NAME="test_login_with_invalid_inf... Coverage Results" MODIFIED="1585605217205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_all_invitation_receive___.rcov" NAME="test_all_invitation_receive... Coverage Results" MODIFIED="1586035280236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_the_last_user_quit_gro___.rcov" NAME="test_the_last_user_quit_gro... Coverage Results" MODIFIED="1586122671098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@Development__HoShr.rcov" NAME="Development: HoShr Coverage Results" MODIFIED="1586453213983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_valid_signup_information.rcov" NAME="test_valid_signup_information Coverage Results" MODIFIED="1585606192333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_a_team_member_can_crea___.rcov" NAME="test_a_team_member_can_crea... Coverage Results" MODIFIED="1585961853694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@agree_on_invitation_test.rcov" NAME="agree_on_invitation_test Coverage Results" MODIFIED="1586451706266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_a_group_member_of_one____.rcov" NAME="test_a_group_member_of_one_... Coverage Results" MODIFIED="1586031454215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_quit_group_will_delete___.rcov" NAME="test_quit_group_will_delete... Coverage Results" MODIFIED="1586119512554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@GroupTest.rcov" NAME="GroupTest Coverage Results" MODIFIED="1586450546564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_a_user_in_its_origin_g___.rcov" NAME="test_a_user_in_its_origin_g... Coverage Results" MODIFIED="1586116356840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_quit_group_will_reset____.rcov" NAME="test_quit_group_will_reset_... Coverage Results" MODIFIED="1586118845860" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_the_truth.rcov" NAME="test_the_truth Coverage Results" MODIFIED="1585605421848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@UsersLoginTest.rcov" NAME="UsersLoginTest Coverage Results" MODIFIED="1585604940549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_the_last_user_quit_gro___.rcov" NAME="test_the_last_user_quit_gro... Coverage Results" MODIFIED="1586122671098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@Development__HoShr.rcov" NAME="Development: HoShr Coverage Results" MODIFIED="1587231384526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test__one_team_member_of_mu___.rcov" NAME="test__one_team_member_of_mu... Coverage Results" MODIFIED="1585965501533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1583131776238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_login_with_invalid_inf___.rcov" NAME="test_login_with_invalid_inf... Coverage Results" MODIFIED="1585605217205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@disagree_on_invitation_test.rcov" NAME="disagree_on_invitation_test Coverage Results" MODIFIED="1587256292904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@agree_on_invitation_test.rcov" NAME="agree_on_invitation_test Coverage Results" MODIFIED="1587256297441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@users_login_test.rcov" NAME="users_login_test Coverage Results" MODIFIED="1585606200080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_quit_group_will_delete___.rcov" NAME="test_quit_group_will_delete... Coverage Results" MODIFIED="1586119512554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_valid_signup_information.rcov" NAME="test_valid_signup_information Coverage Results" MODIFIED="1585606192333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_all_invitation_receive___.rcov" NAME="test_all_invitation_receive... Coverage Results" MODIFIED="1586035280236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_a_member_of_a_group_ca___.rcov" NAME="test_a_member_of_a_group_ca... Coverage Results" MODIFIED="1587248059845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_all_member_of_a_group____.rcov" NAME="test_all_member_of_a_group_... Coverage Results" MODIFIED="1587256286370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_user_can_withdraw_thei___.rcov" NAME="test_user_can_withdraw_thei... Coverage Results" MODIFIED="1587254868840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_a_team_member_can_crea___.rcov" NAME="test_a_team_member_can_crea... Coverage Results" MODIFIED="1585961853694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_the_truth.rcov" NAME="test_the_truth Coverage Results" MODIFIED="1585605421848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_a_member_of_a_group_ca_____1_.rcov" NAME="test_a_member_of_a_group_ca... (1) Coverage Results" MODIFIED="1587248618566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test__one_group_member_of_t___.rcov" NAME="test__one_group_member_of_t... Coverage Results" MODIFIED="1585965595872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@UsersSignupTest.rcov" NAME="UsersSignupTest Coverage Results" MODIFIED="1585946746686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_invitation_receiver_ca___.rcov" NAME="test_invitation_receiver_ca... Coverage Results" MODIFIED="1586035181462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_login_with_valid_email___.rcov" NAME="test_login_with_valid_email... Coverage Results" MODIFIED="1585605372055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
   </component>
 </project>

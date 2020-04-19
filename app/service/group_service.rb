@@ -74,10 +74,12 @@ module GroupService
       end
       group.received_invitation.all.each do |invitation|
         invitation.agree_on_invitations.destroy_all
+        invitation.disagree_on_invitations.destroy_all
         invitation.save
       end
       group.send_invitation.all.each do |invitation|
         invitation.agree_on_invitations.destroy_all
+        invitation.disagree_on_invitations.destroy_all
         invitation.save
       end
       group.received_invitation.destroy_all

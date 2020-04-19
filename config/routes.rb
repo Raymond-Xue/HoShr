@@ -30,6 +30,11 @@ Rails.application.routes.draw do
   post '/invitation/agree_on_sending_request/:invitation_id', to:'invitation#agree_on_send_invitation_request', as: 'agree_on_sending_invitation'
   post '/invitation/agree_on_accepting_request/:invitation_id', to:'invitation#agree_on_accept_invitation_request', as: 'agree_on_accepting_invitation'
 
+  post '/invitation/disagree_on_sending_request/:invitation_id', to:'invitation#disagree_on_send_invitation_request', as: 'disagree_on_sending_invitation'
+  post '/invitation/disagree_on_accepting_request/:invitation_id', to:'invitation#disagree_on_accept_invitation_request', as: 'disagree_on_accepting_invitation'
+
+  delete '/invitation/withdraw_opinion/:invitation_id', to:'invitation#withdraw_decision', as: 'withdraw_decision'
+
   get '/my_lessee', to: 'groups#my_lessee'
   post '/submit/:lessee_id', to: 'groups#submit'
   post '/cancel/:property_id', to: 'groups#cancel'
