@@ -26,7 +26,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1/edit
   def edit
-	
+    @property = Property.find_by(:id => params[:id])
   end
 
   # POST /properties
