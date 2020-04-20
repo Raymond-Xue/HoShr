@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     @properties = Property.where(owner_id: current_user.id)
   end
 
+  def my_property
+    @user = current_user
+    @properties = Property.where(:owner_id => current_user.id)
+  end
+
   # GET /users/new
   def new
     @user = User.new

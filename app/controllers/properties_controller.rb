@@ -52,6 +52,20 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def my_lessor
+	@user = current_user
+    @properties = Property.where(:owner_id => current_user.id)
+	@lessor_requests = nil
+	if @properties.count > 0
+		@lessor_requests = LessorRequest.where(:property_id => @properties.first.id)
+	end
+	if @properties.count > 1
+		for i in 1..(@properties.count - 1) do
+    		@lessor_requests = @lessor_requests + LessorRequest.where(:property_id => @properties[i].id)
+		end
+	end
+  end
+
   # PATCH/PUT /properties/1
   # PATCH/PUT /properties/1.json
   def update
@@ -69,9 +83,10 @@ class PropertiesController < ApplicationController
   # DELETE /properties/1
   # DELETE /properties/1.json
   def destroy
+    @property = Property.find_by(:id => params[:id])
     @property.destroy
     respond_to do |format|
-      format.html { redirect_to properties_url, notice: 'Property was successfully destroyed.' }
+      format.html { redirect_to my_property_url, notice: 'Property was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

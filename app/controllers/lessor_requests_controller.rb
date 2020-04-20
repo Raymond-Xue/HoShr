@@ -58,9 +58,10 @@ class LessorRequestsController < ApplicationController
   # DELETE /lessor_requests/1
   # DELETE /lessor_requests/1.json
   def destroy
+    @lessor_request = LessorRequest.find_by(:id => params[:id])
     @lessor_request.destroy
     respond_to do |format|
-      format.html { redirect_to lessor_requests_url, notice: 'Lessor request was successfully destroyed.' }
+      format.html { redirect_to my_lessor_url, notice: 'Lessor request was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

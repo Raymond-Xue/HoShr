@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.dt
+{
+float:left;
+margin-left: 3%;
+margin-right: 3%;
+}
+
+</style>
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center my-5">
+  <%= @user.username %>
+</h1>
+
+<h3 class="my-3">My Lessor:</h3>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Lessor ID</th>
+    <th>Earliest Move in Date</th>
+    <th>Min Duration (Month)</th>
+    <th>Total Rent(USD)</th>
+    <th colspan="3"></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <% if @lessor_requests != nil%>
+  <% @lessor_requests.each do |lessor_request| %>
+    <tr>
+      <td><%= lessor_request.id %></td>
+      <td><%= lessor_request.earliest_movein_date%></td>
+      <td><%= lessor_request.min_duration%></td>
+      <td><%= lessor_request.total_rent %></td>
+      <td><%= link_to ' Detail', lessor_request, class: 'fa fa-arrow-right'%></td>
+      <td><%= link_to ' Cancel', lessor_request, method: :delete, class: 'fa fa-times', data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+	
+  <%end%>
+
+  </tbody>
+</table>
+</div>

@@ -47,6 +47,10 @@ Rails.application.routes.draw do
   #post '/delete_property/:property_id', to: 'properties#destroy'
 
   get '/post_property/:property_id', to: 'properties#post'
+
+  get '/my_lessor', to: 'properties#my_lessor'
+
+  get '/my_property', to: 'users#my_property'
   
   
   resources :groups

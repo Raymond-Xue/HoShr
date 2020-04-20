@@ -32,10 +32,10 @@
 	}
     .imgs
 	{
-		width: 31%;
-		height: 28%;
+		width: 26%;
+		height: 24%;
 		float: left;
-		margin-left: 12%;
+		margin-left: 5%;
 		margin-top: 2%;
 		border-radius: 15%;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -46,7 +46,7 @@
 	}
     p
 	{
-		font-size: 1.5em;
+		font-size: 1.1em;
 		font-family: OCR A Std, monospace;
 	}
 	h6
@@ -116,7 +116,7 @@
 		</div>
 
 		<div class="imgs">
-			<%= link_to properties_path do %>
+			<%= link_to lessor_requests_path do %>
 			   <%= image_tag "house.jpg", class: "img_class"%>
 			<% end %>
 			<div class="text_tag">
@@ -159,6 +159,25 @@
 				<p>Post Your Property</p>
 			</div>
 		</div>
+
+		<div class="imgs">
+			<%= link_to my_lessor_path do %>
+			   <%= image_tag "lessor.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p>Your Lessor Request</p>
+			</div>
+		</div>
+
+		<div class="imgs">
+			<%= link_to my_property_path do %>
+			   <%= image_tag "my_property.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p>Your Property</p>
+			</div>
+		</div>
+
     </div>
 	
 
