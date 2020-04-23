@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<p id="notice"><%= notice %></p>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
@@ -26,7 +25,6 @@
     <h1>
         <%= @property.street_address%>
     </h1>
-<p id="notice"><%= notice %></p>
 
 <html>
   <head>
@@ -107,10 +105,10 @@
   <tr>
     <td>Ammenity:</td>
     <td>
-      <% if !@property.hasKitchen?%> 
+      <% if @property.hasKitchen?%> 
         <%= image_tag "kitchen.png", class: "icon" %>
       <% end %>
-      <% if !@property.hasSmokeDetector?%> 
+      <% if @property.hasSmokeDetector?%> 
         <%= image_tag "no-smoking.png", class: "icon" %>
       <% end %>
       <%= image_tag "air-conditioner.png", class: "icon" %>
@@ -126,6 +124,11 @@
   </tbody>
 </table>
 
+<% if @property.avatar.attached? %>
+  <%= image_tag url_for(@property.avatar), class: "photo"%>
+<% end %>
+
 <%= link_to 'Edit Property Info', edit_property_path(@property), class: "btn btn-primary" %> |
-<%= link_to 'Post this Property', new_lessor_request_path(:property_id => @property.id), class: "btn btn-primary" %>
+<%= link_to 'Post this Property', new_lessor_request_path(:property_id => @property.id), class: "btn btn-primary" %> |
+<%= link_to 'Upload Photo', photo_property_path(@property), class: "btn btn-primary" %>
 

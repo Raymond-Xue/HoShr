@@ -29,14 +29,17 @@ class PropertiesController < ApplicationController
     @property = Property.find_by(:id => params[:id])
   end
 
+  # GET /properties/1/photo
+  def photo
+    @property = Property.find_by(:id => params[:id])
+  end
+
   # POST /properties
   # POST /properties.json
   def create
     @property = Property.new(property_params)
     @property.owner_id = current_user.id
-    puts "county id ############"
     @property.country_id = Country.find_by(country_name: params[:property][:country]).id
-    puts @property.country_id
     @property.state_id = State.find_by(country_id: @property.country_id, state_name: params[:property][:state]).id
     @property.city_id = City.find_by(state_id: @property.state_id, city_name: params[:property][:city]).id
     @property = address_standardilization(@property)
@@ -69,6 +72,17 @@ class PropertiesController < ApplicationController
   # PATCH/PUT /properties/1
   # PATCH/PUT /properties/1.json
   def update
+    @property = Property.find_by(:id => params[:id])
+    if Country.find_by(country_name: params[:property][:country])
+      @property.owner_id = current_user.id
+      @property.country_id = Country.find_by(country_name: params[:property][:country]).id
+      @property.state_id = State.find_by(country_id: @property.country_id, state_name: params[:property][:state]).id
+      @property.city_id = City.find_by(state_id: @property.state_id, city_name: params[:property][:city]).id
+      @property = address_standardilization(@property)
+    end
+    if !params[:avatar].nil?
+      @property.avatar.attach(params[:avatar])
+    end
     respond_to do |format|
       if @property.update(property_params)
         format.html { redirect_to @property, notice: 'Property was successfully updated.' }
@@ -112,6 +126,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:latitude, :longitude, :street_address, :city_id, :state_id, :country_id, :zipcode, :owner_id, :n_bedrooms, :n_bathroom, :hasKitchen, :hasSmokeDetector, :hasAirConditioning, :type_id)
+      params.require(:property).permit(:latitude, :longitude, :street_address, :city_id, :state_id, :country_id, :zipcode, :owner_id, :n_bedrooms, :n_bathroom, :hasKitchen, :hasSmokeDetector, :hasAirConditioning, :type_id, :avatar)
     end
 end

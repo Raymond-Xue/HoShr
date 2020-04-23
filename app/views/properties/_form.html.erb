@@ -60,16 +60,8 @@
   <tr>
     <td><%= form.label :zipcode %></td>
     <td><%= form.text_field :zipcode %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :latitude %></td>
-    <td><%= form.text_field :latitude, :required => true, :readonly => true %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :longitude %></td>
-    <td><%= form.text_field :longitude, :required => true, :readonly => true %></td>
+    <td><%= form.hidden_field :latitude %></td>
+    <td><%= form.hidden_field :longitude %></td>
   </tr>
 
   <tr>

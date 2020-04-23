@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   
   get '/uploaded_properties', to: 'users#uploaded_properties'
   get '/show_property/:property_id', to: 'properties#show'
-  #post '/edit_property/:property_id', to: 'properties#edit'
+  # post '/photo_property/:property_id', to: 'properties#photo', as: 'photo_property'
   #post '/delete_property/:property_id', to: 'properties#destroy'
 
   get '/post_property/:property_id', to: 'properties#post'
@@ -51,6 +51,8 @@ Rails.application.routes.draw do
   get '/my_lessor', to: 'properties#my_lessor'
 
   get '/my_property', to: 'users#my_property'
+
+  get '/properties/:id/photo', to: 'properties#photo', as: 'photo_property'
   
   
   resources :groups
