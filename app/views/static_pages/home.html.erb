@@ -104,59 +104,16 @@
 		</div>
 
 	</div>
+  <% if current_user.usertype == "Lessor"%>
 
 	<div class="buttons">
-		<div class="imgs">
-			<%= link_to new_lessee_request_path do %>
-			   <%= image_tag "roommate.jpg", class: "img_class" %>
-			<% end %>
-			<div class="text_tag">
-				<p>Find Roommate</p>
-			</div>
-		</div>
-
-		<div class="imgs">
-			<%= link_to lessor_requests_path do %>
-			   <%= image_tag "house.jpg", class: "img_class"%>
-			<% end %>
-			<div class="text_tag">
-				<p>Find Property</p>
-			</div>
-		</div>
-
-		<div class="imgs">
-			<%= link_to recommendation_path do %>
-			    <%= image_tag("recommendation.jpg", class: "img_class")%>
-			<% end %>
-			<div class="text_tag">
-				<p>Your Roommate Recommendation</p>
-			</div>
-		</div>
-
-		<div class="imgs">
-			<%= link_to my_group_path do %>
-			   <%= image_tag "group.jpg", class: "img_class" %>
-			<% end %>
-			<div class="text_tag">
-				<p>Your Group</p>
-			</div>
-		</div>
-
-		<div class="imgs">
-			<%= link_to my_lessee_path do %>
-			   <%= image_tag "my_lessee.jpg", class: "img_class" %>
-			<% end %>
-			<div class="text_tag">
-				<p>Your Lessee Request</p>
-			</div>
-		</div>
 
 		<div class="imgs">
 			<%= link_to new_property_path do %>
 			   <%= image_tag "post_house.jpg", class: "img_class" %>
 			<% end %>
 			<div class="text_tag">
-				<p>Post Your Property</p>
+				<p class="lr">Post Your Property</p>
 			</div>
 		</div>
 
@@ -165,7 +122,7 @@
 			   <%= image_tag "lessor.jpg", class: "img_class" %>
 			<% end %>
 			<div class="text_tag">
-				<p>Your Lessor Request</p>
+				<p class="lr">Your Lessor Request</p>
 			</div>
 		</div>
 
@@ -174,11 +131,60 @@
 			   <%= image_tag "my_property.jpg", class: "img_class" %>
 			<% end %>
 			<div class="text_tag">
-				<p>Your Property</p>
+				<p class="lr">Your Property</p>
 			</div>
 		</div>
 
     </div>
+  <% elsif current_user.usertype == "Lessee"%>
+
+	<div class="buttons">
+		<div class="imgs">
+			<%= link_to new_lessee_request_path do %>
+			   <%= image_tag "roommate.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p class="le">Find Roommate</p>
+			</div>
+		</div>
+
+		<div class="imgs">
+			<%= link_to lessor_requests_path do %>
+			   <%= image_tag "house.jpg", class: "img_class"%>
+			<% end %>
+			<div class="text_tag">
+				<p class="le">Find Property</p>
+			</div>
+		</div>
+
+		<div class="imgs">
+			<%= link_to recommendation_path do %>
+			    <%= image_tag("recommendation.jpg", class: "img_class")%>
+			<% end %>
+			<div class="text_tag">
+				<p class="le">Your Roommate Recommendation</p>
+			</div>
+		</div>
+
+		<div class="imgs">
+			<%= link_to my_group_path do %>
+			   <%= image_tag "group.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p class="le">Your Group</p>
+			</div>
+		</div>
+
+		<div class="imgs">
+			<%= link_to my_lessee_path do %>
+			   <%= image_tag "my_lessee.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p class="le">Your Lessee Request</p>
+			</div>
+		</div>
+    </div>
+  <% end %>
 	
 
 

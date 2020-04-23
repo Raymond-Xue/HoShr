@@ -74,6 +74,9 @@
     <%= form.label :age %>
     <%= form.number_field :age %>
 
+    <%= form.label :usertype %>
+    <%= form.select :usertype, ["Lessee","Lessor"] %>
+
 
 
     <%= form.submit yield(:button_text), class: "btn btn-primary" %>

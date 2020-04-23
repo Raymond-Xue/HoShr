@@ -61,6 +61,11 @@
     <%= form.number_field :age %>
   </div>
 
+  <div class="field">
+    <%= form.label :usertype %>
+    <%= form.select :usertype, ["Lessee","Lessor"] %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

@@ -17,6 +17,9 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
 
+      <%= f.label :usertype, "User Type" %>
+      <%= f.select :usertype, ["Lessee","Lessor"] %>
+
       
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>

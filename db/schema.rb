@@ -180,6 +180,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
     t.string "lastname"
     t.string "email"
     t.string "gender"
+    t.string "usertype"
     t.string "occupation"
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false
