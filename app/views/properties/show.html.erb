@@ -125,7 +125,13 @@
 </table>
 
 <% if @property.avatar.attached? %>
-  <%= image_tag url_for(@property.avatar), class: "photo"%>
+  <p>
+    <strong>Images:</strong>
+    <br>
+    <% @property.avatar.each do |image| %>
+      <%= image_tag(image) %>
+    <% end %>
+  </p>
 <% end %>
 
 <%= link_to 'Edit Property Info', edit_property_path(@property), class: "btn btn-primary" %> |
