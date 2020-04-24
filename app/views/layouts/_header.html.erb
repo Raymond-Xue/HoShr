@@ -16,70 +16,79 @@
     font-size: 20px;
   }
 
-
 </style>
 
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Hoshr", root_path, id: "logo" %>
-    <nav>
-		<div class="navbar-header">
-        		<button type="button" class="navbar-toggle collapsed"
-                		data-toggle="collapse"
-                		data-target="#bs-example-navbar-collapse-1"
-                		aria-expanded="false">
-          		<span class="sr-only">Toggle navigation</span>
-          		<span class="icon-bar"></span>
-          		<span class="icon-bar"></span>
-          		<span class="icon-bar"></span>
-        	</button>
-    	</div>
-      
- 
-    <%= form_tag(search_result_path, remote: true, method: :get, class: 'navbar-form navbar-left') do %>
-      <div class="input-group">
-            
-            
-            <%= text_field_tag :city_name, nil, onkeyup: 'Rails.fire(this.form, "submit")', placeholder: 'Add Destination', class: 'form-control' %>
-            
-            <div class="input-group-btn">  
-              <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
-            </div>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>HoShr Home PAge</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Vendor CSS Files -->
+
+  <% stylesheet_link_tag 'vendor/bootstrap/css/bootstrap.min.css'%>
+  <% stylesheet_link_tag 'vendor/icofont/icofont.min.css'%>
+  <% stylesheet_link_tag 'vendor/boxicons/css/boxicons.min.css'%>
+  <% stylesheet_link_tag 'vendor/animate.css/animate.min.css'%>
+  <% stylesheet_link_tag 'vendor/venobox/venobox.css'%>
+
+  <!-- Template Main CSS File -->
+  <% stylesheet_link_tag 'vendor/style.css'%>
+
+  <!-- =======================================================
+  * Template Name: Eterna - v2.0.0
+  * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-none d-lg-block">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        <i class="fa fa-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a>
+        <i class="fa fa-phone"></i> +1 781 12345 67
       </div>
-    <% end %>
- <!--       
-	<div role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc">
-   
-   
-   <form>
-     <p>
-       <label for="firstName">First Name</label>
-       <input id="firstName" type="text" />
-     </p>
-     <p>
-       <label for="lastName">Last Name</label>
-       <input id="lastName" type="text"/>
-     </p>
-     <p>
-       <label for="interests">Interests</label>
-       <textarea id="interests"></textarea>
-     </p>
-     <p>
-       <input type="checkbox" id="autoLogin"/>
-       <label for="autoLogin">Auto-login?</label>
-     </p>
-     <p>
-         <input type="submit" value="Save Information"/>
-     </p>
-   </form>
- </div>        
-     --> 
-      <ul class="nav navbar-nav navbar-right collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1">
-        
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="skype"><i class="fa fa-skype"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container d-flex">
+
+      <div class="logo mr-auto">
+        <h1 class="text-light"><%= link_to "HoShr", root_path%></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><%= link_to "Home", root_path%></li>
+	  	  <li><%= link_to "Contact", root_path%></li>
         <% if logged_in? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <li class="drop-down">
+            <a href="#">
               <% if current_user.avatar.attached? %>
                 <%= image_tag url_for(current_user.avatar), class: "headshot"%><%=" Hello, " + current_user.username.to_s + "!"%>
               <% else %>
@@ -100,7 +109,23 @@
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <%= javascript_include_tag 'vendor/jquery/jquery.min.js'%>
+  <%= javascript_include_tag 'vendor/bootstrap/js/bootstrap.bundle.min.js'%>
+  <%= javascript_include_tag 'vendor/jquery.easing/jquery.easing.min.js'%>
+  <%= javascript_include_tag 'vendor/php-email-form/validate.js'%>
+  <%= javascript_include_tag 'vendor/waypoints/jquery.waypoints.min.js'%>
+  <%= javascript_include_tag 'vendor/jquery-sticky/jquery.sticky.js'%>
+  <%= javascript_include_tag 'vendor/counterup/counterup.min.js'%>
+  <%= javascript_include_tag 'vendor/isotope-layout/isotope.pkgd.min.js'%>
+  <%= javascript_include_tag 'vendor/venobox/venobox.min.js'%>
+
+  <!-- Template Main JS File -->
+  <%= javascript_include_tag 'vendor/main.js'%>
+</body>

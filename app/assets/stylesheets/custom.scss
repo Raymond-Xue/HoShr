@@ -14,7 +14,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 40px;
+  padding-top: 0;
 }
 
 section {
@@ -68,20 +68,7 @@ a.btn {
 }
 /* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 15px;
-  font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
-}
+
 
 /* footer */
 
