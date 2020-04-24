@@ -136,15 +136,15 @@ module InvitationService
     if user.current_group_id != invitation.group_to_id
       raise "Illegal request"
     end
-    agree_id = nil
+    merge_result = false
     AgreeOnInvitation.transaction do
       agree_id = agree_with_invitation(user_id, invitation_id)
       if user.current_group.users.count == invitation.agree_on_invitations.count
         invitation.agree_on_invitations.destroy_all
-        accept_invitation(invitation_id)
+        merge_result = accept_invitation(invitation_id)
       end
     end
-    return agree_id
+    return merge_result
   end
 
   def find_received_invitation_of_group(group_id)
@@ -187,7 +187,7 @@ module InvitationService
       if invitation.nil?
         raise "Invitation not found"
       end
-      merge_group(invitation.group_from_id, invitation.group_to_id)
+      return !merge_group(invitation.group_from_id, invitation.group_to_id).nil?
     end
   end
 

@@ -36,16 +36,19 @@ module GroupService
     User.transaction do
       user = User.find(user_id)
       if user.origin_group == user.current_group
-        raise "Cannot exit origin group"
+        raise "Cannot exit group"
       end
       left_group = user.current_group
       left_group.send_invitation.all.each do  |invitation|
         AgreeOnInvitation.where(invitation_id: invitation.id).destroy_all
+        DisagreeOnInvitation.where(invitation_id: invitation.id).destroy_all
       end
       left_group.received_invitation.all.each do  |invitation|
         AgreeOnInvitation.where(invitation_id: invitation.id).destroy_all
+        DisagreeOnInvitation.where(invitation_id: invitation.id).destroy_all
       end
       AgreeOnInvitation.where(invitation_id: left_group.id).destroy_all
+      DisagreeOnInvitation.where(invitation_id: left_group.id).destroy_all
       Invitation.where(group_to_id: left_group.id).destroy_all
       Invitation.where(group_from_id: left_group.id).destroy_all
       user.current_group = user.origin_group
@@ -57,6 +60,30 @@ module GroupService
       if left_group.users.empty?
         destroy_group(left_group.id)
       end
+    end
+  end
+
+  def close_matching(group_id)
+    Group.transaction do
+      group = Group.find(group_id)
+      group.active_for_matching = false
+      group.lessee_request.all.each do |request|
+        request.active = false
+        request.save
+      end
+      group.save
+    end
+  end
+
+  def open_matching(group_id)
+    Group.transaction do
+      group = Group.find(group_id)
+      group.active_for_matching = true
+      group.lessee_request.all.each do |request|
+        request.active = true
+        request.save
+      end
+      group.save
     end
   end
 

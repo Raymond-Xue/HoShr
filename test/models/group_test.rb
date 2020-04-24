@@ -4,6 +4,7 @@ class GroupTest < ActiveSupport::TestCase
   include GroupService
   include UserService
   include InvitationService
+  include LesseeRequestService
   # test "the truth" do
   #   assert true
   # end
@@ -95,4 +96,25 @@ requests, agrees, invitations deleted." do
     assert_equal(user2.current_group_id, user2.origin_group_id)
     assert_nil(Group.find_by_id(join_group_id))
   end
+
+  test "a group close matching will set all lessee request to false" do
+    user1 = User.find(1)
+    user2 = User.find(2)
+    create_request(user1.current_group_id,1, 1, 1)
+    user1 = User.find(1)
+    assert_equal(true, LesseeRequest.first.active)
+    close_matching(user1.current_group_id)
+    assert_equal(false, LesseeRequest.first.active)
+  end
+  test "a group open matching will set all lessee request to true" do
+    user1 = User.find(1)
+    user2 = User.find(2)
+    create_request(user1.current_group_id, 1,1,1)
+    assert_equal(true, LesseeRequest.first.active)
+    close_matching(user1.current_group_id)
+    assert_equal(false, LesseeRequest.first.active)
+    open_matching(user1.current_group_id)
+    assert_equal(true, LesseeRequest.first.active)
+  end
+
 end

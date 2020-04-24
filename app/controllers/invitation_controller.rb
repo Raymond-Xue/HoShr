@@ -40,12 +40,17 @@ class InvitationController < ApplicationController
 
   def agree_on_accept_invitation_request
     params.require(:invitation_id)
+    merge = false
     begin
-      agree_on_accept_invitation(current_user.id, params[:invitation_id])
+      merge = agree_on_accept_invitation(current_user.id, params[:invitation_id])
     rescue => ex
       flash[:danger] = ex.message
     end
-    redirect_to recommendation_path
+    if merge
+      redirect_to my_group_path
+    else
+      redirect_to recommendation_path
+    end
   end
 
   def disagree_on_send_invitation_request

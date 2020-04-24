@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_22_203326) do
+ActiveRecord::Schema.define(version: 2020_04_24_020813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "agree_on_invitations", force: :cascade do |t|
+    t.integer "invitation_id"
+    t.integer "user_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -68,10 +73,16 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "disagree_on_invitations", force: :cascade do |t|
+    t.integer "invitation_id"
+    t.integer "user_id"
+  end
+
   create_table "groups", force: :cascade do |t|
     t.integer "n_lessees"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "active_for_matching", default: true
   end
 
   create_table "invitations", force: :cascade do |t|
@@ -188,23 +199,13 @@ ActiveRecord::Schema.define(version: 2020_03_22_203326) do
     t.integer "origin_group_id"
   end
 
-  create_table "agree_on_invitations", force: :cascade do |t|
-    t.integer "invitation_id"
-    t.integer "user_id"
-  end
-
-  create_table "disagree_on_invitations", force: :cascade do |t|
-    t.integer "invitation_id"
-    t.integer "user_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cities", "states"
   add_foreign_key "lessee_requests", "groups"
   add_foreign_key "lessor_requests", "properties"
-  add_foreign_key "properties", "cities", column: "city_id"
+  add_foreign_key "properties", "cities"
+  add_foreign_key "properties", "types"
   add_foreign_key "properties", "users", column: "owner_id"
-  add_foreign_key "properties", "types", column: "type_id"
   add_foreign_key "rooms", "properties"
   add_foreign_key "states", "countries"
   add_foreign_key "users", "groups", column: "current_group_id"

@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  include GroupService
   #before_action :set_group, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:my_group, :my_lessee, :index, :new, :create, :destroy]
 
@@ -76,6 +77,34 @@ class GroupsController < ApplicationController
     redirect_to my_lessee_path
   end
 
+  def quit
+    begin
+      quit_group(current_user.id)
+    rescue => ex
+      flash[:danger] = ex.message
+    end
+    redirect_to my_group_path
+  end
+
+
+  def close_matching
+    begin
+      GroupService::close_matching(current_user.current_group_id)
+    rescue => ex
+      flash[:danger] = ex.message
+    end
+    redirect_to my_group_path
+  end
+
+  def open_matching
+    begin
+      GroupService::open_matching(current_user.current_group_id)
+    rescue => ex
+      flash[:danger] = ex.message
+    end
+    redirect_to my_group_path
+  end
+
   def my_lessee
     @user = current_user
     @group = Group.find_by(:id => @user.current_group_id)
@@ -89,13 +118,14 @@ class GroupsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_group
-      @group = Group.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def group_params
-      params.require(:group).permit(:group_id, :n_lessees)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def group_params
+    params.require(:group).permit(:group_id, :n_lessees)
+  end
 end

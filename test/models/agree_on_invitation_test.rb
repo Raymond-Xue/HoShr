@@ -102,12 +102,11 @@ other member can agree the request" do
 
     assert_equal(1, user3.current_group.received_invitation.count)
     invitation = Invitation.find(invitation_id)
-    agree_on_accept_invitation(user3.id, invitation.id)
+    assert_equal(false, agree_on_accept_invitation(user3.id, invitation.id))
 
     assert_equal(1, AgreeOnInvitation.count)
     assert_equal(1, Invitation.count)
-    agree_on_accept_invitation(user4.id, invitation.id)
-
+    assert_equal(true, agree_on_accept_invitation(user4.id, invitation.id))
     user1 = User.find(1)
     user3 = User.find(3)
     user4 = User.find(4)
