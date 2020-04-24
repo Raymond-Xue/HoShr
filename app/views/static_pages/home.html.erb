@@ -32,10 +32,10 @@
 	}
     .imgs
 	{
-		width: 31%;
-		height: 28%;
+		width: 26%;
+		height: 24%;
 		float: left;
-		margin-left: 12%;
+		margin-left: 5%;
 		margin-top: 2%;
 		border-radius: 15%;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -46,7 +46,7 @@
 	}
     p
 	{
-		font-size: 1.5em;
+		font-size: 1.1em;
 		font-family: OCR A Std, monospace;
 	}
 	h6
@@ -103,6 +103,39 @@
 		</div>
 
 	</div>
+  <% if current_user.usertype == "Lessor"%>
+
+	<div class="buttons">
+
+		<div class="imgs">
+			<%= link_to new_property_path do %>
+			   <%= image_tag "post_house.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p class="lr">Post Your Property</p>
+			</div>
+		</div>
+
+		<div class="imgs">
+			<%= link_to my_lessor_path do %>
+			   <%= image_tag "lessor.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p class="lr">Your Lessor Request</p>
+			</div>
+		</div>
+
+		<div class="imgs">
+			<%= link_to my_property_path do %>
+			   <%= image_tag "my_property.jpg", class: "img_class" %>
+			<% end %>
+			<div class="text_tag">
+				<p class="lr">Your Property</p>
+			</div>
+		</div>
+
+    </div>
+  <% elsif current_user.usertype == "Lessee"%>
 
 	<div class="buttons">
 		<div class="imgs">
@@ -110,16 +143,16 @@
 			   <%= image_tag "roommate.jpg", class: "img_class" %>
 			<% end %>
 			<div class="text_tag">
-				<p>Find Roommate</p>
+				<p class="le">Find Roommate</p>
 			</div>
 		</div>
 
 		<div class="imgs">
-			<%= link_to properties_path do %>
+			<%= link_to lessor_requests_path do %>
 			   <%= image_tag "house.jpg", class: "img_class"%>
 			<% end %>
 			<div class="text_tag">
-				<p>Find Property</p>
+				<p class="le">Find Property</p>
 			</div>
 		</div>
 
@@ -128,7 +161,7 @@
 			    <%= image_tag("recommendation.jpg", class: "img_class")%>
 			<% end %>
 			<div class="text_tag">
-				<p>Your Roommate Recommendation</p>
+				<p class="le">Your Roommate Recommendation</p>
 			</div>
 		</div>
 
@@ -137,7 +170,7 @@
 			   <%= image_tag "group.jpg", class: "img_class" %>
 			<% end %>
 			<div class="text_tag">
-				<p>Your Group</p>
+				<p class="le">Your Group</p>
 			</div>
 		</div>
 
@@ -146,19 +179,11 @@
 			   <%= image_tag "my_lessee.jpg", class: "img_class" %>
 			<% end %>
 			<div class="text_tag">
-				<p>Your Lessee Request</p>
-			</div>
-		</div>
-
-		<div class="imgs">
-			<%= link_to new_property_path do %>
-			   <%= image_tag "post_house.jpg", class: "img_class" %>
-			<% end %>
-			<div class="text_tag">
-				<p>Post Your Property</p>
+				<p class="le">Your Lessee Request</p>
 			</div>
 		</div>
     </div>
+  <% end %>
 	
 
 

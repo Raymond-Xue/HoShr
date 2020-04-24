@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     @properties = Property.where(owner_id: current_user.id)
   end
 
+  def my_property
+    @user = current_user
+    @properties = Property.where(:owner_id => current_user.id)
+  end
+
   # GET /users/new
   def new
     @user = User.new
@@ -87,7 +92,7 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation, 
-                                      :firstname, :lastname, :gender, :occupation, :age, :avatar)
+                                      :firstname, :lastname, :gender, :occupation, :age, :avatar, :usertype)
       
     end
 

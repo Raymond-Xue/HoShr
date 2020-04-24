@@ -9,7 +9,7 @@
   {
     width: 60%;
     float: left;
-    height: 800px;
+    height: 600px;
   }
 
 </style>
@@ -60,16 +60,8 @@
   <tr>
     <td><%= form.label :zipcode %></td>
     <td><%= form.text_field :zipcode %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :latitude %></td>
-    <td><%= form.text_field :latitude, :required => true, :readonly => true %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :longitude %></td>
-    <td><%= form.text_field :longitude, :required => true, :readonly => true %></td>
+    <td><%= form.hidden_field :latitude %></td>
+    <td><%= form.hidden_field :longitude %></td>
   </tr>
 
   <tr>
@@ -135,8 +127,8 @@
 		    lat=42.3765;
 		    lng=-71.2356;
 		    city="Waltham";
-			state="Massachusetts"
-			country="United States"
+			  state="Massachusetts"
+			  country="United States"
 		    document.getElementById('property_latitude').value = lat;
 		    document.getElementById('property_longitude').value = lng;
 			  var city = document.getElementById('property_city').value = city;

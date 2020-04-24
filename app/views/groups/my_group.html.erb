@@ -43,7 +43,7 @@
 	<table class="table table-striped" id="outer">
 		<td class = "frame">
 		    <% if member.avatar.attached? %>
-		      <%= image_tag url_for(member.avatar), class: "photo"%>
+		      <%= image_tag url_for(member.avatar.variant(combine_options: {resize: '256x256^', extent: '256x256', gravity: 'Center'})), class: "photo"%>
 		    <% end %>
 		</td>
 		<td>

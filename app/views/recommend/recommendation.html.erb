@@ -1,3 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+span
+{
+	margin-left:3%;
+	vertical-align:middle;
+}
+td
+{
+	height:35px;
+}
+th
+{
+text-align:center;
+}
+</style>
 <p id="notice"><%= notice %></p>
 
 <h1>Groups recommended for you:</h1>
@@ -12,6 +28,7 @@
       <th>Group</th>
       <th>Group Member</th>
       <th>Invite/Accept</th>
+	  <th>Lessee Request Detail</th>
     </tr>
     </thead>
 
@@ -22,7 +39,7 @@
         <td><%= info[:group].id %></td>
         <td>
           <% info[:group].users.each do |user| %>
-            <span> <%= user.username %> </span>
+            <span> <%= link_to ' ' + user.username.to_s, user, class: 'fa fa-male' %> </span>
           <% end %>
         </td>
         <td>
@@ -31,31 +48,36 @@
               <span>Waiting for response</span>
             <% elsif current_user_agree?(info[:send_invitation]) %>
               <span>You have agreed on sending the invitation, waiting others</span>
-              <span> <%= link_to("Withdraw agree", withdraw_decision_path(info[:send_invitation].id), method: :delete, class: "btn btn-primary") %></span>
+              <span> <%= link_to("Withdraw agree", withdraw_decision_path(info[:send_invitation].id), method: :delete, class: "fa fa-times") %></span>
             <% elsif current_user_disagree?(info[:send_invitation]) %>
               <span>You have disagreed on sending the invitation</span>
-              <span> <%= link_to("Withdraw disagree", withdraw_decision_path(info[:send_invitation].id), method: :delete, class: "btn btn-primary") %></span>
+              <span> <%= link_to("Withdraw disagree", withdraw_decision_path(info[:send_invitation].id), method: :delete, class: "fa fa-times") %></span>
             <% else %>
               <span>Send an invitation to that group, Agree or Disagree?</span>
-              <span> <%= link_to("Agree", agree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "btn btn-primary") %></span>
-              <span> <%= link_to("Disagree", disagree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "btn btn-primary") %></span>
+              <span> <%= link_to("Agree", agree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "fa fa-thumbs-up") %></span>
+              <span> <%= link_to("Disagree", disagree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "fa fa-thumbs-down") %></span>
             <% end %>
           <% elsif is_a_received_invitation?(info) %>
             <% if current_user_agree?(info[:received_invitation]) %>
               <span>You have agreed on accepting the invitation, waiting others</span>
-              <span><%= link_to("Withdraw agree", withdraw_decision_path(info[:received_invitation].id), method: :delete, class: "btn btn-primary") %></span>
+              <span><%= link_to("Withdraw agree", withdraw_decision_path(info[:received_invitation].id), method: :delete, class: "fa fa-times") %></span>
             <% elsif current_user_disagree?(info[:received_invitation]) %>
               <span>You have disagreed on accepting the invitation</span>
-              <span><%= link_to("Withdraw disagree", withdraw_decision_path(info[:received_invitation].id), method: :delete, class: "btn btn-primary") %></span>
+              <span><%= link_to("Withdraw disagree", withdraw_decision_path(info[:received_invitation].id), method: :delete, class: "fa fa-times") %></span>
             <% else %>
               <span>Accepting the request from that group, Agree or Disagree?</span>
-              <span> <%= link_to("Agree", agree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "btn btn-primary") %></span>
-              <span> <%= link_to("Disagree", disagree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "btn btn-primary") %></span>
+              <span> <%= link_to("Agree", agree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "fa fa-thumbs-up") %></span>
+              <span> <%= link_to("Disagree", disagree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "fa fa-thumbs-down") %></span>
             <% end %>
           <% else %>
-            <span><%= link_to("Invite Group", create_invitation_request_path(info[:group].id), method: :post, class: "btn btn-primary") %> </span>
+            <span><%= link_to("Invite Group", create_invitation_request_path(info[:group].id), method: :post, class: "fa fa-handshake-o") %> </span>
           <% end %>
         </td>
+		<td>
+			<% LesseeRequest.where(:group_id => info[:group].users[0].current_group_id).each do |lessee| %>
+			<%= link_to City.find(lessee.city_id).city_name, lessee, class: 'fa fa-address-card-o' %>
+			<% end %>
+		</td>
       </tr>
       <tr>
         <table class="table table-striped table-bordered">

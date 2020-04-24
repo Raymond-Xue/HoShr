@@ -1,70 +1,140 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @property.latitude %>
-</p>
+<style>
+  /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+  #map
+  {
+    width: 30%;
+    float: left;
+    height: 300px;
+  }
+  .table
+  {
+    width: 600px;
+  }
+  .icon
+  {
+    width: 20px;
+    height: 20px;
+  }
+</style>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @property.longitude %>
-</p>
+<% provide(:title, @property.street_address) %>
+    <h1>
+        <%= @property.street_address%>
+    </h1>
 
-<p>
-  <strong>Street address:</strong>
-  <%= @property.street_address %>
-</p>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        var myLatLng = {lat: <%= @property.latitude %>, lng: <%= @property.longitude %>};
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          zoom: 15
+        });
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          draggable: false,
+          animation: google.maps.Animation.DROP,
+          title: 'Hello World!'
+      });
+        marker.addListener('click', toggleBounce);
+      }
+      function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI&callback=initMap"
+    async defer></script>
+  </body>
+</html>
 
-<p>
-  <strong>City:</strong>
-  <%= @property.city.city_name %>
-</p>
+<table class="table table-striped" >
+  <tbody>
+  <tr>
+    <td>Street address:</td>
+    <td><%= @property.street_address %></td>
+  </tr>
+  
+  <tr>
+    <td>City:</td>
+    <td><%= @property.city.city_name %></td>
+  </tr>
 
-<p>
-  <strong>State:</strong>
-  <%= @property.city.state.state_name %>
-</p>
+  <tr>
+    <td>State:</td>
+    <td><%= @property.city.state.state_name %></td>
+  </tr>
 
-<p>
-  <strong>Country:</strong>
-  <%= @property.city.state.country.country_name %>
-</p>
+  <tr>
+    <td>Country:</td>
+    <td><%= @property.city.state.country.country_name %></td>
+  </tr>
 
-<p>
-  <strong>Zipcode:</strong>
-  <%= @property.zipcode %>
-</p>
+  <tr>
+    <td>Zipcode:</td>
+    <td><%= @property.zipcode %></td>
+  </tr>
 
+  <tr>
+    <td>Number of bedrooms:</td>
+    <td><%= @property.n_bedrooms %></td>
+  </tr>
 
-<p>
-  <strong>Number of bedrooms:</strong>
-  <%= @property.n_bedrooms %>
-</p>
+  <tr>
+    <td>Number of bathroom:</td>
+    <td><%= @property.n_bathroom %></td>
+  </tr>
 
-<p>
-  <strong>Number of bathroom:</strong>
-  <%= @property.n_bathroom %>
-</p>
+  <tr>
+    <td>Ammenity:</td>
+    <td>
+      <% if @property.hasKitchen?%> 
+        <%= image_tag "kitchen.png", class: "icon" %>
+      <% end %>
+      <% if @property.hasSmokeDetector?%> 
+        <%= image_tag "no-smoking.png", class: "icon" %>
+      <% end %>
+      <%= image_tag "air-conditioner.png", class: "icon" %>
+    </td>
+  
+  </tr>
 
-<p>
-  <strong>Has kitchen:</strong>
-  <%= @property.hasKitchen %>
-</p>
+  <tr>
+    <td>Type:</td>
+    <td><%= @property.type.type_name %></td>
+  </tr>
 
-<p>
-  <strong>Has Smoke Detector:</strong>
-  <%= @property.hasSmokeDetector %>
-</p>
+  </tbody>
+</table>
 
-<p>
-  <strong>Hasairconditioning:</strong>
-  <%= @property.hasAirConditioning %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @property.type_id %>
-</p>
+<% if @property.avatar.attached? %>
+  <p>
+    <strong>Images:</strong>
+    <br>
+    <% @property.avatar.each do |image| %>
+      <%= image_tag(image) %>
+    <% end %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit Property Info', edit_property_path(@property), class: "btn btn-primary" %> |
-<%= link_to 'Post this Property', new_lessor_request_path(:property_id => @property.id), class: "btn btn-primary" %>
+<%= link_to 'Post this Property', new_lessor_request_path(:property_id => @property.id), class: "btn btn-primary" %> |
+<%= link_to 'Upload Photo', photo_property_path(@property), class: "btn btn-primary" %>
+
