@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   put '/my_group/matching/close', to: 'groups#close_mathcing'
   put '/my_group/matching/open', to: 'groups#open_matching'
 
+  put '/my_group/quit', to: 'groups#quit'
+
   get '/my_lessee', to: 'groups#my_lessee'
   post '/submit/:lessee_id', to: 'groups#submit'
   post '/cancel/:property_id', to: 'groups#cancel'

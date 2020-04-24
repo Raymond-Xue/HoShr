@@ -2,36 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/service/lessee_request_service.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/background_book.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/background_house.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/background_roommate.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/animate.css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/animate.css/animate.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/css/animations.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/css/boxicons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/css/boxicons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/css/transformations.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/fonts/boxicons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/fonts/boxicons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/fonts/boxicons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/fonts/boxicons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/fonts/boxicons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/counterup/counterup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/icofont/fonts/icofont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/icofont/fonts/icofont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/icofont/icofont.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/isotope-layout/isotope.pkgd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/isotope-layout/isotope.pkgd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/jquery-sticky/jquery.sticky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/jquery.easing/jquery.easing.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/jquery/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/php-email-form/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/venobox/venobox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/venobox/venobox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/venobox/venobox.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/venobox/venobox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/waypoints/jquery.waypoints.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/config/manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/config/manifest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/groups_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/groups_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/invitation_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/invitation_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/recommend_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/recommend_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/groups_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/groups_helper.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/service/group_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/group_service.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/service/invitation_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/invitation_service.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/service/recommendation_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/recommendation_service.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/groups/my_group.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/groups/my_group.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/lessee_requests/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/lessee_requests/new.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200226002342_create_users.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200226004000_create_properties.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200226163829_create_lessor_requests.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200226165341_change_id_to_be_integer_in_users.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200227020948_create_lessee_requests.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200227021307_add_unit_currency_to_lessorrequest.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200227023112_create_rooms.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200227023710_create_types.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200227023815_create_currencies.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200227023952_create_countries.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200227024125_create_states.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200227024237_create_cities.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200228194243_create_groups.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200228194538_add_group_id_to_users.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200228195559_add_group_id_to_lessee_requests.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200228202338_add_group_ref_to_lessee_request.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200228202950_add_foreign_keys.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200228204903_add_propref_to_room.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200228213050_change_password_in_users.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200322203326_create_active_storage_tables.active_storage.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/models/group_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/group_test.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +121,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.test_a_group_close_matching...">
+  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.group_test">
     <configuration name="Development: HoShr" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="HoShr" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -180,7 +219,7 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="disagree_on_invitation_test" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+    <configuration name="agree_on_invitation_test" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
       <module name="HoShr" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
@@ -201,7 +240,7 @@
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/disagree_on_invitation_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/agree_on_invitation_test.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
@@ -304,7 +343,7 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_quit_group_will_reset_..." type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
+    <configuration name="test_all_invitation_receive..." type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true" nameIsGenerated="true">
       <module name="HoShr" />
       <predefined_log_file enabled="true" id="RUBY_TESTUNIT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-Itest" />
@@ -325,9 +364,9 @@
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/group_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/models/agree_on_invitation_test.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^test_quit_group_will_reset_a_user's_group_to_its_origin_group$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="^test_all_invitation_receiver_must_agree_on_the_received_invitation_to_merge_$" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
@@ -337,11 +376,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Test::Unit/Shoulda/Minitest.test_a_group_close_matching..." />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.test_quit_group_will_reset_..." />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.test_a_group_open_matching_..." />
         <item itemvalue="Test::Unit/Shoulda/Minitest.group_test" />
-        <item itemvalue="Test::Unit/Shoulda/Minitest.disagree_on_invitation_test" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_a_group_close_matching..." />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.agree_on_invitation_test" />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_all_invitation_receive..." />
+        <item itemvalue="Test::Unit/Shoulda/Minitest.test_a_group_open_matching_..." />
       </list>
     </recent_temporary>
   </component>
@@ -384,7 +423,7 @@
       <workItem from="1586030553746" duration="2406000" />
       <workItem from="1587315806292" duration="7396000" />
       <workItem from="1587518759034" duration="3668000" />
-      <workItem from="1587696591896" duration="1860000" />
+      <workItem from="1587696591896" duration="16153000" />
     </task>
     <servers />
   </component>
@@ -404,38 +443,38 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1587510049013" />
-    <state width="1793" height="294" key="GridCell.Tab.0.bottom" timestamp="1587698452507">
+    <state width="1793" height="307" key="GridCell.Tab.0.bottom" timestamp="1587763539672">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="294" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587698452507" />
-    <state width="1793" height="294" key="GridCell.Tab.0.center" timestamp="1587698452505">
+    <state width="1793" height="307" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539672" />
+    <state width="1793" height="307" key="GridCell.Tab.0.center" timestamp="1587763539672">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="294" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587698452505" />
-    <state width="1793" height="294" key="GridCell.Tab.0.left" timestamp="1587698452504">
+    <state width="1793" height="307" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539672" />
+    <state width="1793" height="307" key="GridCell.Tab.0.left" timestamp="1587763539672">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="294" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587698452503" />
-    <state width="1793" height="294" key="GridCell.Tab.0.right" timestamp="1587698452506">
+    <state width="1793" height="307" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539672" />
+    <state width="1793" height="307" key="GridCell.Tab.0.right" timestamp="1587763539672">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="294" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587698452506" />
-    <state width="1793" height="294" key="GridCell.Tab.1.bottom" timestamp="1587698452511">
+    <state width="1793" height="307" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539672" />
+    <state width="1793" height="307" key="GridCell.Tab.1.bottom" timestamp="1587763539674">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="294" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587698452511" />
-    <state width="1793" height="294" key="GridCell.Tab.1.center" timestamp="1587698452509">
+    <state width="1793" height="307" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539674" />
+    <state width="1793" height="307" key="GridCell.Tab.1.center" timestamp="1587763539673">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="294" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587698452509" />
-    <state width="1793" height="294" key="GridCell.Tab.1.left" timestamp="1587698452508">
+    <state width="1793" height="307" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539673" />
+    <state width="1793" height="307" key="GridCell.Tab.1.left" timestamp="1587763539673">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="294" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587698452508" />
-    <state width="1793" height="294" key="GridCell.Tab.1.right" timestamp="1587698452510">
+    <state width="1793" height="307" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539673" />
+    <state width="1793" height="307" key="GridCell.Tab.1.right" timestamp="1587763539673">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="294" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587698452510" />
+    <state width="1793" height="307" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539673" />
     <state width="1793" height="422" key="GridCell.Tab.2.bottom" timestamp="1587698418247">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -468,6 +507,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1793" height="422" key="GridCell.Tab.3.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587698418250" />
+    <state x="842" y="389" key="MultipleFileMergeDialog" timestamp="1587750825646">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="842" y="389" key="MultipleFileMergeDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587750825646" />
     <state x="351" y="100" key="SettingsEditor" timestamp="1585951349233">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -485,39 +528,25 @@
     </state>
     <state x="572" y="45" width="840" height="1034" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1586031272898" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/app/views/recommend/recommendation.html.erb</url>
-          <line>28</line>
-          <properties myBlockOrdinal="-1">
-            <option name="block-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/HoShr@test_a_group_member_of_one____.rcov" NAME="test_a_group_member_of_one_... Coverage Results" MODIFIED="1586031454215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@GroupTest.rcov" NAME="GroupTest Coverage Results" MODIFIED="1586450546564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@group_test.rcov" NAME="group_test Coverage Results" MODIFIED="1587697429444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@group_test.rcov" NAME="group_test Coverage Results" MODIFIED="1587763532362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_a_user_in_its_origin_g___.rcov" NAME="test_a_user_in_its_origin_g... Coverage Results" MODIFIED="1586116356840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_quit_group_will_reset____.rcov" NAME="test_quit_group_will_reset_... Coverage Results" MODIFIED="1587698244702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@UsersLoginTest.rcov" NAME="UsersLoginTest Coverage Results" MODIFIED="1585604940549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_the_last_user_quit_gro___.rcov" NAME="test_the_last_user_quit_gro... Coverage Results" MODIFIED="1587696423252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@Development__HoShr.rcov" NAME="Development: HoShr Coverage Results" MODIFIED="1587231384526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test__one_team_member_of_mu___.rcov" NAME="test__one_team_member_of_mu... Coverage Results" MODIFIED="1585965501533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_a_group_close_matching___.rcov" NAME="test_a_group_close_matching... Coverage Results" MODIFIED="1587698700184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_a_group_close_matching___.rcov" NAME="test_a_group_close_matching... Coverage Results" MODIFIED="1587763454655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1583131776238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_login_with_invalid_inf___.rcov" NAME="test_login_with_invalid_inf... Coverage Results" MODIFIED="1585605217205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@agree_on_invitation_test.rcov" NAME="agree_on_invitation_test Coverage Results" MODIFIED="1587694908851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@disagree_on_invitation_test.rcov" NAME="disagree_on_invitation_test Coverage Results" MODIFIED="1587696553110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@agree_on_invitation_test.rcov" NAME="agree_on_invitation_test Coverage Results" MODIFIED="1587699096610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@users_login_test.rcov" NAME="users_login_test Coverage Results" MODIFIED="1585606200080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_quit_group_will_delete___.rcov" NAME="test_quit_group_will_delete... Coverage Results" MODIFIED="1587693824508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_valid_signup_information.rcov" NAME="test_valid_signup_information Coverage Results" MODIFIED="1585606192333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_all_invitation_receive___.rcov" NAME="test_all_invitation_receive... Coverage Results" MODIFIED="1586035280236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_all_invitation_receive___.rcov" NAME="test_all_invitation_receive... Coverage Results" MODIFIED="1587699000208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_a_member_of_a_group_ca___.rcov" NAME="test_a_member_of_a_group_ca... Coverage Results" MODIFIED="1587248059845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_all_member_of_a_group____.rcov" NAME="test_all_member_of_a_group_... Coverage Results" MODIFIED="1587256286370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_user_can_withdraw_thei___.rcov" NAME="test_user_can_withdraw_thei... Coverage Results" MODIFIED="1587254868840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
@@ -528,6 +557,6 @@
     <SUITE FILE_PATH="coverage/HoShr@UsersSignupTest.rcov" NAME="UsersSignupTest Coverage Results" MODIFIED="1585946746686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_invitation_receiver_ca___.rcov" NAME="test_invitation_receiver_ca... Coverage Results" MODIFIED="1587321251258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
     <SUITE FILE_PATH="coverage/HoShr@test_login_with_valid_email___.rcov" NAME="test_login_with_valid_email... Coverage Results" MODIFIED="1585605372055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
-    <SUITE FILE_PATH="coverage/HoShr@test_a_group_open_matching____.rcov" NAME="test_a_group_open_matching_... Coverage Results" MODIFIED="1587697964003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
+    <SUITE FILE_PATH="coverage/HoShr@test_a_group_open_matching____.rcov" NAME="test_a_group_open_matching_... Coverage Results" MODIFIED="1587698891596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="HoShr" />
   </component>
 </project>

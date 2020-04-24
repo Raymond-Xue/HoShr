@@ -9,10 +9,14 @@ class RecommendController < ApplicationController
     #Login user placeholder
     user = current_user
 
-    recommend_groups = find_recommendation(current_user.current_group_id)
-
     @current_group = @current_user.current_group
     @group_info = []
+
+    recommend_groups = {}
+    if !matching_closed?(user.current_group_id)
+      recommend_groups = find_recommendation(current_user.current_group_id)
+    end
+
     recommend_groups.keys.each do |group_id|
       @group_info.append({:group => Group.find(group_id),
                           :received_invitation => find_sender(group_id, current_user.current_group_id),

@@ -63,7 +63,7 @@ module GroupService
     end
   end
 
-  def close_matching(group_id)
+  def group_close_matching(group_id)
     Group.transaction do
       group = Group.find(group_id)
       group.active_for_matching = false
@@ -75,7 +75,7 @@ module GroupService
     end
   end
 
-  def open_matching(group_id)
+  def group_open_matching(group_id)
     Group.transaction do
       group = Group.find(group_id)
       group.active_for_matching = true
@@ -85,6 +85,15 @@ module GroupService
       end
       group.save
     end
+  end
+
+  def matching_closed?(group_id)
+    !Group.find(group_id).active_for_matching
+  end
+
+  def can_exit_group(user_id)
+    user = User.find(user_id)
+    !user.current_group_id == user.origin_group_id
   end
 
   private

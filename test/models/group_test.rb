@@ -103,7 +103,7 @@ requests, agrees, invitations deleted." do
     create_request(user1.current_group_id,1, 1, 1)
     user1 = User.find(1)
     assert_equal(true, LesseeRequest.first.active)
-    close_matching(user1.current_group_id)
+    group_close_matching(user1.current_group_id)
     assert_equal(false, LesseeRequest.first.active)
   end
   test "a group open matching will set all lessee request to true" do
@@ -111,9 +111,9 @@ requests, agrees, invitations deleted." do
     user2 = User.find(2)
     create_request(user1.current_group_id, 1,1,1)
     assert_equal(true, LesseeRequest.first.active)
-    close_matching(user1.current_group_id)
+    group_close_matching(user1.current_group_id)
     assert_equal(false, LesseeRequest.first.active)
-    open_matching(user1.current_group_id)
+    group_open_matching(user1.current_group_id)
     assert_equal(true, LesseeRequest.first.active)
   end
 

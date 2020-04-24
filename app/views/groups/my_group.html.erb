@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-  .body
-  {
-	height: 1000px;
+  .btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    color: #fff;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    border: 2px solid #e96b56;
+    background: #e96b56;
   }
-  .photo
-  {
-    border-radius:20px;
-	width: 100%;
-	height: 100%;
+  .btn-active{
+    border: 2px solid #e96b56;
+    background: #e96b56;
   }
-  .frame
-  {
-	width: 40%;
-	height: 30%;
+  .btn-inactive{
+    border: 2px solid #5a6268;
+    background: #5a6268;
+    cursor: not-allowed;
   }
-  #outer
-  {
-	width: 45%;
-	float: left;
-	margin: 15px;
+
+  .body {
+    height: 1000px;
   }
-  #inner
-  {
-	height: 100%;
+
+  .photo {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .frame {
+    width: 40%;
+    height: 30%;
+  }
+
+
+  #inner {
+    height: 100%;
   }
 
 
@@ -32,48 +53,69 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-center my-5">
-  <%= @user.username %>
+ <h1 class="text-center my-5">
+  <%= @user.username + "'s group" %>
 </h1>
 
-<h3 class="my-3">My Group:</h3>
 
-<div class="body">
+<h3 class="my-3">My Group Member:</h3>
+
+<div class="container">
+  <div class="row">
+
   <% @members.each do |member| %>
-	<table class="table table-striped" id="outer">
-		<td class = "frame">
-		    <% if member.avatar.attached? %>
-		      <%= image_tag url_for(member.avatar.variant(combine_options: {resize: '256x256^', extent: '256x256', gravity: 'Center'})), class: "photo"%>
-		    <% end %>
-		</td>
-		<td>
-		<table class="table table-striped" id = "inner">
-			<tbody>
-				<tr>
-				  <td>Name</td>
-				  <td><%= member.firstname.to_s + " " + member.lastname.to_s %></td>
-				</tr> 
-				<tr> 
-				  <td>Email</td>    
-				  <td><%= member.email %></td>
-				</tr>
-				<tr>
-				  <td>Age</td>
-				  <td><%= member.age %></td>
-				</tr>
-				<tr>
-				  <td>Gender</td>
-				  <td><%= member.gender %></td>
-				</tr>
-				<tr>
-				  <td></td>
-				  <td><%= link_to ' View More', member, class: 'fa fa-address-card-o' %></td>
-				</tr>
-			</tbody>
-		</table>
-		</td>
-	</table>
+      <div class="col-6">
+        <table class="table table-striped" id="outer">
+          <td class="frame">
+            <% if member.avatar.attached? %>
+              <%= image_tag url_for(member.avatar.variant(combine_options: {resize: '256x256^', extent: '256x256', gravity: 'Center'})), class: "photo" %>
+            <% end %>
+          </td>
+          <td>
+            <table class="table table-striped" id="inner">
+              <tbody>
+              <tr>
+                <td>Name</td>
+                <td><%= member.firstname.to_s + " " + member.lastname.to_s %></td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td><%= member.email %></td>
+              </tr>
+              <tr>
+                <td>Age</td>
+                <td><%= member.age %></td>
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td><%= member.gender %></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><%= link_to ' View More', member, class: 'fa fa-address-card-o' %></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </table>
+      </div>
   <% end %>
+  </div>
+    <div class="row">
+      <div class="col-12">
+        <% if can_exit_group? %>
+          <%= link_to "Quit Group", my_group_quit_path, method: :put, class: "btn btn-active" %>
+        <% else %>
+          <span class="btn btn-inactive">Quit Group</span>
+        <% end %>
+        <% if matching_closed? %>
+          <%= link_to "Close Matching", my_group_matching_close_path, method: :put, class: "btn" %>
+        <% else %>
+          <%= link_to "Open Matching", my_group_matching_open_path, method: :put, class: "btn" %>
+        <% end %>
+      </div>
+    </div>
+
 </div>
 
   

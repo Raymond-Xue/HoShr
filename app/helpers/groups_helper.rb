@@ -1,46 +1,15 @@
 module GroupsHelper
+  include GroupService
   # merge two group
-def merge_group(group_id_1, group_id_2)
 
-  raise "Assert Error" unless group_id_1 != group_id_2
-
-  Group.transaction do
-    group_1 = Group.find(group_id_1)
-    group_2 = Group.find(group_id_2)
-
-    if group_1.nil? || group_2.nil?
-      raise "Group not find"
-    end
-
-    new_group = Group.new
-
-    group_1.users.each { |user|
-      user.current_group = new_group
-      user.save
-    }
-    group_2.users.each{ |user|
-      user.current_group = new_group
-      user.save
-    }
-    destroy_group(group_1.id)
-    destroy_group(group_2.id)
+  def matching_closed?
+    group_close_matching(current_user.current_group_id)
   end
-end
 
-def quit_group(user_id)
-  User.transaction do
-    user = User.find(user_id)
-    if user.origin_group == user.current_group
-      raise "Cannot exit origin group"
-    end
-    group = user.current_group
-    user.group = user.origin_group
-    if group.users.empty?
-      destroy_group(group.id)
-    end
-    user.save
+  def can_exit_group?
+    can_exit_group(current_user.current_group_id)
   end
-end
+
 
 private
 def destroy_group(group_id)

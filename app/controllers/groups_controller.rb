@@ -89,16 +89,16 @@ class GroupsController < ApplicationController
 
   def close_matching
     begin
-      GroupService::close_matching(current_user.current_group_id)
+      group_close_matching(current_user.current_group_id)
     rescue => ex
-      flash[:danger] = ex.message
+      raise ActionController::RoutingError.new('Invalid Request')
     end
     redirect_to my_group_path
   end
 
   def open_matching
     begin
-      GroupService::open_matching(current_user.current_group_id)
+      group_open_matching(current_user.current_group_id)
     rescue => ex
       flash[:danger] = ex.message
     end
