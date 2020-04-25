@@ -47,6 +47,9 @@
   #inner {
     height: 100%;
   }
+  #itemgroup {
+	margin-top: 2%;
+  }
 
 
 </style>
@@ -56,50 +59,30 @@
  <h1 class="text-center my-5">
   <%= @user.username + "'s group" %>
 </h1>
+    <section id="testimonials" class="testimonials">
+      <div class="container">
 
+        <div class="row">
+		<% @members.each do |member| %>
+          <div class="col-lg-6" id="itemgroup">
+            <div class="testimonial-item">
+		    <% if member.avatar.attached? %>
+		      <%= image_tag url_for(member.avatar.variant(combine_options: {resize: '256x256^', extent: '256x256', gravity: 'Center'})), class: "testimonial-img" %>
+		    <% end %>
+              <h3><%=member.username%></h3>
+              <h4><%=member.email%></h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                <%= link_to "View Detail", member, class: "btn" %>
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+		<%end%>
+        </div>
 
-<h3 class="my-3">My Group Member:</h3>
-
-<div class="container">
-  <div class="row">
-
-  <% @members.each do |member| %>
-      <div class="col-6">
-        <table class="table table-striped" id="outer">
-          <td class="frame">
-            <% if member.avatar.attached? %>
-              <%= image_tag url_for(member.avatar.variant(combine_options: {resize: '256x256^', extent: '256x256', gravity: 'Center'})), class: "photo" %>
-            <% end %>
-          </td>
-          <td>
-            <table class="table table-striped" id="inner">
-              <tbody>
-              <tr>
-                <td>Name</td>
-                <td><%= member.firstname.to_s + " " + member.lastname.to_s %></td>
-              </tr>
-              <tr>
-                <td>Email</td>
-                <td><%= member.email %></td>
-              </tr>
-              <tr>
-                <td>Age</td>
-                <td><%= member.age %></td>
-              </tr>
-              <tr>
-                <td>Gender</td>
-                <td><%= member.gender %></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td><%= link_to ' View More', member, class: 'fa fa-address-card-o' %></td>
-              </tr>
-              </tbody>
-            </table>
-          </td>
-        </table>
       </div>
-  <% end %>
+
   </div>
     <div class="row">
       <div class="col-12">
@@ -115,9 +98,7 @@
         <% end %>
       </div>
     </div>
-
-</div>
-
+    </section><!-- End Testimonials Section -->
   
 
 

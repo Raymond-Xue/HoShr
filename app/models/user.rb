@@ -1,6 +1,7 @@
 require 'bcrypt'
 
 class User < ApplicationRecord
+    after_commit :add_default_cover, on: [:create, :update]
     has_one_attached :avatar
 	  has_many :property
 	  has_many :lessor_request, :through => :property	
@@ -29,4 +30,9 @@ class User < ApplicationRecord
                                                   BCrypt::Engine.cost
       BCrypt::Password.create(string, cost: cost)
     end
+    private def add_default_cover
+	unless avatar.attached?
+		self.avatar.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.png")), filename: 'default.png' , content_type: "image/png")
+	  end
+	end
 end
