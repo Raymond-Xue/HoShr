@@ -1,57 +1,97 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-.dt
-{
-float:left;
-margin-left: 3%;
-margin-right: 3%;
-}
+	.dt
+	{
+		font-size:1.5em;
+		margin-left: 3%;
+		margin-right: 3%;
+		display:inline;
+	}
+	#aaa
+	{
+	margin: 0 auto;
+	}
+    .btn {
+      font-family: "Raleway", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 50px;
+      transition: 0.5s;
+      line-height: 1;
+      margin: 10px;
+      color: #fff;
+      -webkit-animation-delay: 0.8s;
+      animation-delay: 0.8s;
+      border: 2px solid #e96b56;
+      background: #e96b56;
+    }
+	.icon-box
+	{
+		margin-top:5px;
+	}
 
 </style>
 <p id="notice"><%= notice %></p>
 
 <h1 class="text-center my-5">
-  <%= @user.username %>
+  <%= @user.username.to_s + " 's Lessee Request" %>
 </h1>
-
-<h3 class="my-3">My Lessee:</h3>
-
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th>Lessee ID</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Country</th>
-    <th>Move in Date Range</th>
-    <th>Duration Range(Month)</th>
-    <th>Max Rent(USD)</th>
-    <th>Max Housemates</th>
-    <th colspan="3"></th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @lessee_requests.each do |lessee_request| %>
-    <tr>
-      <td><%= lessee_request.id %></td>
-      <td><%= City.find(lessee_request.city_id).city_name %></td>
-      <td><%= State.find(lessee_request.state_id).state_name %></td>
-      <td><%= Country.find(lessee_request.country_id).country_name %></td>
-      <td><%= lessee_request.earliest_movein_date.to_s + " to " +  lessee_request.latest_movein_date.to_s%></td>
-      <td><%= lessee_request.min_duration.to_s + " to " +  lessee_request.max_duration.to_s%></td>
-      <td><%= lessee_request.max_rent %></td>
-      <td><%= lessee_request.max_n_housemates %></td>
-      <td><%= link_to ' Detail', lessee_request, class: 'fa fa-arrow-right'%></td>
-      <td><%= link_to ' Cancel', "/cancel/#{lessee_request.id}", class: 'fa fa-times', method: :post %></td>
-    </tr>
-  <% end %>
-
-  </tbody>
-</table>
 <div class="button">
-<div class="dt"><%= link_to ' View my Group', my_group_path, class: 'fa fa-users'%></div>
-<div class="dt"><%= link_to ' View my Recommendation', recommendation_path, class: 'fa fa-thumbs-o-up'%></div>
-<div class="dt"><%= link_to ' New Lessee Request', new_lessee_request_path, class: 'fa fa-home'%></div>
+<div class="dt"><%= link_to ' View my Group', my_group_path, class: 'fa fa-users'%></div><div class="dt"><%= link_to ' View my Recommendation', recommendation_path, class: 'fa fa-thumbs-o-up'%></div><div class="dt"><%= link_to ' New Lessee Request', new_lessee_request_path, class: 'fa fa-home'%></div>
 </div>
+<br></br>
+    <section id="services" class="services">
+      <div class="container">
+        <div class="row">
+		<% @lessee_requests.each do |lessee_request| %>
+          <div class="col-lg-6 align-items-stretch" id = "aaa">
+            <div class="icon-box">
+			  <div class="icon"><i class="fa fa-book"></i></div>
+              <h4>Lorem Ipsum</h4>
+              <table class="table">
+				<tbody>
+					<tr>
+						<td>City</td>
+      					<td><%= City.find(lessee_request.city_id).city_name %></td>
+					</tr>
+					<tr>
+						<td>State</td>
+      					<td><%= State.find(lessee_request.state_id).state_name %></td>
+					</tr>
+					<tr>
+						<td>Country</td>
+      					<td><%= Country.find(lessee_request.country_id).country_name %></td>
+					</tr>
+					<tr>
+						<td>Move in Date</td>
+      					<td><%= lessee_request.earliest_movein_date.to_s + " to " +  lessee_request.latest_movein_date.to_s%></td>
+					</tr>
+					<tr>
+						<td>Duration Range(Month)</td>
+      					<td><%= lessee_request.min_duration.to_s + " to " +  lessee_request.max_duration.to_s%></td>
+					</tr>
+					<tr>
+						<td>Max Rent(USD)</td>
+      					<td><%= lessee_request.max_rent %></td>
+					</tr>
+					<tr>
+						<td>Max Housemates</td>
+      					<td><%= lessee_request.max_n_housemates %></td>
+					</tr>
+					<tr>
+						<td><%= link_to 'Detail', lessee_request, class: 'btn'%></td>
+      					<td><%= link_to 'Cancel', "/cancel/#{lessee_request.id}", class: 'btn', method: :post %></td>
+					</tr>
+				</tbody>
+			  </table>
+            </div>
+          </div>
+
+		<%end%>
+        </div>
+
+      </div>
+    </section>
