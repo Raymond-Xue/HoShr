@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # gem to add all the county and city
 gem 'city-state', '~>0.0.13'
+# date picker
+gem 'flatpickr'
 
 # gem for address standardilization and lontiture/lititude retrival
 gem 'geokit'
