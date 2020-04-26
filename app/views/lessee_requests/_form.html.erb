@@ -72,13 +72,8 @@
   </tr>
 
   <tr>
-    <td><%= form.label :earliest_movein_date %></td>
-    <td><%= form.date_select :earliest_movein_date, :required => true %><td>
-  </tr>
-
-  <tr>
     <td><%= form.label :latest_movein_date %></td>
-    <td><%= form.date_select :latest_movein_date, :required => true %></td>
+    <td><%= form.text_field :latest_movein_date, data: { behavior: "flatpickr"}, :required => true %></td>
   </tr>
 
   <tr>
