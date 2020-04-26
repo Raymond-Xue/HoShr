@@ -1,34 +1,86 @@
+<style>
+	#aaa
+	{
+	margin: 0 auto;
+	}
+    .btn {
+      font-family: "Raleway", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 50px;
+      transition: 0.5s;
+      line-height: 1;
+      margin: 10px;
+      color: #fff;
+      -webkit-animation-delay: 0.8s;
+      animation-delay: 0.8s;
+      border: 2px solid #e96b56;
+      background: #e96b56;
+    }
+	.icon-box
+	{
+		margin-top:5px;
+	}
+</style>
 <p id="notice"><%= notice %></p>
 
-<h1>Lessor Requests</h1>
-<table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th>Earliest movein date</th>
-      <th>Min duration</th>
-      <th>Total rent</th>
-      <th>Total rent currency</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @lessor_requests.each do |lessor_request| %>
-      <tr>
-        <td><%= lessor_request.property_id %></td>
-        <td><%= lessor_request.earliest_movein_date %></td>
-        <td><%= lessor_request.min_duration %></td>
-        <td><%= lessor_request.total_rent %></td>
-        <td><%= lessor_request.total_rent_currency %></td>
-        <td><%= link_to 'Show', lessor_request %></td>
-        <td><%= link_to 'Edit', edit_lessor_request_path(lessor_request) %></td>
-        <td><%= link_to 'Destroy', lessor_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<h1>Home Recommendation For You</h1>
 <br>
 
-<%= link_to 'New Lessor Request', new_lessor_request_path %>
+<section id="services" class="services">
+      <div class="container">
+        <div class="row">
+		<%i = 1%>
+		<% @lessor_requests.each do |lessor_request| %>
+          <div class="col-lg-6 align-items-stretch" id = "aaa">
+            <div class="icon-box">
+			  <div class="icon"><i class="fa fa-home"></i></div>
+              <h4><%="Request " + i.to_s%></h4>
+			  <%i = i + 1%>
+              <table class="table">
+				<tbody>
+					<tr>
+						<td>Property Address</td>
+      					<td><%= Property.find(lessor_request.property_id).street_address %></td>
+					</tr>
+					<tr>
+						<td>Property Location</td>
+      					<td><%= City.find(Property.find(lessor_request.property_id).city_id).city_name + ', ' +  State.find(Property.find(lessor_request.property_id).state_id).state_name + ', ' + Country.find(Property.find(lessor_request.property_id).country_id).country_name%></td>
+					</tr>
+					<tr>
+						<td>Owner</td>
+      					<td><%= link_to User.find(Property.find(lessor_request.property_id).owner_id).username, User.find(Property.find(lessor_request.property_id).owner_id) %></td>
+					</tr>
+					<tr>
+						<td>Owner Email</td>
+      					<td><%= User.find(Property.find(lessor_request.property_id).owner_id).email%></td>
+					</tr>
+					<tr>
+						<td>Earliest Movein Date</td>
+      					<td><%= lessor_request.earliest_movein_date%></td>
+					</tr>
+					<tr>
+						<td>Total Rent(USD)</td>
+      					<td><%= lessor_request.total_rent %></td>
+					</tr>
+					<tr>
+						<td>Min Duration(Month)</td>
+      					<td><%= lessor_request.min_duration %></td>
+					</tr>
+					<tr>
+						<td><%= link_to 'Detail', lessor_request, class: 'btn'%></td>
+      					<td><%= link_to 'Cancel', "/cancel/#{lessor_request.id}", class: 'btn', method: :post %></td>
+					</tr>
+				</tbody>
+			  </table>
+            </div>
+          </div>
+
+		<%end%>
+        </div>
+
+      </div>
+    </section>

@@ -3,17 +3,37 @@
   .form
   {
     width:37%;
-    float: left;
+    display:inline-block;
   }
   #map
   {
-    width: 60%;
-    float: left;
-    height: 600px;
+    width: 50%;
+    display:inline-block;
+    height: 540px;
   }
+  .member{margin-left:3%; margin-top:2%;}
+    .btn {
+      width:35%;
+      font-family: "Raleway", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 50px;
+      transition: 0.5s;
+      line-height: 1;
+      margin: 10px;
+      color: #fff;
+      -webkit-animation-delay: 0.8s;
+      animation-delay: 0.8s;
+      border: 2px solid #e96b56;
+      background: #e96b56;
+    }
 
 </style>
 
+<div class = "form member">
 <%= form_with(model: property, local: true) do |form| %>
   <% if property.errors.any? %>
     <div id="error_explanation">
@@ -27,9 +47,7 @@
     </div>
   <% end %>
 
-<div class = "form">
-
-  <table class="table table-striped">
+  <table class="table">
   <tbody>
 
   <tr>
@@ -96,12 +114,15 @@
 
   </tbody>
   </table>
+  <div class="actions">
+    <%= form.submit "Submit", class: "btn"  %>
+    
+  </div>
 
 </div>
   
 
-<p>
-    <div id="map"></div>
+    <div id="map" class="member"></div>
     <script>
       function initMap() {
         
@@ -286,9 +307,5 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI&libraries=places&callback=initMap"
     async defer></script>
-</p>
 
-  <div class="actions">
-    <%= form.submit "Submit property", class: "btn btn-primary"  %>
-  </div>
 <% end %>

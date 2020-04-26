@@ -5,13 +5,11 @@
     vertical-align: middle;
   }
 
-  td {
-    height: 35px;
-  }
-
   th {
     text-align: center;
+	font-size:10px;
   }
+
 </style>
 <p id="notice"><%= notice %></p>
 
@@ -21,109 +19,101 @@
 <% elsif @group_info.empty? %>
   <h3>No recommendation found. You can adjust your request or wait a little longer.</h3>
 <% else %>
-  <% @group_info.each do |info| %>
-    <table class="table table-striped table-bordered">
-      <thead>
-      <tr>
-        <th>Group</th>
-        <th>Group Member</th>
-        <th>Invite/Accept</th>
-        <th>Lessee Request Detail</th>
-      </tr>
-      </thead>
+    <section id="services" class="services">
+      <div class="container">
+        <div class="row">
+		<%i = 1%>
+		<% @group_info.each do |info| %>
+          <div class="col-lg-12 align-items-stretch" id = "aaa">
+            <div class="icon-box">
+			  <div class="icon"><i class="fa fa-group"></i></div>
+              <h4><%="Group " + i.to_s%></h4>
+			  <%i = i + 1%>
+				<table class="table">
+				  <thead>
+				  <tr>
+					<th>Group Member</th>
+					<th>Invite/Accept</th>
+				  </tr>
+				  </thead>
 
-      <tbody>
-      <tr>
-        <td><%= info[:group].id %></td>
-        <td>
-          <% info[:group].users.each do |user| %>
-            <span> <%= link_to ' ' + user.username.to_s, user, class: 'fa fa-male' %> </span>
-          <% end %>
-        </td>
-        <td>
-          <% if is_a_send_invitation?(info) %>
-            <% if invitation_already_send?(info[:send_invitation]) %>
-              <span>Waiting for response</span>
-            <% elsif current_user_agree?(info[:send_invitation]) %>
-              <span>You have agreed on sending the invitation, waiting others</span>
-              <span> <%= link_to("Withdraw agree", withdraw_decision_path(info[:send_invitation].id), method: :delete, class: "fa fa-times") %></span>
-            <% elsif current_user_disagree?(info[:send_invitation]) %>
-              <span>You have disagreed on sending the invitation</span>
-              <span> <%= link_to("Withdraw disagree", withdraw_decision_path(info[:send_invitation].id), method: :delete, class: "fa fa-times") %></span>
-            <% else %>
-              <span>Send an invitation to that group, Agree or Disagree?</span>
-              <span> <%= link_to("Agree", agree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "fa fa-thumbs-up") %></span>
-              <span> <%= link_to("Disagree", disagree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "fa fa-thumbs-down") %></span>
-            <% end %>
-          <% elsif is_a_received_invitation?(info) %>
-            <% if current_user_agree?(info[:received_invitation]) %>
-              <span>You have agreed on accepting the invitation, waiting others</span>
-              <span><%= link_to("Withdraw agree", withdraw_decision_path(info[:received_invitation].id), method: :delete, class: "fa fa-times") %></span>
-            <% elsif current_user_disagree?(info[:received_invitation]) %>
-              <span>You have disagreed on accepting the invitation</span>
-              <span><%= link_to("Withdraw disagree", withdraw_decision_path(info[:received_invitation].id), method: :delete, class: "fa fa-times") %></span>
-            <% else %>
-              <span>Accepting the request from that group, Agree or Disagree?</span>
-              <span> <%= link_to("Agree", agree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "fa fa-thumbs-up") %></span>
-              <span> <%= link_to("Disagree", disagree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "fa fa-thumbs-down") %></span>
-            <% end %>
-          <% else %>
-            <span><%= link_to("Invite Group", create_invitation_request_path(info[:group].id), method: :post, class: "fa fa-handshake-o") %> </span>
-          <% end %>
-        </td>
-        <td>
-          <% LesseeRequest.where(:group_id => info[:group].users[0].current_group_id).each do |lessee| %>
-            <%= link_to City.find(lessee.city_id).city_name, lessee, class: 'fa fa-address-card-o' %>
-          <% end %>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-    <table class="table table-striped table-bordered">
-      <thead>
-      <tr>
-        <th>City</th>
-        <th>State</th>
-        <th>Country</th>
-        <th>Group</th>
-        <th>Earliest movein date</th>
-        <th>Latest movein date</th>
-        <th>Min duration</th>
-        <th>Max duration</th>
-        <th>Max rent</th>
-        <th>Max n roommates</th>
-        <th>Max n housemates</th>
-        <th>Private bath</th>
-        <th>Balcony</th>
-        <th>Smoke</th>
-        <th>Roommate gender</th>
-        <th colspan="3"></th>
-      </tr>
-      </thead>
+				  <tbody>
+				  <tr>
+					<td>
+					  <% info[:group].users.each do |user| %>
+						<span> <%= link_to ' ' + user.username.to_s, user, class: 'fa fa-male' %> </span>
+					  <% end %>
+					</td>
+					<td>
+					  <% if is_a_send_invitation?(info) %>
+						<% if invitation_already_send?(info[:send_invitation]) %>
+						  <span>Waiting for response</span>
+						<% elsif current_user_agree?(info[:send_invitation]) %>
+						  <span>You have agreed on sending the invitation, waiting others</span>
+						  <span> <%= link_to("Withdraw agree", withdraw_decision_path(info[:send_invitation].id), method: :delete, class: "fa fa-times") %></span>
+						<% elsif current_user_disagree?(info[:send_invitation]) %>
+						  <span>You have disagreed on sending the invitation</span>
+						  <span> <%= link_to("Withdraw disagree", withdraw_decision_path(info[:send_invitation].id), method: :delete, class: "fa fa-times") %></span>
+						<% else %>
+						  <span>Send an invitation to that group, Agree or Disagree?</span>
+						  <span> <%= link_to("Agree", agree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "fa fa-thumbs-up") %></span>
+						  <span> <%= link_to("Disagree", disagree_on_sending_invitation_path(info[:send_invitation].id), method: :post, class: "fa fa-thumbs-down") %></span>
+						<% end %>
+					  <% elsif is_a_received_invitation?(info) %>
+						<% if current_user_agree?(info[:received_invitation]) %>
+						  <span>You have agreed on accepting the invitation, waiting others</span>
+						  <span><%= link_to("Withdraw agree", withdraw_decision_path(info[:received_invitation].id), method: :delete, class: "fa fa-times") %></span>
+						<% elsif current_user_disagree?(info[:received_invitation]) %>
+						  <span>You have disagreed on accepting the invitation</span>
+						  <span><%= link_to("Withdraw disagree", withdraw_decision_path(info[:received_invitation].id), method: :delete, class: "fa fa-times") %></span>
+						<% else %>
+						  <span>Accepting the request from that group, Agree or Disagree?</span>
+						  <span> <%= link_to("Agree", agree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "fa fa-thumbs-up") %></span>
+						  <span> <%= link_to("Disagree", disagree_on_accepting_invitation_path(info[:received_invitation].id), method: :post, class: "fa fa-thumbs-down") %></span>
+						<% end %>
+					  <% else %>
+						<span><%= link_to("Invite Group", create_invitation_request_path(info[:group].id), method: :post, class: "fa fa-handshake-o") %> </span>
+					  <% end %>
+					</td>
+				  </tr>
+				  </tbody>
+				</table>
+				<table class="table">
+				  <thead>
+				  <tr>
+					<th>City</th>
+					<th>State</th>
+					<th>Country</th>
+					<th>Movein Date</th>
+					<th>Duration(Month)</th>
+					<th>Max Expect Rent(USD/house)</th>
+					<th>Expect Housemates Number</th>
+					<th colspan="3"></th>
+				  </tr>
+				  </thead>
 
-      <tbody>
-      <% info[:matched_requests].each do |lessee_request| %>
-        <tr>
-          <td><%= lessee_request.city_id %></td>
-          <td><%= lessee_request.state_id %></td>
-          <td><%= lessee_request.country_id %></td>
-          <td><%= lessee_request.group_id %></td>
-          <td><%= lessee_request.earliest_movein_date %></td>
-          <td><%= lessee_request.latest_movein_date %></td>
-          <td><%= lessee_request.min_duration %></td>
-          <td><%= lessee_request.max_duration %></td>
-          <td><%= lessee_request.max_rent %></td>
-          <td><%= lessee_request.max_n_roommates %></td>
-          <td><%= lessee_request.max_n_housemates %></td>
-          <td><%= lessee_request.private_bath %></td>
-          <td><%= lessee_request.balcony %></td>
-          <td><%= lessee_request.smoke %></td>
-          <td><%= lessee_request.roommate_gender %></td>
-          <td><%= link_to 'Show', lessee_request %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-  <% end %>
+				  <tbody>
+				  <% info[:matched_requests].each do |lessee_request| %>
+					<tr>
+					  <td><%= City.find(lessee_request.city_id).city_name %></td>
+					  <td><%= State.find(lessee_request.state_id).state_name %></td>
+					  <td><%= Country.find(lessee_request.country_id).country_name %></td>
+					  <td><%= lessee_request.earliest_movein_date.to_s + ' to ' + lessee_request.latest_movein_date.to_s%></td>
+					  <td><%= lessee_request.min_duration.to_s + ' to ' +  lessee_request.max_duration.to_s%></td>
+					  <td><%= lessee_request.max_rent %></td>
+					  <td><%= lessee_request.max_n_housemates %></td>
+					  <td><%= link_to 'Detail', lessee_request, class: 'fa fa-book'%></td>
+					</tr>
+				  <% end %>
+				  </tbody>
+				</table>
+			  
+            </div>
+          </div>
+		<% end %>
+        </div>
+
+      </div>
+    </section>
 <% end %>
 
