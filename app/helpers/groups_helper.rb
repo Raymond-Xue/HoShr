@@ -2,8 +2,8 @@ module GroupsHelper
   include GroupService
   # merge two group
 
-  def matching_closed?
-    group_close_matching(current_user.current_group_id)
+  def is_matching_closed?
+    matching_closed?(current_user.current_group_id)
   end
 
   def can_exit_group?

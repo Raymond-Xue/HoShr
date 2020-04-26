@@ -108,7 +108,7 @@
         <% else %>
           <span class="btn btn-inactive">Quit Group</span>
         <% end %>
-        <% if matching_closed? %>
+        <% if !is_matching_closed? %>
           <%= link_to "Close Matching", my_group_matching_close_path, method: :put, class: "btn" %>
         <% else %>
           <%= link_to "Open Matching", my_group_matching_open_path, method: :put, class: "btn" %>

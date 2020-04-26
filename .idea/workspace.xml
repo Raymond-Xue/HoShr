@@ -1,77 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/background_book.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/background_house.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/background_roommate.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/animate.css/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/animate.css/animate.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/css/animations.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/css/boxicons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/css/boxicons.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/css/transformations.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/fonts/boxicons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/fonts/boxicons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/fonts/boxicons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/fonts/boxicons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/boxicons/fonts/boxicons.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/counterup/counterup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/icofont/fonts/icofont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/icofont/fonts/icofont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/icofont/icofont.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/isotope-layout/isotope.pkgd.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/isotope-layout/isotope.pkgd.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/jquery-sticky/jquery.sticky.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/jquery.easing/jquery.easing.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/jquery/jquery.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/php-email-form/validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/venobox/venobox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/venobox/venobox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/venobox/venobox.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/venobox/venobox.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/vendor/waypoints/jquery.waypoints.min.js" afterDir="false" />
+    <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="Merge branch 'master' of https://github.com/hantingge/HoShr&#10;&#10;# Conflicts:&#10;#&#9;app/views/static_pages/home.html.erb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/config/manifest.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/config/manifest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/groups_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/groups_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/recommend_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/recommend_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers/groups_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/groups_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/service/group_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/group_service.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/service/recommendation_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/recommendation_service.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/groups/my_group.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/groups/my_group.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/lessee_requests/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/lessee_requests/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/group_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/group_test.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -423,7 +357,9 @@
       <workItem from="1586030553746" duration="2406000" />
       <workItem from="1587315806292" duration="7396000" />
       <workItem from="1587518759034" duration="3668000" />
-      <workItem from="1587696591896" duration="16153000" />
+      <workItem from="1587696591896" duration="16951000" />
+      <workItem from="1587787562986" duration="774000" />
+      <workItem from="1587852686079" duration="404000" />
     </task>
     <servers />
   </component>
@@ -435,86 +371,90 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="615" y="340" width="747" height="424" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1585604991799" />
+    <state x="370" y="27" width="1236" height="1053" key="CommitChangelistDialog2" timestamp="1587763569935">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="370" y="27" width="1236" height="1053" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1587763569935" />
     <state width="1148" height="643" key="DebuggerActiveHint" timestamp="1585939976099">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1148" height="643" key="DebuggerActiveHint/67.27.1853.1053@67.27.1853.1053" timestamp="1585939976099" />
-    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl" timestamp="1587510049013">
+    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl" timestamp="1587839524357">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1587510049013" />
-    <state width="1793" height="307" key="GridCell.Tab.0.bottom" timestamp="1587763539672">
+    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1587839524357" />
+    <state width="1793" height="422" key="GridCell.Tab.0.bottom" timestamp="1587787324751">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="307" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539672" />
-    <state width="1793" height="307" key="GridCell.Tab.0.center" timestamp="1587763539672">
+    <state width="1793" height="422" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324751" />
+    <state width="1793" height="422" key="GridCell.Tab.0.center" timestamp="1587787324741">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="307" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539672" />
-    <state width="1793" height="307" key="GridCell.Tab.0.left" timestamp="1587763539672">
+    <state width="1793" height="422" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324741" />
+    <state width="1793" height="422" key="GridCell.Tab.0.left" timestamp="1587787324739">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="307" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539672" />
-    <state width="1793" height="307" key="GridCell.Tab.0.right" timestamp="1587763539672">
+    <state width="1793" height="422" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324739" />
+    <state width="1793" height="422" key="GridCell.Tab.0.right" timestamp="1587787324742">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="307" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539672" />
-    <state width="1793" height="307" key="GridCell.Tab.1.bottom" timestamp="1587763539674">
+    <state width="1793" height="422" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324742" />
+    <state width="1793" height="422" key="GridCell.Tab.1.bottom" timestamp="1587787324757">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="307" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539674" />
-    <state width="1793" height="307" key="GridCell.Tab.1.center" timestamp="1587763539673">
+    <state width="1793" height="422" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324757" />
+    <state width="1793" height="422" key="GridCell.Tab.1.center" timestamp="1587787324755">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="307" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539673" />
-    <state width="1793" height="307" key="GridCell.Tab.1.left" timestamp="1587763539673">
+    <state width="1793" height="422" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324755" />
+    <state width="1793" height="422" key="GridCell.Tab.1.left" timestamp="1587787324753">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="307" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539673" />
-    <state width="1793" height="307" key="GridCell.Tab.1.right" timestamp="1587763539673">
+    <state width="1793" height="422" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324753" />
+    <state width="1793" height="422" key="GridCell.Tab.1.right" timestamp="1587787324756">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="307" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587763539673" />
-    <state width="1793" height="422" key="GridCell.Tab.2.bottom" timestamp="1587698418247">
+    <state width="1793" height="422" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324756" />
+    <state width="1793" height="422" key="GridCell.Tab.2.bottom" timestamp="1587787324763">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="422" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587698418247" />
-    <state width="1793" height="422" key="GridCell.Tab.2.center" timestamp="1587698418246">
+    <state width="1793" height="422" key="GridCell.Tab.2.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324763" />
+    <state width="1793" height="422" key="GridCell.Tab.2.center" timestamp="1587787324759">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="422" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587698418246" />
-    <state width="1793" height="422" key="GridCell.Tab.2.left" timestamp="1587698418245">
+    <state width="1793" height="422" key="GridCell.Tab.2.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324759" />
+    <state width="1793" height="422" key="GridCell.Tab.2.left" timestamp="1587787324758">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="422" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587698418245" />
-    <state width="1793" height="422" key="GridCell.Tab.2.right" timestamp="1587698418247">
+    <state width="1793" height="422" key="GridCell.Tab.2.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324758" />
+    <state width="1793" height="422" key="GridCell.Tab.2.right" timestamp="1587787324762">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="422" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587698418247" />
-    <state width="1793" height="422" key="GridCell.Tab.3.bottom" timestamp="1587698418250">
+    <state width="1793" height="422" key="GridCell.Tab.2.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324762" />
+    <state width="1793" height="422" key="GridCell.Tab.3.bottom" timestamp="1587787324768">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="422" key="GridCell.Tab.3.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587698418250" />
-    <state width="1793" height="422" key="GridCell.Tab.3.center" timestamp="1587698418249">
+    <state width="1793" height="422" key="GridCell.Tab.3.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324768" />
+    <state width="1793" height="422" key="GridCell.Tab.3.center" timestamp="1587787324765">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="422" key="GridCell.Tab.3.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587698418249" />
-    <state width="1793" height="422" key="GridCell.Tab.3.left" timestamp="1587698418248">
+    <state width="1793" height="422" key="GridCell.Tab.3.center/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324765" />
+    <state width="1793" height="422" key="GridCell.Tab.3.left" timestamp="1587787324764">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="422" key="GridCell.Tab.3.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587698418248" />
-    <state width="1793" height="422" key="GridCell.Tab.3.right" timestamp="1587698418250">
+    <state width="1793" height="422" key="GridCell.Tab.3.left/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324764" />
+    <state width="1793" height="422" key="GridCell.Tab.3.right" timestamp="1587787324766">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1793" height="422" key="GridCell.Tab.3.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587698418250" />
+    <state width="1793" height="422" key="GridCell.Tab.3.right/67.27.1853.1053@67.27.1853.1053" timestamp="1587787324766" />
     <state x="842" y="389" key="MultipleFileMergeDialog" timestamp="1587750825646">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="842" y="389" key="MultipleFileMergeDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1587750825646" />
-    <state x="351" y="100" key="SettingsEditor" timestamp="1585951349233">
+    <state x="351" y="100" key="SettingsEditor" timestamp="1587838898353">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="351" y="100" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1585951349233" />
+    <state x="351" y="100" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1587838898353" />
     <state x="535" y="27" width="917" height="1050" key="find.popup" timestamp="1585600557922">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

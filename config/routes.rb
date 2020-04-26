@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   delete '/invitation/withdraw_opinion/:invitation_id', to:'invitation#withdraw_decision', as: 'withdraw_decision'
 
-  put '/my_group/matching/close', to: 'groups#close_mathcing'
+  put '/my_group/matching/close', to: 'groups#close_matching'
   put '/my_group/matching/open', to: 'groups#open_matching'
 
   put '/my_group/quit', to: 'groups#quit'
