@@ -91,10 +91,7 @@ module GroupService
     !Group.find(group_id).active_for_matching
   end
 
-  def can_exit_group(user_id)
-    user = User.find(user_id)
-    !user.current_group_id == user.origin_group_id
-  end
+
 
   private
   def destroy_group(group_id)

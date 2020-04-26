@@ -86,7 +86,7 @@
   </div>
     <div class="row">
       <div class="col-12">
-        <% if can_exit_group? %>
+        <% if user_can_exit_group? %>
           <%= link_to "Quit Group", my_group_quit_path, method: :put, class: "btn btn-active" %>
         <% else %>
           <span class="btn btn-inactive">Quit Group</span>

@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="Merge branch 'master' of https://github.com/hantingge/HoShr&#10;&#10;# Conflicts:&#10;#&#9;app/views/static_pages/home.html.erb">
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HoShr.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HoShr.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers/groups_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/groups_helper.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/groups/my_group.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/groups/my_group.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/service/group_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/group_service.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/service/user_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/user_service.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recommend/recommendation.html.erb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -359,7 +362,7 @@
       <workItem from="1587518759034" duration="3668000" />
       <workItem from="1587696591896" duration="16951000" />
       <workItem from="1587787562986" duration="774000" />
-      <workItem from="1587852686079" duration="404000" />
+      <workItem from="1587852686079" duration="1911000" />
     </task>
     <servers />
   </component>
