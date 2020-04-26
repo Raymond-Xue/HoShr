@@ -1,22 +1,63 @@
 <%#Author: Hanting Ge%>
+<style>
+.member{
+  margin: 0 auto;
+  width: 70%;
+  margin-top:5%;
+}
+.btn {
+  width: 30%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  color: #fff;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  border: 2px solid #e96b56;
+  background: #e96b56;
+}
+h1{
+  font-size: 2em;
+  letter-spacing: 3px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+}
+</style>
+
 <% provide(:title, "Log in") %>
 
-<div class="card shadow-lg mx-auto my-5 ">
-  <div class="card-body">
-    <h1 class="card-title text-center mt-3 mb-5">Log in</h1>
+<!-- ======= Team Section ======= -->
+<section id="team" class="team">
+  <div class="container">
 
-    <div class="col mx-auto">
-      <%= form_for(:session, url: login_path) do |f| %>
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control mb-3' %>
+    <div class="row">
+      <div class="col-lg-20 col-md-12 d-flex align-items-stretch">
+        <div class="member">
+          <div class="social">
+            <h1 class="card-title text-center mt-3 mb-5">Log in</h1>
+            <div class="col mx-auto">
+              <%= form_for(:session, url: login_path) do |f| %>
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'form-control mb-3' %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control mb-4' %>
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'form-control mb-4' %>
 
-        <%= f.submit "Log in", class: "btn btn-primary mb-2" %>
-      <% end %>
+                <%= f.submit "Log in", class: "btn" %>
+              <% end %>
 
-      <small>New user? <%= link_to "Sign up now!", signup_path %></small>
+              <small>New user? <%= link_to "Sign up now!", signup_path%></small>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section><!-- End Team Section -->

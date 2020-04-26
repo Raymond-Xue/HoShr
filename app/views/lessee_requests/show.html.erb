@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+  .fa{margin-right: 2%;}
   .fl
   {
-    float: left;
-    width: 450px;
-    margin-left: 75px;
+    display: inline-block;
+    width: 40%;
   }
   .fr
   {
-    float: right;
-    width: 450px;
-    margin-right: 75px;
+    display: inline-block;
+    width: 40%;
   }
-  .mainbox
+  #map2
   {
+    margin-top: 5%;
     height: 600px;
   }
 
@@ -22,7 +22,6 @@
 <p id="notice"><%= notice %></p>
 
 <div class = "fl">
-<p>
     <div id="map2"></div>
     <script>
       var map;
@@ -49,12 +48,10 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7ClwnGU9QTuNhY3DuVqM5K5YbWA7zJsI&callback=initMap"
     async defer></script>
-</p>
 </div>
 
-<div class = "mainbox">
 <div class = "fr">
-<table class="table table-striped">
+<table class="table">
   <tbody>
     <tr>
       <td>Latitude</td>
@@ -136,9 +133,7 @@
 
 <%if current_user.current_group_id == @lessee_request.group_id%>
 
-	<%= link_to 'Edit', edit_lessee_request_path(@lessee_request), class: 'fa fa-pencil-square-o' %> |
-	<%= link_to 'Back', my_lessee_path, class: 'fa fa-reply' %>
+	<%= link_to 'Edit', edit_lessee_request_path(@lessee_request), class: 'fa fa-pencil-square-o fa-2x' %>
+	<%= link_to 'Back', my_lessee_path, class: 'fa fa-reply fa-2x' %>
 <% end%>
-
-</div>
 </div>

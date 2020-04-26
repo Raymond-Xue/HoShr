@@ -1,31 +1,77 @@
 
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<style>
+.member{
+  margin: 0 auto;
+  width: 70%;
+  margin-top:5%;
+}
+.btn {
+  width: 80%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  color: #fff;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  border: 2px solid #e96b56;
+  background: #e96b56;
+}
+h1{
+  font-size: 2em;
+  letter-spacing: 3px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+}
+.f{
+  border-radius: 75%;
+}
+</style>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user, local: true) do |f| %>
-      <%= f.label :username %>
-      <%= f.text_field :username %>
+<section id="team" class="team">
+  <div class="container">
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.label :usertype, "User Type" %>
-      <%= f.select :usertype, ["Lessee","Lessor"] %>
-
-      
-
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
-      <small>Already have an account? <%= link_to "Login!", login_path %></small>
-    <% end %>
+    <div class="row">
+      <div class="col-lg-20 col-md-12 d-flex align-items-stretch">
+        <div class="member">
+          <div class="social">
+            <h1>Sign up</h1>
+            <div class="col mx-auto">
+                <%= form_with(model: @user, local: true) do |f| %>
+                  <%= f.label :username %>
+                  <div class="f"><%= f.text_field :username %></div>
+            
+                  <%= f.label :email %>
+                  <%= f.email_field :email %>
+            
+                  <%= f.label :password %>
+                  <%= f.password_field :password %>
+            
+                  <%= f.label :password_confirmation, "Confirmation" %>
+                  <%= f.password_field :password_confirmation %>
+            
+                  <%= f.label :usertype, "User Type" %>
+                  <%= f.select :usertype, ["Lessee","Lessor"] %>
+            
+                  
+            
+                  <%= f.submit "Create my account", class: "btn" %>
+                  <br>
+                  <small>Already have an account? <%= link_to "Login!", login_path %></small>
+                <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section><!-- End Team Section -->
 
 

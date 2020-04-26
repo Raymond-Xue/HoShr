@@ -45,6 +45,8 @@ Rails.application.routes.draw do
   post '/cancel/:property_id', to: 'groups#cancel'
 
   get '/my_group', to: 'groups#my_group'
+
+  get 'lessor_recommend', to: 'lessor_requests#lessor_recommend'
   
   get '/uploaded_properties', to: 'users#uploaded_properties'
   get '/show_property/:property_id', to: 'properties#show'
