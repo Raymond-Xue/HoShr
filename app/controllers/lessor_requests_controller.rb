@@ -8,6 +8,17 @@ class LessorRequestsController < ApplicationController
     @lessor_requests = LessorRequest.all
   end
 
+  def lessor_recommend
+	@user = current_user
+	@lessee_requests = LesseeRequest.where(:group_id => @user.current_group_id)
+	cid = []
+	@lessee_requests.each do |l|
+		cid.append(l.city_id)
+	end
+    @lessor_requests = LessorRequest.where(:property_id => Property.where(:city_id => cid).ids)
+
+  end
+
   # GET /lessor_requests/1
   # GET /lessor_requests/1.json
   def show
