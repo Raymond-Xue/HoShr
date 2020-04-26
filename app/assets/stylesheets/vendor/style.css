@@ -860,8 +860,8 @@ section {
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50px;
+  width: 130px;
+  border-radius: 50%;
   border: 6px solid #fff;
   float: left;
   margin: 0 10px 0 0;

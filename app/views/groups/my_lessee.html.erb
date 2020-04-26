@@ -46,11 +46,13 @@
     <section id="services" class="services">
       <div class="container">
         <div class="row">
+		<%i = 1%>
 		<% @lessee_requests.each do |lessee_request| %>
           <div class="col-lg-6 align-items-stretch" id = "aaa">
             <div class="icon-box">
 			  <div class="icon"><i class="fa fa-book"></i></div>
-              <h4>Lorem Ipsum</h4>
+              <h4><%="Request " + i.to_s%></h4>
+			  <%i = i + 1%>
               <table class="table">
 				<tbody>
 					<tr>

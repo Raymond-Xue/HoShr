@@ -26,9 +26,10 @@ class LesseeRequestsController < ApplicationController
   def create
     @lessee_request = LesseeRequest.new(lessee_request_params)
     @lessee_request.group = current_user.current_group
-    @lessee_request.city_id = City.find_by(:city_name => lessee_request_params[:city]).id
-    @lessee_request.state_id = State.find_by(:state_name => lessee_request_params[:state]).id
     @lessee_request.country_id = Country.find_by(:country_name => lessee_request_params[:country]).id
+    @lessee_request.state_id = State.find_by(:state_name => lessee_request_params[:state], :country_id => @lessee_request.country_id).id
+    @lessee_request.city_id = City.find_by(:city_name => lessee_request_params[:city], :state_id => @lessee_request.state_id).id
+    
     respond_to do |format|
       if @lessee_request.save
         format.html { redirect_to my_lessee_path, notice: 'Lessee request was successfully created.' }
@@ -44,6 +45,10 @@ class LesseeRequestsController < ApplicationController
   # PATCH/PUT /lessee_requests/1.json
   def update
     respond_to do |format|
+    @lessee_request.group = current_user.current_group
+    @lessee_request.country_id = Country.find_by(:country_name => lessee_request_params[:country]).id
+    @lessee_request.state_id = State.find_by(:state_name => lessee_request_params[:state], :country_id => @lessee_request.country_id).id
+    @lessee_request.city_id = City.find_by(:city_name => lessee_request_params[:city], :state_id => @lessee_request.state_id).id
       if @lessee_request.update(lessee_request_params)
         format.html { redirect_to @lessee_request, notice: 'Lessee request was successfully updated.' }
         format.json { render :show, status: :ok, location: @lessee_request }

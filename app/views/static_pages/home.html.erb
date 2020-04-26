@@ -53,21 +53,27 @@
             <div class="carousel-content">
               <h2 class="animated fadeInDown">Welcome to <span>HoShr</span></h2>
               <p class="animated fadeInUp">
-              <h4>How We Work:</h4>
-              <h5>Please <%= link_to "click here", login_path %> to log in to show more options. For new uers,
-                Please <%= link_to "click here", signup_path %> to sign up.</h5>
-              <h5>Set your preference after login.</h5>
-              <h5>Post at least one lessee request.</h5>
-              <h5>Look at your recommendation, and invite ones you are interested in to form a group.</h5>
-              <h5>Once you have formed a group, please post a new lessee request and search for properties.</h5>
-              <h5>Select your favorite property and contact them.</h5>
-              <h5>Enjoy your new home!</h5>
-              </p>
-              <% if logged_in? %>
-                <%= link_to "Complete Profile", edit_user_path(current_user), class: "btn-get-started animated fadeInUp" %>
+			  <% if logged_in? and current_user.usertype == "Lessee"%>
+		          <h4>How We Work:</h4>
+		          <h5>Set your preference after login.</h5>
+		          <h5>Post at least one lessee request.</h5>
+		          <h5>Look at your recommendation, and invite ones you are interested in to form a group.</h5>
+		          <h5>Once you have formed a group, please post a new lessee request and search for properties.</h5>
+		          <h5>Select your favorite property and contact them.</h5>
+		          <h5>Enjoy your new home!</h5>
+              	  <%= link_to "Complete Profile", edit_user_path(current_user), class: "btn-get-started animated fadeInUp" %>
+			  <% elsif logged_in? and current_user.usertype == "Lessor"%>
+		          <h4>How We Work:</h4>
+		          <h5>Post Properties that you want to lease.</h5>
+		          <h5>Select at least one of your rooms in certain property and post lessor request.</h5>
+		          <h5>Wait for lessees to contact with you.</h5>
+				  <%= link_to "Complete Profile", edit_user_path(current_user), class: "btn-get-started animated fadeInUp" %>
               <% else %>
+                <h5>Please <%= link_to "click here", login_path %> to log in to show more options. For new uers,Please <%= link_to "click here", signup_path %> to sign up.</h5>
+			    <h5>Please select user type while signing up. Different user type will lead to different views. Once you finished signing up, you cannot modify your type.</h5>
                 <%= link_to "Login", login_path, class: "btn-get-started animated fadeInUp" %>
               <% end %>
+			  </p>
             </div>
           </div>
         </div>
@@ -78,20 +84,27 @@
             <div class="carousel-content">
               <h2 class="animated fadeInDown">欢迎来到<span>好筛</span></h2>
               <p class="animated fadeInUp">
-              <h4>使用指南：</h4>
-              <h5>请<%= link_to "点击这里", login_path %>登陆以解锁更多功能。新用户请<%= link_to "点击这里", signup_path %>注册。</h5>
-              <h5>登陆后完善您的个人喜好。</h5>
-              <h5>至少提交一份承租申请。</h5>
-              <h5>查看您的室友推荐，邀请您感兴趣的人/组组成新的小组。</h5>
-              <h5>成组后，请提交最新的承租申请并搜索合适的公寓。</h5>
-              <h5>选择您最感兴趣的并与房主取得联系。</h5>
-              <h5>入住新房！</h5>
-              </p>
-              <% if logged_in? %>
-                <%= link_to "完善个人档案", edit_user_path(current_user), class: "btn-get-started animated fadeInUp" %>
+			  <% if logged_in? and current_user.usertype == "Lessee"%>
+		          <h4>使用指南：</h4>
+		          <h5>登陆后完善您的个人喜好。</h5>
+		          <h5>至少提交一份承租申请。</h5>
+		          <h5>查看您的室友推荐，邀请您感兴趣的人/组组成新的小组。</h5>
+		          <h5>成组后，请提交最新的承租申请并搜索合适的公寓。</h5>
+		          <h5>选择您最感兴趣的并与房主取得联系。</h5>
+		          <h5>入住新房！</h5>
+                  <%= link_to "完善个人档案", edit_user_path(current_user), class: "btn-get-started animated fadeInUp" %>
+			  <% elsif logged_in? and current_user.usertype == "Lessor"%>
+		          <h4>使用指南:</h4>
+		          <h5>选择您想出租的房屋并贴出。</h5>
+		          <h5>选择已贴出的房屋中的特定房间并张贴房客招募。</h5>
+		          <h5>等待其他用户联系您。</h5>
+				  <%= link_to "完善个人档案", edit_user_path(current_user), class: "btn-get-started animated fadeInUp" %>
               <% else %>
+                <h5>请<%= link_to "点击这里", login_path %>登陆以解锁更多功能。新用户请<%= link_to "点击这里", signup_path %>注册。</h5>
+			    <h5>注册时请选择您的用户类型。不同用户类型会显示不同的网站功能。一旦完成注册，您将无法修改您的用户类型。</h5>
                 <%= link_to "登陆", login_path, class: "btn-get-started animated fadeInUp" %>
               <% end %>
+			  </p>
             </div>
           </div>
         </div>
@@ -102,22 +115,29 @@
             <div class="carousel-content">
               <h2 class="animated fadeInDown">Добро пожаловать в <span>впихивать</span></h2>
               <p class="animated fadeInUp">
-              <h4>Как мы работаем:</h4>
-              <h5>пожалуйста <%= link_to "кликните сюда", login_path %> войти, чтобы показать больше вариантов. Для
-                новых пользователей, пожалуйста <%= link_to "кликните сюда", signup_path %> Зарегистрироваться.</h5>
-              <h5>Установите ваши предпочтения после входа в систему.</h5>
-              <h5>Разместите хотя бы один запрос арендатора.</h5>
-              <h5>Посмотрите на ваши рекомендации и пригласите интересующих вас людей в группу.</h5>
-              <h5>После того, как вы сформировали группу, пожалуйста, опубликуйте новый запрос арендатора и выполните
-                поиск недвижимости.</h5>
-              <h5>Выберите вашу любимую недвижимость и свяжитесь с ними.</h5>
-              <h5>Наслаждайтесь своим новым домом!</h5>
-              </p>
-              <% if logged_in? %>
-                <%= link_to "Полный профиль", edit_user_path(current_user), class: "btn-get-started animated fadeInUp" %>
+			  <% if logged_in? and current_user.usertype == "Lessee"%>
+		          <h4>Как мы работаем:</h4>
+		          <h5>Установите ваши предпочтения после входа в систему.</h5>
+		          <h5>Разместите хотя бы один запрос арендатора.</h5>
+		          <h5>Посмотрите на ваши рекомендации и пригласите интересующих вас людей в группу.</h5>
+		          <h5>После того, как вы сформировали группу, пожалуйста, опубликуйте новый запрос арендатора и выполните
+		            поиск недвижимости.</h5>
+		          <h5>Выберите вашу любимую недвижимость и свяжитесь с ними.</h5>
+		          <h5>Наслаждайтесь своим новым домом!</h5>
+				  <%= link_to "Полный профиль", edit_user_path(current_user), class: "btn-get-started animated fadeInUp" %>
+              <% elsif logged_in? and current_user.usertype == "Lessor"%>
+				  <h4>Как мы работаем:</h4>
+		          <h5>Выберите дом, который хотите арендовать, и опубликуйте его.</h5>
+		          <h5>Выберите определенные комнаты в объявленном доме и пост вербуйте арендатора.</h5>
+		          <h5>Подождите, пока другие пользователи свяжутся с вами.</h5>
+				  <%= link_to "Полный профиль", edit_user_path(current_user), class: "btn-get-started animated fadeInUp" %>
               <% else %>
+				<h5>пожалуйста <%= link_to "кликните сюда", login_path %> войти, чтобы показать больше вариантов. Дляновых пользователей, пожалуйста <%= link_to "кликните сюда", signup_path %> Зарегистрироваться.</h5>
+				<h5>Пожалуйста, выберите ваш тип пользователя при регистрации. Различные типы пользователей будут отображать различные функции веб-сайта.</h5>
+				<h5>После завершения регистрации вы не сможете изменить свой тип пользователя.</h5>
                 <%= link_to "Авторизоваться", login_path, class: "btn-get-started animated fadeInUp" %>
               <% end %>
+			  </p>
             </div>
           </div>
         </div>
@@ -210,7 +230,7 @@
             <div class="col-lg-4 mt-4 mt-lg-0">
               <div class="icon-box">
                 <i class="fa fa-home"></i>
-                <h3><%= link_to "Property Recommendation", lessor_requests_path %></h3>
+                <h3><%= link_to "Property Recommendation", lessor_recommend_path %></h3>
                 <p>Here you can view your property recommendation after forming groups. You may contact the owner
                   directly.</p>
               </div>
