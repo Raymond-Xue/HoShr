@@ -6,13 +6,18 @@
     * element that contains the map. */
   #map
   {
-    width: 30%;
+    width: 40%;
     float: left;
-    height: 300px;
+    height: 350px;
+	margin-left: 10%;
+	display: inline-block;
+	margin-top: 5%;
   }
   .table
   {
     width: 600px;
+	margin: 0 auto;
+	margin-top: 5%;
   }
   .icon
   {
@@ -20,9 +25,31 @@
     height: 20px;
   }
   .carousel {
-    width:300px;
+    width:350px;
     margin: 0 auto;
+	display: inline-block;
+	margin-top: 5%;
   } 
+  .btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 10px;
+    color: #fff;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    border: 2px solid #e96b56;
+    background: #e96b56;
+  }
+.show-image{width:100%; height:100%;}
+.carousel-control-prev, .carousel-control-next{margin-top:10%;}
+h1{margin-top:5%;}
 </style>
 
 <% provide(:title, @property.street_address) %>
@@ -38,7 +65,6 @@
     
   </head>
   <body>
-    <div id="map"></div>
     <script>
       var map;
       function initMap() {
@@ -69,7 +95,42 @@
   </body>
 </html>
 
-<table class="table table-striped" >
+
+<div class="upper">
+<div id="map"></div>
+
+<% if @property.avatar.attached? %>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner w-100">
+        <div class="carousel-item row no-gutters active">
+          <div class="col d-flex justify-content-center">
+            <div class="show-image-container">
+              <%= image_tag(@property.avatar[0].variant(combine_options: {resize: '512x512^', extent: '512x512', gravity: 'Center'}), class: "show-image") %>
+            </div>
+          </div>
+        </div>
+        <% @property.avatar[1..-1].each do |image| %>
+          <div class="carousel-item row no-gutters">
+            <div class="col d-flex justify-content-center">
+              <%= image_tag(image.variant(combine_options: {resize: '512x512^', extent: '512x512', gravity: 'Center'}), class: "show-image") %>     
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+<% end %>
+
+</div>
+<div class="upper">
+<table class="table" >
   <tbody>
   <tr>
     <td>Street address:</td>
@@ -127,42 +188,10 @@
 
   </tbody>
 </table>
-
-<% if @property.avatar.attached? %>
-  <p>
-    <strong>Images:</strong>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner w-100">
-        <div class="carousel-item row no-gutters active">
-          <div class="col d-flex justify-content-center">
-            <div class="show-image-container">
-              <%= image_tag(@property.avatar[0], class: "show-image") %>
-            </div>
-          </div>
-        </div>
-        <% @property.avatar[1..-1].each do |image| %>
-          <div class="carousel-item row no-gutters">
-            <div class="col d-flex justify-content-center">
-              <%= image_tag(image, class: "show-image") %>     
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    
-  </p>
-<% end %>
+</div>
 
 
-<%= link_to 'Edit Property Info', edit_property_path(@property), class: "btn btn-primary" %> |
-<%= link_to 'Post this Property', new_lessor_request_path(:property_id => @property.id), class: "btn btn-primary" %> |
-<%= link_to 'Upload Photo', photo_property_path(@property), class: "btn btn-primary" %>
+<%= link_to 'Edit Property Info', edit_property_path(@property), class: "btn" %> |
+<%= link_to 'Post this Property', new_lessor_request_path(:property_id => @property.id), class: "btn" %> |
+<%= link_to 'Upload Photo', photo_property_path(@property), class: "btn" %>
 

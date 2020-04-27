@@ -36,8 +36,12 @@
 		<%i = 1%>
 		<% @lessor_requests.each do |lessor_request| %>
           <div class="col-lg-6 align-items-stretch" id = "aaa">
-            <div class="icon-box">
-			  <div class="icon"><i class="fa fa-home"></i></div>
+            <div class="icon-box" id="lro">
+			  <div class="icon">
+				<%if Property.find(lessor_request.property_id).avatar.attached?%>
+					<%= image_tag(Property.find(lessor_request.property_id).avatar[0].variant(combine_options: {resize: '512x512^', extent: '512x512', gravity: 'Center'}), class: "show-image") %>
+				<%end%>
+			  </div>
               <h4><%="Request " + i.to_s%></h4>
 			  <%i = i + 1%>
               <table class="table">

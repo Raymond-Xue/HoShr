@@ -60,7 +60,7 @@ class PropertiesController < ApplicationController
     @properties = Property.where(:owner_id => current_user.id)
 	@lessor_requests = nil
 	if @properties.count > 0
-		@lessor_requests = LessorRequest.where(:property_id => @properties.first.id)
+		@lessor_requests = LessorRequest.where(:property_id => @properties[0].id)
 	end
 	if @properties.count > 1
 		for i in 1..(@properties.count - 1) do
