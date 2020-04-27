@@ -36,6 +36,7 @@
 	border: 2px solid #e96b56;
 	background: #e96b56;
   }
+  .sg{height:100px;}
 
 </style>
 <div class="outer">
@@ -68,7 +69,7 @@
 
   <tr>
     <td><%= form.label :country %></td>
-    <td><%= form.text_field :country, :required => true, :readonly => true %></td>
+    <td><%= form.text_field :country, :required => true, :readonly => true%></td>
   </tr>
 
   <tr>
@@ -82,7 +83,7 @@
   </tr>
 
   <tr>
-    <td><%= form.label :radius %></td>
+    <td><%= form.label :radius, 'Radius(Mile)' %></td>
     <td><%= form.text_field :radius, :required => true, min: 0 %></td>
   </tr>
 
@@ -97,28 +98,28 @@
   </tr>
 
   <tr>
-    <td><%= form.label :min_duration %></td>
+    <td><%= form.label :min_duration, 'Min Duration(Month)' %></td>
     <td><%= form.number_field :min_duration , :required => true, min: 1%></td>
   </tr>
 
   <tr>
-    <td><%= form.label :max_duration %></td>
+    <td><%= form.label :max_duration, 'Max Duration(Month)' %></td>
     <td><%= form.number_field :max_duration , :required => true, min: 1%></td>
   </tr>
 
   <tr>
-    <td><%= form.label :max_rent %></td>
+    <td><%= form.label :max_rent, 'Max Rent(USD)' %></td>
     <td><%= form.text_field :max_rent , :required => true, min: 100%></td>
   </tr>
 
   <tr>
-    <td><%= form.label :max_n_roommates %></td>
-    <td><%= form.number_field :max_n_roommates , :required => true, min: 0%></td>
+    <td><%= form.label :max_n_roommates,'Max Number of Roommates' %><p>(put 0 if you want a single room)</p></td>
+    <td><%= form.number_field :max_n_roommates , :required => true, min: 0,input_html: {style: 'height:200px !important;'}%></td>
   </tr>
 
   <tr>
-    <td><%= form.label :max_n_housemates, min: 0 %></td>
-    <td><%= form.number_field :max_n_housemates , :required => true%></td>
+    <td><%= form.label :max_n_housemates,'Max Number of Housemates' %></td>
+    <td><%= form.number_field :max_n_housemates ,min: 0, :required => true%></td>
   </tr>
 
   <tr>
@@ -176,8 +177,8 @@
 		    lat=42.3765;
 		    lng=-71.2356;
 		    city="Waltham";
-			state="Massachusetts"
-			country="United States"
+			state="Massachusetts";
+			country="United States";
 		    document.getElementById('lessee_request_latitude').value = lat;
 		    document.getElementById('lessee_request_longitude').value = lng;
 			var city = document.getElementById('lessee_request_city').value = city;

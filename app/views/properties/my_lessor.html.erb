@@ -24,12 +24,21 @@ margin-right: 3%;
       border: 2px solid #e96b56;
       background: #e96b56;
     }
+	p
+	  {      
+	  font-family: "Raleway", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 1px;
+	  }
 
 </style>
 <p id="notice"><%= notice %></p>
 
 <h3 class="my-3">My Lessor Request</h3>
-
+<%if @lessor_requests.count == 0%>
+	<p>Please post at least one lessor request under any property you posted before.</p>
+<%else%>
     <section id="services" class="services">
       <div class="container">
         <div class="row">
@@ -75,3 +84,4 @@ margin-right: 3%;
 
       </div>
     </section>
+<%end%>

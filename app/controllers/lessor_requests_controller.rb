@@ -43,7 +43,7 @@ class LessorRequestsController < ApplicationController
 
     respond_to do |format|
       if @lessor_request.save
-        format.html { redirect_to @lessor_request, notice: 'Lessor request was successfully created.' }
+        format.html { redirect_to my_lessor_path, notice: 'Lessor request was successfully created.' }
         format.json { render :show, status: :created, location: @lessor_request }
       else
         format.html { render :new }

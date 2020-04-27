@@ -98,10 +98,17 @@ class PropertiesController < ApplicationController
   # DELETE /properties/1.json
   def destroy
     @property = Property.find_by(:id => params[:id])
-    @property.destroy
+    
+    
     respond_to do |format|
-      format.html { redirect_to my_property_url, notice: 'Property was successfully destroyed.' }
-      format.json { head :no_content }
+	  if LessorRequest.where(:property_id => @property.id).count > 0
+		  format.html { redirect_to my_property_url, notice: 'Please Delete Lessor Request under this Property first.' }
+		  format.json { head :no_content }
+	  else
+          @property.destroy
+		  format.html { redirect_to my_property_url, notice: 'Property was successfully destroyed.' }
+		  format.json { head :no_content }
+	  end
     end
   end
   

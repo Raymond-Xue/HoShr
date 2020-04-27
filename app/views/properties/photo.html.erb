@@ -1,22 +1,73 @@
-<%= form_with(model: @property, local: true) do |form| %>
-  <% if @property.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-        <% @property.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<style>
+.member{
+  margin: 0 auto;
+  width: 70%;
+  margin-top:5%;
+}
+.btn {
+  width: 30%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  color: #fff;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  border: 2px solid #e96b56;
+  background: #e96b56;
+}
+h1{
+  font-size: 2em;
+  letter-spacing: 3px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+}
+</style>
+
+
+<!-- ======= Team Section ======= -->
+<section id="team" class="team">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-20 col-md-12 d-flex align-items-stretch">
+        <div class="member">
+          <div class="social">
+            <h1 class="card-title text-center mt-3 mb-5">Upload Photo</h1>
+            <div class="col mx-auto">
+		<%= form_with(model: @property, local: true) do |form| %>
+		  <% if @property.errors.any? %>
+		    <div id="error_explanation">
+		      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+		      <ul>
+			<% @property.errors.full_messages.each do |message| %>
+			  <li><%= message %></li>
+			<% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+
+		    <div class="field">
+			<%= form.label :photo %>
+			<%= form.file_field :avatar, multiple:true %>
+		    </div>
+
+		  <div class="actions">
+		    <%= form.submit 'Submit', class: "btn" %>
+		  </div>
+		<% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-    <div class="field">
-        <%= form.label :photo %>
-        <%= form.file_field :avatar, multiple:true %>
-    </div>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
-<% end %>
+</section><!-- End Team Section -->
