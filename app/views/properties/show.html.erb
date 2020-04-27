@@ -124,15 +124,31 @@
   </tbody>
 </table>
 
+
+
 <% if @property.avatar.attached? %>
   <p>
-    <strong>Images:</strong>
-    <br>
-    <% @property.avatar.each do |image| %>
-      <%= image_tag(image) %>
-    <% end %>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner w-100">
+        <div class="carousel-item row no-gutters active">
+          <div class="col d-flex justify-content-center">
+            <div class="show-image-container">
+              <%= image_tag(@property.avatar[0], class: "show-image") %>
+            </div>
+          </div>
+        </div>
+        <% @property.avatar[1..-1].each do |image| %>
+          <div class="carousel-item row no-gutters">
+            <div class="col d-flex justify-content-center">
+              <%= image_tag(image, class: "show-image") %>     
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div> 
   </p>
 <% end %>
+
 
 <%= link_to 'Edit Property Info', edit_property_path(@property), class: "btn btn-primary" %> |
 <%= link_to 'Post this Property', new_lessor_request_path(:property_id => @property.id), class: "btn btn-primary" %> |
