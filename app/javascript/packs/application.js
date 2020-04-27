@@ -10,12 +10,6 @@ require("channels")
 require("jquery")
 import "bootstrap"
 
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel';
-
-import JQuery from 'jquery';
-window.$ = window.JQuery = JQuery;
-
 import flatpickr from "flatpickr"
 require("flatpickr/dist/flatpickr.css")
 

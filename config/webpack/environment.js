@@ -8,7 +8,6 @@ environment.plugins.prepend('Provide',
     jquery: 'jquery/src/jquery',
     Popper: 'popper.js/dist/popper',
     moment: 'moment/moment'
-    'window.jQuery': 'jquery'
   })
 )
 
