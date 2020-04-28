@@ -75,8 +75,7 @@
       					<td><%= lessor_request.min_duration %></td>
 					</tr>
 					<tr>
-						<td><%= link_to 'Detail', lessor_request, class: 'btn'%></td>
-      					<td><%= link_to 'Cancel', "/cancel/#{lessor_request.id}", class: 'btn', method: :post %></td>
+						<td><%= link_to 'Detail', Property.find(lessor_request.property_id), class: 'btn'%></td>
 					</tr>
 				</tbody>
 			  </table>

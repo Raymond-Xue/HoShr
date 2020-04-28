@@ -46,9 +46,11 @@ class LesseeRequestsController < ApplicationController
   def update
     respond_to do |format|
     @lessee_request.group = current_user.current_group
-    @lessee_request.country_id = Country.find_by(:country_name => lessee_request_params[:country]).id
-    @lessee_request.state_id = State.find_by(:state_name => lessee_request_params[:state], :country_id => @lessee_request.country_id).id
-    @lessee_request.city_id = City.find_by(:city_name => lessee_request_params[:city], :state_id => @lessee_request.state_id).id
+    if City.find_by(:city_name => lessee_request_params[:city])
+		@lessee_request.country_id = Country.find_by(:country_name => lessee_request_params[:country]).id
+		@lessee_request.state_id = State.find_by(:state_name => lessee_request_params[:state], :country_id => @lessee_request.country_id).id
+		@lessee_request.city_id = City.find_by(:city_name => lessee_request_params[:city], :state_id => @lessee_request.state_id).id
+	end
       if @lessee_request.update(lessee_request_params)
         format.html { redirect_to @lessee_request, notice: 'Lessee request was successfully updated.' }
         format.json { render :show, status: :ok, location: @lessee_request }
