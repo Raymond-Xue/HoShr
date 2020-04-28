@@ -36,7 +36,9 @@ module RecommendationService
     sql_select_requests = LesseeRequest.where("group_id != #{group_request.group_id} and active != false")
         .where("city_id = #{group_request.city_id} and state_id = #{group_request.state_id} and country_id = #{group_request.country_id}")
         .where("smoke = #{group_request.smoke}")
-        .where("max_rent <= #{group_request.max_rent}")
+        .where("max_rent <= #{group_request.max_rent + 300} and max_rent >= #{group_request.max_rent - 300}")
+    # |a - b| <= 300
+    # a <= 300 + b && a >= -300 + b
 
     current_group_num = group_request.group.users.count
     select_requests = []
