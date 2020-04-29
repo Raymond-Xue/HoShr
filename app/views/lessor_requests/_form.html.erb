@@ -59,17 +59,17 @@
 		  <tbody>
 
 		  <tr>
-		    <%= form.label :earliest_movein_date %>
+		    <%= form.label :earliest_movein_date, "Earliest Move-in Date:" %>
 		    <%= form.date_select :earliest_movein_date %>
 		  </tr>
 
 		  <tr>
-		    <%= form.label :min_duration %>
+		    <%= form.label :min_duration, "Minimum Duration (month):" %>
 		    <%= form.number_field :min_duration %>
 		  </tr>
 		  
 		  <tr>
-		    <%= form.label :total_rent %>
+		    <%= form.label :total_rent, "Total Rent ($):" %>
 		    <%= form.text_field :total_rent %>
 		  </tr>
 		  <%= hidden_field_tag :property_id, @property_id %>
