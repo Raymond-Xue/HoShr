@@ -43,7 +43,7 @@ class LessorRequestsController < ApplicationController
 
     respond_to do |format|
       if @lessor_request.save
-        format.html { redirect_to my_lessor_path, notice: 'Lessor request was successfully created.' }
+        format.html { redirect_to my_lessor_path}
         format.json { render :show, status: :created, location: @lessor_request }
       else
         format.html { render :new }
@@ -57,7 +57,7 @@ class LessorRequestsController < ApplicationController
   def update
     respond_to do |format|
       if @lessor_request.update(lessor_request_params)
-        format.html { redirect_to @lessor_request, notice: 'Lessor request was successfully updated.' }
+        format.html { redirect_to my_lessor_path}
         format.json { render :show, status: :ok, location: @lessor_request }
       else
         format.html { render :edit }
@@ -72,7 +72,7 @@ class LessorRequestsController < ApplicationController
     @lessor_request = LessorRequest.find_by(:id => params[:id])
     @lessor_request.destroy
     respond_to do |format|
-      format.html { redirect_to my_lessor_url, notice: 'Lessor request was successfully destroyed.' }
+      format.html { redirect_to my_lessor_url}
       format.json { head :no_content }
     end
   end

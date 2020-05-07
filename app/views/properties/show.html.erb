@@ -190,8 +190,9 @@ h1{margin-top:5%;}
 </table>
 </div>
 
-
-<%= link_to 'Edit Property Info', edit_property_path(@property), class: "btn" %> |
-<%= link_to 'Post this Property', new_lessor_request_path(:property_id => @property.id), class: "btn" %> |
-<%= link_to 'Upload Photo', photo_property_path(@property), class: "btn" %>
+<%if current_user.id == @property.owner_id%>
+	<%= link_to 'Edit Property Info', edit_property_path(@property), class: "btn" %> |
+	<%= link_to 'Post this Property', new_lessor_request_path(:property_id => @property.id), class: "btn" %> |
+	<%= link_to 'Upload Photo', photo_property_path(@property), class: "btn" %>
+<%end%>
 
