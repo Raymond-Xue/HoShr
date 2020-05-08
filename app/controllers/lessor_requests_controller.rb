@@ -15,7 +15,15 @@ class LessorRequestsController < ApplicationController
 	@lessee_requests.each do |l|
 		cid.append(l.city_id)
 	end
-    @lessor_requests = LessorRequest.where(:property_id => Property.where(:city_id => cid).ids)
+    @lessor_requests_tmp = LessorRequest.where(:property_id => Property.where(:city_id => cid).ids)
+	@lessor_requests = []
+	@lessor_requests_tmp.each do |lessor|
+		@lessee_requests.each do |lessee|
+			if lessor.earliest_movein_date >= lessee.earliest_movein_date and lessor.earliest_movein_date <= lessee.latest_movein_date and Property.find(lessor.property_id).city_id == lessee.city_id
+				@lessor_requests.push(lessor)
+			end
+		end
+	end
 
   end
 
