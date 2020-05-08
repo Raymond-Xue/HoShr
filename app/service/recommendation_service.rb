@@ -44,6 +44,7 @@ module RecommendationService
     select_requests = []
     sql_select_requests.each do |request|
       if request.group.users.count + current_group_num <= group_request.max_n_housemates &&
+          current_group_num + request.group.users.count <= request.max_n_housemates &&
           group_request.latest_movein_date >= request.earliest_movein_date &&
           group_request.earliest_movein_date <= request.latest_movein_date &&
           group_request.min_duration <= request.max_duration &&
