@@ -106,7 +106,7 @@ class PropertiesController < ApplicationController
 		  format.json { head :no_content }
 	  else
           @property.destroy
-		  format.html { redirect_to my_property_url, notice: 'Property was successfully destroyed.' }
+		  format.html { redirect_to my_property_url }
 		  format.json { head :no_content }
 	  end
     end
