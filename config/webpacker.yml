@@ -7,6 +7,8 @@ default: &default
   public_output_path: packs
   cache_path: tmp/cache/webpacker
   check_yarn_integrity: false
+  # Below is a test on 04/28/2020 
+  #check_yarn_integrity: True
   webpack_compile_output: true
 
   # Additional paths webpack should lookup modules
@@ -87,10 +89,10 @@ production:
   <<: *default
 
   # Production depends on precompilation of packs prior to booting for performance.
-  compile: false
-
+  #compile: false
+  compile: true
   # Extract and emit a css file
   extract_css: true
-
+  #extract_css: false
   # Cache manifest.json for performance
   cache_manifest: true

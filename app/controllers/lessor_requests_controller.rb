@@ -15,7 +15,15 @@ class LessorRequestsController < ApplicationController
 	@lessee_requests.each do |l|
 		cid.append(l.city_id)
 	end
-    @lessor_requests = LessorRequest.where(:property_id => Property.where(:city_id => cid).ids)
+    @lessor_requests_tmp = LessorRequest.where(:property_id => Property.where(:city_id => cid).ids)
+	@lessor_requests = []
+	@lessor_requests_tmp.each do |lessor|
+		@lessee_requests.each do |lessee|
+			if lessor.earliest_movein_date >= lessee.earliest_movein_date and lessor.earliest_movein_date <= lessee.latest_movein_date and Property.find(lessor.property_id).city_id == lessee.city_id
+				@lessor_requests.push(lessor)
+			end
+		end
+	end
 
   end
 
@@ -43,7 +51,7 @@ class LessorRequestsController < ApplicationController
 
     respond_to do |format|
       if @lessor_request.save
-        format.html { redirect_to my_lessor_path, notice: 'Lessor request was successfully created.' }
+        format.html { redirect_to my_lessor_path}
         format.json { render :show, status: :created, location: @lessor_request }
       else
         format.html { render :new }
@@ -57,7 +65,7 @@ class LessorRequestsController < ApplicationController
   def update
     respond_to do |format|
       if @lessor_request.update(lessor_request_params)
-        format.html { redirect_to @lessor_request, notice: 'Lessor request was successfully updated.' }
+        format.html { redirect_to my_lessor_path}
         format.json { render :show, status: :ok, location: @lessor_request }
       else
         format.html { render :edit }
@@ -72,7 +80,7 @@ class LessorRequestsController < ApplicationController
     @lessor_request = LessorRequest.find_by(:id => params[:id])
     @lessor_request.destroy
     respond_to do |format|
-      format.html { redirect_to my_lessor_url, notice: 'Lessor request was successfully destroyed.' }
+      format.html { redirect_to my_lessor_url}
       format.json { head :no_content }
     end
   end

@@ -26,64 +26,71 @@
 	}
 </style>
 <p id="notice"><%= notice %></p>
+<% if !Group.find(current_user.current_group_id).active_for_matching %>
+	<% if @lessor_requests.count < 1 %>
+		<h1>No Recommendation Now. Please adjust your lessee request or wait longer.</h1>
+	<% else %>
+		<h1>Home Recommendation For You</h1>
+		<br>
 
-<h1>Home Recommendation For You</h1>
-<br>
+		<section id="services" class="services">
+			  <div class="container">
+				<div class="row">
+				<%i = 1%>
+				<% @lessor_requests.each do |lessor_request| %>
+				  <div class="col-lg-6 align-items-stretch" id = "aaa">
+				    <div class="icon-box" id="lro">
+					  <div class="icon">
+						<%if Property.find(lessor_request.property_id).avatar.attached?%>
+							<%= image_tag(Property.find(lessor_request.property_id).avatar[0].variant(combine_options: {resize: '512x512^', extent: '512x512', gravity: 'Center'}), class: "show-image") %>
+						<%end%>
+					  </div>
+				      <h4><%="Request " + i.to_s%></h4>
+					  <%i = i + 1%>
+				      <table class="table">
+						<tbody>
+							<tr>
+								<td>Property Address</td>
+			  					<td><%= Property.find(lessor_request.property_id).street_address %></td>
+							</tr>
+							<tr>
+								<td>Property Location</td>
+			  					<td><%= City.find(Property.find(lessor_request.property_id).city_id).city_name + ', ' +  State.find(Property.find(lessor_request.property_id).state_id).state_name + ', ' + Country.find(Property.find(lessor_request.property_id).country_id).country_name%></td>
+							</tr>
+							<tr>
+								<td>Owner</td>
+			  					<td><%= link_to User.find(Property.find(lessor_request.property_id).owner_id).username, User.find(Property.find(lessor_request.property_id).owner_id) %></td>
+							</tr>
+							<tr>
+								<td>Owner Email</td>
+			  					<td><%= User.find(Property.find(lessor_request.property_id).owner_id).email%></td>
+							</tr>
+							<tr>
+								<td>Earliest Movein Date</td>
+			  					<td><%= lessor_request.earliest_movein_date%></td>
+							</tr>
+							<tr>
+								<td>Total Rent(USD)</td>
+			  					<td><%= lessor_request.total_rent %></td>
+							</tr>
+							<tr>
+								<td>Min Duration(Month)</td>
+			  					<td><%= lessor_request.min_duration %></td>
+							</tr>
+							<tr>
+								<td><%= link_to 'Detail', Property.find(lessor_request.property_id), class: 'btn'%></td>
+							</tr>
+						</tbody>
+					  </table>
+				    </div>
+				  </div>
 
-<section id="services" class="services">
-      <div class="container">
-        <div class="row">
-		<%i = 1%>
-		<% @lessor_requests.each do |lessor_request| %>
-          <div class="col-lg-6 align-items-stretch" id = "aaa">
-            <div class="icon-box" id="lro">
-			  <div class="icon">
-				<%if Property.find(lessor_request.property_id).avatar.attached?%>
-					<%= image_tag(Property.find(lessor_request.property_id).avatar[0].variant(combine_options: {resize: '512x512^', extent: '512x512', gravity: 'Center'}), class: "show-image") %>
 				<%end%>
+				</div>
+
 			  </div>
-              <h4><%="Request " + i.to_s%></h4>
-			  <%i = i + 1%>
-              <table class="table">
-				<tbody>
-					<tr>
-						<td>Property Address</td>
-      					<td><%= Property.find(lessor_request.property_id).street_address %></td>
-					</tr>
-					<tr>
-						<td>Property Location</td>
-      					<td><%= City.find(Property.find(lessor_request.property_id).city_id).city_name + ', ' +  State.find(Property.find(lessor_request.property_id).state_id).state_name + ', ' + Country.find(Property.find(lessor_request.property_id).country_id).country_name%></td>
-					</tr>
-					<tr>
-						<td>Owner</td>
-      					<td><%= link_to User.find(Property.find(lessor_request.property_id).owner_id).username, User.find(Property.find(lessor_request.property_id).owner_id) %></td>
-					</tr>
-					<tr>
-						<td>Owner Email</td>
-      					<td><%= User.find(Property.find(lessor_request.property_id).owner_id).email%></td>
-					</tr>
-					<tr>
-						<td>Earliest Movein Date</td>
-      					<td><%= lessor_request.earliest_movein_date%></td>
-					</tr>
-					<tr>
-						<td>Total Rent(USD)</td>
-      					<td><%= lessor_request.total_rent %></td>
-					</tr>
-					<tr>
-						<td>Min Duration(Month)</td>
-      					<td><%= lessor_request.min_duration %></td>
-					</tr>
-					<tr>
-						<td><%= link_to 'Detail', Property.find(lessor_request.property_id), class: 'btn'%></td>
-					</tr>
-				</tbody>
-			  </table>
-            </div>
-          </div>
-
-		<%end%>
-        </div>
-
-      </div>
-    </section>
+			</section>
+	<% end %>
+<% else %>
+	<h1>You are still open for roommate recommendation. Please close matching first.</h1>
+<% end %>

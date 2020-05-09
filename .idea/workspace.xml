@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccb4d2c3-4b5d-4543-b120-176fe042c947" name="Default Changelist" comment="Merge branch 'master' of https://github.com/hantingge/HoShr&#10;&#10;# Conflicts:&#10;#&#9;app/views/static_pages/home.html.erb">
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/service/recommendation_service.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/service/recommendation_service.rb" afterDir="false" />
     </list>
@@ -361,7 +360,11 @@
       <workItem from="1587852686079" duration="3338000" />
       <workItem from="1588025111066" duration="847000" />
       <workItem from="1588027962354" duration="36000" />
-      <workItem from="1588040117321" duration="430000" />
+      <workItem from="1588040117321" duration="3111000" />
+      <workItem from="1588283494679" duration="42000" />
+      <workItem from="1588289542684" duration="755000" />
+      <workItem from="1588896325720" duration="2571000" />
+      <workItem from="1588959115566" duration="3698000" />
     </task>
     <servers />
   </component>
@@ -381,10 +384,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1148" height="643" key="DebuggerActiveHint/67.27.1853.1053@67.27.1853.1053" timestamp="1585939976099" />
-    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl" timestamp="1588027996338">
+    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl" timestamp="1588298045208">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1588027996338" />
+    <state x="726" y="255" width="524" height="594" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1588298045208" />
     <state width="1793" height="422" key="GridCell.Tab.0.bottom" timestamp="1587787324751">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

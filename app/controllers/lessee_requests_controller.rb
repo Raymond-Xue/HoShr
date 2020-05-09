@@ -32,7 +32,7 @@ class LesseeRequestsController < ApplicationController
     
     respond_to do |format|
       if @lessee_request.save
-        format.html { redirect_to my_lessee_path, notice: 'Lessee request was successfully created.' }
+        format.html { redirect_to my_lessee_path}
         format.json { render :show, status: :created, location: @lessee_request }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class LesseeRequestsController < ApplicationController
 		@lessee_request.city_id = City.find_by(:city_name => lessee_request_params[:city], :state_id => @lessee_request.state_id).id
 	end
       if @lessee_request.update(lessee_request_params)
-        format.html { redirect_to @lessee_request, notice: 'Lessee request was successfully updated.' }
+        format.html { redirect_to my_lessee_path}
         format.json { render :show, status: :ok, location: @lessee_request }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class LesseeRequestsController < ApplicationController
   def destroy
     @lessee_request.destroy
     respond_to do |format|
-      format.html { redirect_to lessee_requests_url, notice: 'Lessee request was successfully destroyed.' }
+      format.html { redirect_to lessee_requests_url}
       format.json { head :no_content }
     end
   end
