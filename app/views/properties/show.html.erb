@@ -176,7 +176,9 @@ h1{margin-top:5%;}
       <% if @property.hasSmokeDetector?%> 
         <%= image_tag "no-smoking.png", class: "icon" %>
       <% end %>
-      <%= image_tag "air-conditioner.png", class: "icon" %>
+      <% if @property.hasAirConditioning?%>
+        <%= image_tag "air-conditioner.png", class: "icon" %>
+      <% end %>
     </td>
   
   </tr>

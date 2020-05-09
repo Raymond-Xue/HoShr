@@ -67,7 +67,7 @@
           <div class="col-lg-6" id="itemgroup">
             <div class="testimonial-item">
 		    <% if member.avatar.attached? %>
-		      <%= image_tag url_for(member.avatar.variant(combine_options: {resize: '256x256^', extent: '256x256', gravity: 'Center'})), class: "testimonial-img" %>
+		      <%= image_tag url_for(member.avatar), class: "testimonial-img" %>
 		    <% end %>
               <h3><%=member.username%></h3>
               <h4><%=member.email%></h4>
