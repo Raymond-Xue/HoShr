@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to:'sessions#destroy'
   get '/recommendation', to: 'recommend#show'
-
+  
+  get '/lessee_requests/new'
+  
   post '/invitation/accept/:invitation_id', to:'invitation#accept', as: 'accept_invitation'
   post '/invitation/send/:group_to_id', to:'invitation#create', as: 'send_invitation'
 

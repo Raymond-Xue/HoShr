@@ -1,27 +1,27 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  latitude: 1.5
-  longitude: 1.5
-  radius: 1.5
-  city_id: 1
-  state_id: 1
+  latitude: 42.36
+  longitude: 71.25
+  radius: 3
+  city_id: 7555
+  state_id: 20
   country_id: 1
   id: 1
-  earliest_movein_date: 2020-02-26
-  latest_movein_date: 2020-02-26
-  min_duration: 1
-  max_duration: 1
+  earliest_movein_date: 2020-08-15
+  latest_movein_date: 2020-08-27
+  min_duration: 12
+  max_duration: 15
   duration_unit: 1
-  max_rent: 1.5
+  max_rent: 800
   max_rent_unit: 1
   max_rent_currency: 1
-  max_n_roommates: 1
-  max_n_housemates: 1
+  max_n_roommates: 0
+  max_n_housemates: 9
   private_bath: false
   balcony: false
   smoke: false
-  roommate_gender: MyString
+  roommate_gender: "Male"
 
 two:
   latitude: 1.5
